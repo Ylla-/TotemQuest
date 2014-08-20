@@ -19,6 +19,7 @@ public class Controller : MonoBehaviour {
 	float groundRadius = 0.05f;
 	public LayerMask theGround;
 	public float jumpForce = 50f;
+	public float soloJumpForce = 440;
 
 
 	
@@ -39,7 +40,7 @@ public class Controller : MonoBehaviour {
 		//	rigidbody2D.AddForce(new Vector2 (move * HorizontalForceonAir, 0));
 		
 		
-		//jumping
+		/*jumping hold to go higher
 		if (Input.GetButton ("Jump")) {
 			if (onGround) {
 				JumpPressedTime = Time.time;
@@ -54,8 +55,16 @@ public class Controller : MonoBehaviour {
 					}
 				}
 			}
-		}   
-		
+		}   */
+
+		//Fixed jump
+		if (Input.GetButtonDown ("Jump")) {
+			if (onGround) {
+			    rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+			}
+		}
+
+
 		//flipping for running left or right
 		if (move > 0 && facingRight) {
 			Flip ();
