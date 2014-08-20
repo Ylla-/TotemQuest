@@ -2,10 +2,10 @@
 using System.Collections;
 
 public class Controller : MonoBehaviour {
-	public float maxSpeed = 10f;
+	public float maxSpeed = 5f;
 	public float HorizontalForceonAir = 8f;
 	
-	public float JumpDuration = 0.180f;
+	public float JumpDuration = 0.150f;
 	public float JumpPressedTime;
 	public bool JumpingPressed;
 	
@@ -16,9 +16,9 @@ public class Controller : MonoBehaviour {
 	
 	public bool onGround = false;
 	public Transform groundCheck;
-	float groundRadius = 0.2f;
+	float groundRadius = 0.05f;
 	public LayerMask theGround;
-	public float jumpForce = 90f;
+	public float jumpForce = 50f;
 
 
 	
@@ -57,10 +57,10 @@ public class Controller : MonoBehaviour {
 		}   
 		
 		//flipping for running left or right
-		if (move > 0 && !facingRight) {
+		if (move > 0 && facingRight) {
 			Flip ();
 			facingRight = !facingRight;
-		} else if (move < 0 && facingRight) {
+		} else if (move < 0 && !facingRight) {
 			Flip ();
 			facingRight = !facingRight;
 		}
