@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 60: {fileID: 6000000}
+  - 61: {fileID: 6100000}
   m_Layer: 10
   m_Name: Tile
   m_TagString: Terrain
@@ -24,13 +24,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!60 &6000000
-PolygonCollider2D:
+--- !u!61 &6100000
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -38,21 +38,8 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: a7edadae22e088d48b9c0dda1a5097b1, type: 2}
   m_IsTrigger: 0
-<<<<<<< HEAD
   m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: 0}
-=======
-  m_Poly:
-    m_Paths:
-    - - {x: -.19272542, y: .247092605}
-      - {x: .1913445, y: .24755919}
-      - {x: .243952751, y: .192564249}
-      - {x: .248464823, y: -.192635715}
-      - {x: .19533205, y: -.248852491}
-      - {x: -.19041419, y: -.245021999}
-      - {x: -.24182272, y: -.189955115}
-      - {x: -.245970726, y: .193125963}
->>>>>>> origin/master
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
