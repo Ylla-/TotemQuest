@@ -16,7 +16,7 @@ public class Controller : MonoBehaviour {
 	
 	public bool onGround = false;
 	public Transform groundCheck;
-	float groundRadius = 0.05f;
+	float groundRadius = 0.1f;
 	public LayerMask theGround;
 	public float jumpForce = 50f;
 	public float soloJumpForce = 440;
@@ -57,19 +57,15 @@ public class Controller : MonoBehaviour {
 			}
 		}   */
 
-		//Fixed jump
-		if (Input.GetButtonDown ("Jump")) {
-			if (onGround) {
-			    rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
-			}
-		}
+	
+
 
 
 		//flipping for running left or right
-		if (move > 0 && facingRight) {
+		if (move > 0 && !facingRight) {
 			Flip ();
 			facingRight = !facingRight;
-		} else if (move < 0 && !facingRight) {
+		} else if (move < 0 && facingRight) {
 			Flip ();
 			facingRight = !facingRight;
 		}
@@ -78,16 +74,21 @@ public class Controller : MonoBehaviour {
 	
 	
 	void Update(){
-
+	//Fixed jump
+	if (Input.GetButtonDown ("Jump")) {
+						if (onGround) {
+								rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+						}
+				}
 
 		
 		
 		/*animator variables
-		anim.SetFloat ("Speed", Mathf.Abs (move));
 		anim.SetFloat ("VerticalVelocity", rigidbody2D.velocity.y);
 		anim.SetBool ("Jump", JumpingPressed);
 		anim.SetBool ("Grounded", onGround);
 		*/
+		anim.SetFloat ("Speed", Mathf.Abs (move));
 	
 		
 	}
