@@ -644,6 +644,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: glideDuration
+      value: .25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
   m_RootGameObject: {fileID: 1864323935}
@@ -1619,6 +1623,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   dashDuration: .100000001
   dashSpeed: 20
+  glideDuration: .25
+  glideSpeed: 10
   onGround: 0
   groundCheckL: {fileID: 747834039}
   groundCheckR: {fileID: 59803785}
