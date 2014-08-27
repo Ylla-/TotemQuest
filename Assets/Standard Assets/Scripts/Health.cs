@@ -4,7 +4,7 @@ using System.Collections;
 public class Health : MonoBehaviour {
 	public int maxHealth = 10;
 	public int curHealth = 10;
-	public float healthBarLength = 200;
+	public float healthBarLength;
 	public int pos = 40;
 	// Use this for initialization
 	void Start () {

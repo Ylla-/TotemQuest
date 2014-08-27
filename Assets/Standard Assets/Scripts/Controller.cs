@@ -114,11 +114,10 @@ public class Controller : MonoBehaviour {
 		/*animator variables
 		anim.SetFloat ("VerticalVelocity", rigidbody2D.velocity.y);
 		anim.SetBool ("Jump", JumpingPressed);
-		*/
 		anim.SetBool ("Grounded", onGround);
-		anim.SetBool ("Dash", dash);
-		anim.SetBool ("Glide", glide);
+		*/
 		anim.SetFloat ("Speed", Mathf.Abs (move));
+	
 		
 	}
 	
