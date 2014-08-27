@@ -14,11 +14,11 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
+  User Layer 8: Foreground
   User Layer 9: 
   User Layer 10: Terrain
-  User Layer 11: 
-  User Layer 12: 
+  User Layer 11: Collision
+  User Layer 12: Background
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 
