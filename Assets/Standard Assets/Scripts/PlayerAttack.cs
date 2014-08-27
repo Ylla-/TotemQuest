@@ -4,6 +4,8 @@ using System.Collections;
 public class PlayerAttack : MonoBehaviour {
 	public int DMG = 20;
 	Animator anim;
+	bool fire;
+	public ThrowProjectile shoot1;
 	
 	void Start () {
 		//controller = (Controller)gameObject.GetComponent ("Controller");
@@ -12,7 +14,18 @@ public class PlayerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetButtonDown("Fire")){
+			fire = true;
+		}
 	}
+
+	void FixedUpdate (){
+			if (fire){
+			fire = false;
+			shoot1.ThrowFireball();
+
+			           }
+		}
 	
 	void Attack(){
 		
