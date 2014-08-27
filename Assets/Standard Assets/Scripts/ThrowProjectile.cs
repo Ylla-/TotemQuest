@@ -41,7 +41,7 @@ public class ThrowProjectile : MonoBehaviour {
 		//direction of the shot
 		shot.facingRight = cont.facingRight;
 		// Assign position
-		fireballTransform.position = transform.position;
+		fireballTransform.position = new Vector3 (transform.position.x, transform.position.y, -0.2f);
 		
 		
 		
