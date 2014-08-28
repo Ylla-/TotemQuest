@@ -4,4 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Intro.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Title.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Level Select.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Plains.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Forest.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Caves.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Final Level.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Credits.unity
