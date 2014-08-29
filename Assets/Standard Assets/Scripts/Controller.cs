@@ -1,14 +1,26 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class Controller : MonoBehaviour {
+	//NOW, THIS IS GONNA LOOK UGLY, BUT BEAR WITH ME, AND WATCH IT WORK;
+	public int totem; // 0 = normal, 1 = rabbit, 2 = mole, 3 = mantis
+
+	// in order: maxSpeed, soloJumpForce, maxHealth,
+	public float[] rabbitStats = {5f,440f,8f};
+	public float[] moleStats   = {3f,400f,15f};
+	public float[] mantisStats = {6f,440f,8f};
+	public float[] normalStats = {5f,440f,10f};
+
+
+	Health health;
+
 	//for horizontal movement
 	public float maxSpeed = 5f;
 	public float move;
 	bool moveAllowed;
 	//public float HorizontalForceonAir = 8f;
 
-	//for non fixed jump
+	//for non fixed jump UNUSUED
 	public float JumpDuration = 0.150f;
 	float JumpPressedTime, JumpingPressed;
 	public float jumpForce = 50f;
@@ -39,6 +51,8 @@ public class Controller : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator> ();
 		moveAllowed = true;
+		health = (Health)gameObject.GetComponent ("Health");
+
 	}
 	
 	
@@ -63,8 +77,7 @@ public class Controller : MonoBehaviour {
 		//if(!onGround)
 		//	rigidbody2D.AddForce(new Vector2 (move * HorizontalForceonAir, 0));
 	    }
-		
-		
+
 		/*jumping hold to go higher
 		if (Input.GetButton ("Jump")) {
 			if (onGround) {
@@ -96,8 +109,20 @@ public class Controller : MonoBehaviour {
 
 	}
 	
-	
+	//For totem transformations
 	void Update(){
+	if (Input.GetButtonDown ("Normal")) {
+			totem = 0;
+				} else if (Input.GetButtonDown ("Bunny")) {
+			totem = 1;
+				} else if (Input.GetButtonDown ("Mole")) {
+			totem = 2;
+				} else if (Input.GetButtonDown ("Mantis")) {
+			totem = 3;
+				}
+						
+
+	
 	//Fixed jump
 	if (Input.GetButtonDown("Jump") && onGround){
 		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
@@ -119,6 +144,7 @@ public class Controller : MonoBehaviour {
 		anim.SetBool ("Dash", dash);
 		anim.SetBool ("Glide", glide);
 		anim.SetFloat ("Speed", Mathf.Abs (move));
+		anim.SetInteger ("Totem", totem);
 		
 	}
 	
@@ -176,6 +202,21 @@ public class Controller : MonoBehaviour {
 		}
 
 	}
+
+	void TurnIntoRabbit(){
+		maxSpeed = rabbitStats [0];
+		soloJumpForce = rabbitStats [1];
+		health.maxHealth = (int)rabbitStats [2];
+
+	}
+	void TurnIntoMole(){
+	}
+	void TurnIntoMantis(){
+	}
+	void TurnIntoNormal(){
+	}
+
+
 
 }
 
