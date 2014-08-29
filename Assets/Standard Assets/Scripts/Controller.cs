@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+ using UnityEngine;
 using System.Collections;
 
 public class Controller : MonoBehaviour {
@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour {
 	public float[] moleStats   = {3f,400f,15f};
 	public float[] mantisStats = {6f,440f,8f};
 	public float[] normalStats = {5f,440f,10f};
+	bool canDash, canGlide, canShield;
 
 
 	Health health;
@@ -155,27 +156,24 @@ public class Controller : MonoBehaviour {
 		transform.localScale = theScale;
 	}
 
-	void RabbitDash(){
-		if (dash){
+	public void RabbitDash(){
+		if (dash && anim.GetCurrentAnimatorStateInfo(0).nameHash == HashIDs.rabbitDashState){
 			Debug.Log ("Dash");
-			dash = false;
 			moveAllowed = false;
-			dashStartTime = Time.time;            //if and else just to dash in the right direction
+		   //if and else just to dash in the right direction
 			if (facingRight)rigidbody2D.velocity = new Vector2 (dashSpeed, rigidbody2D.velocity.y); 
 			else rigidbody2D.velocity = new Vector2 (-dashSpeed, rigidbody2D.velocity.y);
-			dashing = true;
+			dash = false; //i set dash to false so this if block only executes once
 		}
-		if (dashing == true) {
-			if ((Time.time - dashStartTime) < dashDuration) {
+		else if (anim.GetCurrentAnimatorStateInfo(0).nameHash == HashIDs.rabbitDashState) { //executes ever frame when dashing
 				if (facingRight) rigidbody2D.velocity = new Vector2 (dashSpeed, rigidbody2D.velocity.y);
 				else rigidbody2D.velocity = new Vector2 (-dashSpeed, rigidbody2D.velocity.y);
-			} else {
+			}
+		else{ //executes when dashing is done
 				rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
 				moveAllowed = true;
-				dashing = false;
 			}
 		}
-	}
 
 	void MantisGlide(){
 		// Glide mantis
@@ -207,13 +205,37 @@ public class Controller : MonoBehaviour {
 		maxSpeed = rabbitStats [0];
 		soloJumpForce = rabbitStats [1];
 		health.maxHealth = (int)rabbitStats [2];
+		canDash = true;
+		canGlide = false;
+		canShield = false;
 
 	}
 	void TurnIntoMole(){
+		maxSpeed = moleStats [0];
+		soloJumpForce = moleStats [1];
+		health.maxHealth = (int)moleStats [2];
+		canDash = false;
+		canGlide = false;
+		canShield = true;
+
 	}
 	void TurnIntoMantis(){
+		maxSpeed = mantisStats [0];
+		soloJumpForce = mantisStats [1];
+		health.maxHealth = (int)mantisStats [2];
+		canDash = false;
+		canGlide = true;
+		canShield = false;
+
 	}
 	void TurnIntoNormal(){
+		maxSpeed = normalStats [0];
+		soloJumpForce = normalStats [1];
+		health.maxHealth = (int)normalStats [2];
+		canDash = false;
+		canGlide = false;
+		canShield = false;
+
 	}
 
 
