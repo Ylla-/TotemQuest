@@ -18,8 +18,10 @@ public class SpaceForNextScene : MonoBehaviour {
 	}
 
 	IEnumerator LoadNextScene() {
-		sceneTransition.FadeUI ();
-		yield return new WaitForSeconds(sceneTransition.standardFadeInTime);
+		if(sceneTransition != null) {  //Fade UI , Then load next level
+			sceneTransition.FadeUI ();
+			yield return new WaitForSeconds(sceneTransition.standardFadeInTime);
+		}
 		Application.LoadLevel(nextScene);
 	}
 }
