@@ -129,11 +129,11 @@ public class Controller : MonoBehaviour {
 		}
 
 		// it seems you cant use GetButtonDown in the FixedUpdate() DASH
-	if (Input.GetButtonDown ("Dash") && onGround) {
+	if ((Input.GetButtonDown ("Dash")||Input.GetButtonDown("Fire1")) && onGround) {
 						dash = true;
 				}
 		// GLIDE
-	if (Input.GetButtonDown ("Dash") && !onGround) {
+	if ((Input.GetButtonDown ("Dash")||Input.GetButtonDown("Fire1")) && !onGround) {
 			glide = true;
 		}
 		/*animator variables
