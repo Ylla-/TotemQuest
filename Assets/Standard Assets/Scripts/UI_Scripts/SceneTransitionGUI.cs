@@ -31,6 +31,7 @@ public class SceneTransitionGUI : MonoBehaviour {
 	void Update () {
 		if(Input.anyKeyDown) {
 			//FadeUI(0.6f,0.4f,Color.red); //For test Purposes only
+
 		}
 	}
 	 

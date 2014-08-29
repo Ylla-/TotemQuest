@@ -6,9 +6,18 @@ public class Health : MonoBehaviour {
 	public int curHealth = 10;
 	public float healthBarLength = 200;
 	public int pos = 40;
-	// Use this for initialization
+
+	private float healthBarMaxLength;
+	private GUIStyle centeredText;
+
+
 	void Start () {
-		healthBarLength = (Screen.width / 3) * (curHealth / (float)(maxHealth));
+		healthBarLength = (Screen.width / 3) * (curHealth / (float)(maxHealth)); //current health Lenght
+		healthBarMaxLength = (Screen.width / 3); //Health Bar Background Lenght
+		//Creating a new GUISTYLE
+		centeredText = new GUIStyle ();
+		centeredText.alignment = TextAnchor.MiddleCenter;
+
 	}
 	
 	// Update is called once per frame
@@ -16,7 +25,9 @@ public class Health : MonoBehaviour {
 	}
 	
 	void OnGUI(){
-		GUI.Box (new Rect (10, pos, healthBarLength, 20), curHealth + "/" + maxHealth);
+		GUI.Box (new Rect (10, pos, healthBarMaxLength, 20),"");
+		GUI.Box (new Rect (10, pos, healthBarLength, 20),"");
+		GUI.Label (new Rect(10, pos, healthBarMaxLength, 20),curHealth + "/" + maxHealth,centeredText);
 	}
 	
 	public void AdjustCurrentHealth(int value){

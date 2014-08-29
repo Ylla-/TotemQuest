@@ -9,9 +9,11 @@ public class LevelSelect : MonoBehaviour {
 	public string FinalLevel;
 	public string Title;
 
+	public SceneTransitionGUI sceneTransition;
+
 	// Use this for initialization
 	void Start () {
-	
+		if (sceneTransition == null) sceneTransition = GameObject.Find ("SceneTransitionGUI").GetComponent<SceneTransitionGUI> ();
 	}
 	
 	// Update is called once per frame
@@ -23,22 +25,32 @@ public class LevelSelect : MonoBehaviour {
 	void OnGUI () {
 		//plains
 		if 
-			(GUI.Button(new Rect(10,10,100,100),"Plains")) Application.LoadLevel(PlainsLevel);
+			(GUI.Button(new Rect(10,10,100,100),"Plains")) StartCoroutine (LoadNextScene(PlainsLevel));
 		//forest
 		if 
-			(GUI.Button(new Rect(10,120,100,100),"Forest")) Application.LoadLevel(ForestLevel);
+			(GUI.Button(new Rect(10,120,100,100),"Forest")) StartCoroutine (LoadNextScene(ForestLevel));
 		//caves
 		if 
-			(GUI.Button(new Rect(10,230,100,100),"Caves")) Application.LoadLevel(CavesLevel);
+			(GUI.Button(new Rect(10,230,100,100),"Caves")) StartCoroutine (LoadNextScene(CavesLevel));
 
 		//final level starts disabled
 		GUI.enabled=false;
 		if 
-			(GUI.Button(new Rect(10,340,100,100),"Final")) Application.LoadLevel(FinalLevel);
+			(GUI.Button(new Rect(10,340,100,100),"Final")) StartCoroutine (LoadNextScene(FinalLevel));
 		GUI.enabled=true;
 
 		//back to title
 		if
-			(GUI.Button(new Rect(Screen.width-100-10,10,100,100),"Back To Title")) Application.LoadLevel(Title);
+			(GUI.Button(new Rect(Screen.width-100-10,10,100,100),"Back To Title")) StartCoroutine (LoadNextScene(Title));
 	}
+
+	IEnumerator LoadNextScene(string nextScene) {
+		if(sceneTransition != null) {  //Fade UI , Then load next level
+			sceneTransition.FadeUI ();
+			yield return new WaitForSeconds(sceneTransition.standardFadeInTime);
+		}
+		Application.LoadLevel(nextScene);
+	}
+
+
 }
