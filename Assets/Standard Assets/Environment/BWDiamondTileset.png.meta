@@ -3,29 +3,29 @@ guid: 5ee226e749fd210409e7b8a3e0db5867
 TextureImporter:
   fileIDToRecycleName:
     21300000: BWDiamondTileset
-    21300002: Top-Left
+    21300002: TopLeft
     21300004: Top
     21300006: TopRight
     21300008: BWDiamondTileset_3
     21300010: BWDiamondTileset_4
     21300012: BWDiamondTileset_5
-    21300014: BWDiamondTileset_6
+    21300014: Left
     21300016: BWDiamondTileset_7
-    21300018: BWDiamondTileset_8
+    21300018: Right
     21300020: BWDiamondTileset_9
     21300022: BWDiamondTileset_10
     21300024: BWDiamondTileset_11
-    21300026: BWDiamondTileset_12
-    21300028: BWDiamondTileset_13
-    21300030: BWDiamondTileset_14
+    21300026: BottomLeft
+    21300028: Bottom
+    21300030: BottomRight
     21300032: Vertical
-    21300034: BWDiamondTileset_16
+    21300034: TopEnd
     21300036: BWDiamondTileset_17
     21300038: TRight
     21300040: TDown
     21300042: Horizontal
     21300044: BWDiamondTileset_21
-    21300046: BWDiamondTileset_22
+    21300046: BottomEnd
     21300048: BWDiamondTileset_23
     21300050: TUp
     21300052: TLeft
@@ -47,14 +47,14 @@ TextureImporter:
     21300084: BWDiamondTileset_41
     21300086: BWDiamondTileset_42
     21300088: BWDiamondTileset_43
-    21300090: BWDiamondTileset_44
-    21300092: BWDiamondTileset_45
+    21300090: TopLeftBend
+    21300092: TopRightBend
     21300094: BWDiamondTileset_46
     21300096: BWDiamondTileset_47
     21300098: BWDiamondTileset_48
     21300100: BWDiamondTileset_49
-    21300102: BWDiamondTileset_50
-    21300104: BWDiamondTileset_51
+    21300102: BottomLeftBend
+    21300104: BottomRightBend
     21300106: BWDiamondTileset_52
     21300108: BWDiamondTileset_53
   serializedVersion: 2
@@ -98,7 +98,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Top-Left
+    - name: TopLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -158,7 +158,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_6
+    - name: Left
       rect:
         serializedVersion: 2
         x: 0
@@ -178,7 +178,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_8
+    - name: Right
       rect:
         serializedVersion: 2
         x: 128
@@ -218,7 +218,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_12
+    - name: BottomLeft
       rect:
         serializedVersion: 2
         x: 0
@@ -228,7 +228,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_13
+    - name: Bottom
       rect:
         serializedVersion: 2
         x: 64
@@ -238,10 +238,10 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_14
+    - name: BottomRight
       rect:
         serializedVersion: 2
-        x: 126
+        x: 128
         y: 384
         width: 64
         height: 64
@@ -258,7 +258,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_16
+    - name: TopEnd
       rect:
         serializedVersion: 2
         x: 256
@@ -318,7 +318,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_22
+    - name: BottomEnd
       rect:
         serializedVersion: 2
         x: 256
@@ -538,7 +538,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_44
+    - name: TopLeftBend
       rect:
         serializedVersion: 2
         x: 128
@@ -548,7 +548,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_45
+    - name: TopRightBend
       rect:
         serializedVersion: 2
         x: 192
@@ -598,7 +598,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_50
+    - name: BottomLeftBend
       rect:
         serializedVersion: 2
         x: 128
@@ -608,7 +608,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BWDiamondTileset_51
+    - name: BottomRightBend
       rect:
         serializedVersion: 2
         x: 192
