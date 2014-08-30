@@ -72,10 +72,13 @@ MonoBehaviour:
   target: {fileID: 0}
   orbIndex: 0
   controller: {fileID: 0}
+  sizePerEnergy: .129999995
   maximumSpeedRange: 4
   speed: 3
   playerFacingRight: 1
   energyBar: {fileID: 0}
+  maximumEnergy: 0
+  currentEnergy: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

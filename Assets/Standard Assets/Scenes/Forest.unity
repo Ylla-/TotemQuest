@@ -8354,8 +8354,9 @@ MonoBehaviour:
   color2: {r: 0, g: .670588255, b: 1, a: 1}
   color3: {r: .933333337, g: .309803933, b: .31764707, a: 1}
   color4: {r: 0, g: .807843149, b: .427450985, a: 1}
-  maxEnergy: 10
-  currentEnergy: 5
+  energyPerOrb: 5
+  maxOrb: 5
+  currentEnergy: 0
   orbList: []
 --- !u!4 &1908563340
 Transform:
@@ -8994,6 +8995,10 @@ Prefab:
     - target: {fileID: 11400000, guid: c7238671f67f26248b6d2704ac2d247f, type: 2}
       propertyPath: color4.b
       value: .427450985
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: c7238671f67f26248b6d2704ac2d247f, type: 2}
+      propertyPath: currentEnergy
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c7238671f67f26248b6d2704ac2d247f, type: 2}

@@ -11,22 +11,29 @@ public class EnergyOrb : MonoBehaviour {
 	public int orbIndex; //index in OrbList of EnergyBar.cs
 	public Controller controller;
 
+	public float sizePerEnergy = 0.15f;
 	public float maximumSpeedRange = 1f; //Distance at which orb speed is at his maximum
 	public float speed; //current Speed
 	public bool playerFacingRight = true;
 	[HideInInspector] public EnergyBar energyBar;
+	[HideInInspector] public int maximumEnergy;
 
 	private SpriteRenderer spriteRenderer;
 	private Vector3 direction; //Current Direction
 	private Vector3 orbToModelStartDistance; //Distance between the orb and the player
 	private Vector3 orbToModelAdditionnalDistance; //Additionnal distance added for each orb
 	private Vector3 currentTargetPosition;
+	public int currentEnergy;
+
+
 
 	void Awake() {
 		spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer> ();
 	}
 	void Start () {
 		UpdatePlayerFacing (); //Update the facing so the orb position themselves correctly on spawn.
+
+
 	}
 	
 	// Update is called once per frame
@@ -43,11 +50,36 @@ public class EnergyOrb : MonoBehaviour {
 		transform.Translate(direction*speed*Time.deltaTime);  //Move
 	}
 
+	public void InitializeEnergy() {
+		currentEnergy = 1; //Adjust size at initialization
+		ChangeOrbSize ();
+	}
+
 	public void LerpColor(Color newColor) {  //Lerp to the new color
 		StartCoroutine (LerpColor (spriteRenderer.color,newColor,2f));
 	}
 	public void SetColor(Color newColor) { //Change to the new color, WITHOUT lerp.
 		spriteRenderer.color = newColor;
+	}
+
+	public void AddEnergy() {
+		if(currentEnergy <= maximumEnergy) {
+			Debug.Log ("Before Adding Energy. Current Energy : " + currentEnergy); 
+			currentEnergy++;
+			Debug.Log ("Added Energy. Current Energy : " + currentEnergy + "      maximum Energy : " + maximumEnergy);
+			ChangeOrbSize();
+		}
+	}
+	public void RemoveEnergy() {
+		if(currentEnergy > 1) {
+			currentEnergy--;
+			ChangeOrbSize();
+		}
+	}
+
+	void ChangeOrbSize(){
+		float finalSize = (sizePerEnergy * currentEnergy) + 0.15f;
+		transform.localScale = new Vector3 (finalSize, finalSize, 0);
 	}
 
 
@@ -67,7 +99,6 @@ public class EnergyOrb : MonoBehaviour {
 		//TODO: Give a y value to the orb depending on its orbIndex to have a straight line of orbs. 
 
 		Transform newTarget;
-
 		newTarget = FindNewTarget ();
 		
 		currentTargetPosition = newTarget.position; //Target's position

@@ -17,7 +17,9 @@ public class EnergyBar : MonoBehaviour {
 	public Color color4; 
 	private Color CurrentColor; //CurrentColor of the orb
 
-	public int maxEnergy = 10; //link these to the Player's energy value later
+	public int energyPerOrb = 5; //Maximum amount of energy per orb	
+	public int maxOrb = 5; //Maximum amount of orb
+
 	public int currentEnergy = 0;
 	public List<EnergyOrb> orbList;
 
@@ -40,17 +42,18 @@ public class EnergyBar : MonoBehaviour {
 		CheckTotemType ();
 
 		//Controls for testing purposes only :
+		//******* Feel Free to comment this out if you need those keys. This is purely for testing as this will be linked with the controller later ! *********//
 		if(Input.GetKeyDown (KeyCode.Z)){
-			Debug.Log ("Test Purpose : Added Orb (Key Z)");
-			CreateOrb();
+			Debug.Log ("Test Purpose : Added energy (Key Z)");
+			AddEnergy(1);
 		}
 		if(Input.GetKeyDown (KeyCode.X)){
-			Debug.Log ("Test Purpose : Removed Orb (Key X)");
-			RemoveOrb();
+			Debug.Log ("Test Purpose : Removed energy (Key X)");
+			RemoveEnergy(1);
 		}
 		if(Input.GetKeyDown (KeyCode.C)){
-			Debug.Log ("Test Purpose : Changing to White (Key C)");
-			ChangeOrbsColor(color1);
+			Debug.Log ("Test Purpose : Removing an Orb (Key C)");
+			RemoveEnergyOrb();
 		}
 		if(Input.GetKeyDown (KeyCode.V)){
 			Debug.Log ("Test Purpose : Changing to Red (Key V)");
@@ -94,28 +97,65 @@ public class EnergyBar : MonoBehaviour {
 		}
 	}
 
+	public void AddEnergy(int amount){ //Add "amount" energy to the bar
+		for(int i=0; i< amount; i++) {
+			if(currentEnergy < (maxOrb*energyPerOrb) && currentEnergy%5 == 0) { //If this equals 0, we need to create a new orb.
+				CreateOrb ();
+				currentEnergy++;
+			} else if(currentEnergy < (maxOrb*energyPerOrb)) {
+				orbList[orbList.Count-1].AddEnergy();
+				currentEnergy++;
+			} else {
+				Debug.Log ("Trying to add energy, but is maxed out !");
+			}
+		}
+	}
+	public void RemoveEnergy(int amount) { //Remove "amount" energy to the bar
+		for(int i=0; i< amount; i++) {
+			if(currentEnergy > 0 && (currentEnergy-1)%5 == 0) { //If this equals 0, we need to remove an orb
+				RemoveOrb();
+				currentEnergy--;
+			} else if(currentEnergy > 0) {
+				orbList[orbList.Count-1].RemoveEnergy();
+				currentEnergy--;
+			} else {
+				Debug.Log ("Trying to remove energy, but has none !");
+			}
+		}
+	}
+	public void RemoveEnergyOrb(){ //Remove a Complete Orb (for exemple, when using an totem ability)
+		if(currentEnergy >= 5) {
+			GameObject orbToDestroy = orbList[0].gameObject;
+			orbList.RemoveAt (0); //Note : Once orbs work, try changing this for RemoveAt(0) for cool effect.
+			Destroy (orbToDestroy); //Here, it would be possible to add an animation on destroy.
+			currentEnergy -= energyPerOrb;
 
-	public void CreateOrb() { //Create an Orb and add energy
-		if(orbList.Count < maxEnergy) {
+			UpdateList();
+		}
+	}
+
+	private void CreateOrb() { //Create an Orb and add energy
+		if(orbList.Count < maxOrb) {
 			orbList.Add ((Instantiate(energySprite, target.position, Quaternion.identity) as GameObject).GetComponent<EnergyOrb>()); //Create Orb & add to List
 			Debug.Log (orbList[orbList.Count-1]);
 			orbList[orbList.Count-1].target = target; // Set Orb's Target
 			orbList[orbList.Count-1].energyBar = this; 
 			orbList[orbList.Count-1].controller = controller;
 			orbList[orbList.Count-1].SetColor(CurrentColor);
+			orbList[orbList.Count-1].maximumEnergy = energyPerOrb;
+			orbList[orbList.Count-1].InitializeEnergy();
 
 			UpdateList();
-			currentEnergy++;
 		}
 	}
 
-	public void RemoveOrb() { //Remoe an Orb and remove energy
+	private void RemoveOrb() { //Remoe an Orb and remove energy
 		if(orbList.Count > 0) {
 			GameObject orbToDestroy = orbList[orbList.Count-1].gameObject;
 			orbList.RemoveAt (orbList.Count-1); //Note : Once orbs work, try changing this for RemoveAt(0) for cool effect.
 			Destroy (orbToDestroy); //Here, it would be possible to add an animation on destroy.
+
 			UpdateList();
-			currentEnergy--;
 		}
 	}
 
