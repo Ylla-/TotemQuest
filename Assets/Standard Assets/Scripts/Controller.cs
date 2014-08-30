@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Controller : MonoBehaviour {
-	//NOW, THIS IS GONNA LOOK UGLY, BUT BEAR WITH ME, AND WATCH IT WORK;
 	public int totem; // 0 = normal, 1 = rabbit, 2 = mole, 3 = mantis
 
 	// in order: maxSpeed, soloJumpForce, maxHealth,
@@ -10,7 +9,7 @@ public class Controller : MonoBehaviour {
 	public float[] moleStats   = {3f,400f,15f};
 	public float[] mantisStats = {6f,440f,8f};
 	public float[] normalStats = {5f,440f,10f};
-	public bool canDash, canGlide, canShield;
+	public bool canDash, canGlide, canShield, canSlowTime;
 
 
 	Health health;
@@ -22,9 +21,9 @@ public class Controller : MonoBehaviour {
 	//public float HorizontalForceonAir = 8f;
 
 	//for non fixed jump UNUSUED
-	public float JumpDuration = 0.150f;
+	float JumpDuration = 0.150f;
 	float JumpPressedTime, JumpingPressed;
-	public float jumpForce = 50f;
+	float jumpForce = 50f;
 	//for fixed jump
 	public float soloJumpForce = 440;
 
@@ -40,6 +39,9 @@ public class Controller : MonoBehaviour {
 	//for gliding
 	public float glideDuration = 0.25f, glideSpeed = 10f;
 	float glideStartTime; bool glide, gliding;
+
+	//for slo-mo
+	bool slowMo = false;
 
 	// ground check
 	public bool onGround = false;
@@ -67,7 +69,6 @@ public class Controller : MonoBehaviour {
 
 		RabbitDash();
 		MantisGlide();
-
 
 		//moving in the x axis, moveAllowed allows to take away the movement control from the player
 		if(moveAllowed){
@@ -135,6 +136,12 @@ public class Controller : MonoBehaviour {
 				glide = true;
 			}
 		}
+
+		if (canSlowTime) {
+			if (Input.GetButtonDown ("Ability2")) {
+				RabbitSlowMotion ();
+					}
+				}
 		/*animator variables
 		anim.SetFloat ("VerticalVelocity", rigidbody2D.velocity.y);
 		anim.SetBool ("Jump", JumpingPressed);
@@ -172,6 +179,16 @@ public class Controller : MonoBehaviour {
 				moveAllowed = true;
 			}
 		}
+	void RabbitSlowMotion(){
+				if(!slowMo){
+					Time.timeScale = 0.5f;
+					slowMo=true;
+			        Debug.Log ("slowmo");
+				}else{
+					Time.timeScale = 1f;
+					slowMo=false;
+				}
+			}
 
 	void MantisGlide(){
 		// Glide mantis
@@ -207,6 +224,7 @@ public class Controller : MonoBehaviour {
 		canDash = true;
 		canGlide = false;
 		canShield = false;
+		canSlowTime = true;
 
 	}
 	public void TurnIntoMole(){
@@ -217,6 +235,8 @@ public class Controller : MonoBehaviour {
 		canDash = false;
 		canGlide = false;
 		canShield = true;
+		canSlowTime = false;
+
 
 	}
 	public void TurnIntoMantis(){
@@ -227,6 +247,8 @@ public class Controller : MonoBehaviour {
 		canDash = false;
 		canGlide = true;
 		canShield = false;
+		canSlowTime = false;
+
 
 	}
 	public void TurnIntoNormal(){
@@ -237,6 +259,8 @@ public class Controller : MonoBehaviour {
 		canDash = false;
 		canGlide = false;
 		canShield = false;
+		canSlowTime = false;
+
 
 	}
 
