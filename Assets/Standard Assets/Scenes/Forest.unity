@@ -3968,6 +3968,9 @@ MonoBehaviour:
   - 5
   - 440
   - 10
+  canDash: 0
+  canGlide: 0
+  canShield: 0
   maxSpeed: 4
   move: 0
   JumpDuration: .150000006

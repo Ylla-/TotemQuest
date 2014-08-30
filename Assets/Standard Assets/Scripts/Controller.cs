@@ -10,7 +10,7 @@ public class Controller : MonoBehaviour {
 	public float[] moleStats   = {3f,400f,15f};
 	public float[] mantisStats = {6f,440f,8f};
 	public float[] normalStats = {5f,440f,10f};
-	bool canDash, canGlide, canShield;
+	public bool canDash, canGlide, canShield;
 
 
 	Health health;
@@ -53,7 +53,6 @@ public class Controller : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		moveAllowed = true;
 		health = (Health)gameObject.GetComponent ("Health");
-
 	}
 	
 	
@@ -112,15 +111,11 @@ public class Controller : MonoBehaviour {
 	
 	//For totem transformations
 	void Update(){
-	if (Input.GetButtonDown ("Normal")) {
-			totem = 0;
-				} else if (Input.GetButtonDown ("Bunny")) {
-			totem = 1;
-				} else if (Input.GetButtonDown ("Mole")) {
-			totem = 2;
-				} else if (Input.GetButtonDown ("Mantis")) {
-			totem = 3;
-				}
+	if (Input.GetButtonDown ("Normal")) totem = 0;
+	if (Input.GetButtonDown ("Bunny")) totem = 1;
+	if (Input.GetButtonDown ("Mole")) totem = 2;
+    if (Input.GetButtonDown ("Mantis")) totem = 3;
+
 						
 
 	
@@ -130,13 +125,17 @@ public class Controller : MonoBehaviour {
 		}
 
 		// it seems you cant use GetButtonDown in the FixedUpdate() DASH
-	if ((Input.GetButtonDown ("Dash")||Input.GetButtonDown("Fire1")) && onGround) {
-						dash = true;
+		if (canDash) {
+			if ((Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) && onGround) {
+				dash = true;
 				}
-		// GLIDE
-	if ((Input.GetButtonDown ("Dash")||Input.GetButtonDown("Fire1")) && !onGround) {
-			glide = true;
 		}
+		// GLIDE
+		if (canGlide) {
+			if ((Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) && !onGround) {
+				glide = true;
+			}
+			}
 		/*animator variables
 		anim.SetFloat ("VerticalVelocity", rigidbody2D.velocity.y);
 		anim.SetBool ("Jump", JumpingPressed);
@@ -201,7 +200,8 @@ public class Controller : MonoBehaviour {
 
 	}
 
-	void TurnIntoRabbit(){
+	public void TurnIntoRabbit(){
+		Debug.Log ("rabbit");
 		maxSpeed = rabbitStats [0];
 		soloJumpForce = rabbitStats [1];
 		health.maxHealth = (int)rabbitStats [2];
@@ -210,7 +210,8 @@ public class Controller : MonoBehaviour {
 		canShield = false;
 
 	}
-	void TurnIntoMole(){
+	public void TurnIntoMole(){
+		Debug.Log ("mole");
 		maxSpeed = moleStats [0];
 		soloJumpForce = moleStats [1];
 		health.maxHealth = (int)moleStats [2];
@@ -219,7 +220,8 @@ public class Controller : MonoBehaviour {
 		canShield = true;
 
 	}
-	void TurnIntoMantis(){
+	public void TurnIntoMantis(){
+		Debug.Log ("mantis");
 		maxSpeed = mantisStats [0];
 		soloJumpForce = mantisStats [1];
 		health.maxHealth = (int)mantisStats [2];
@@ -228,7 +230,8 @@ public class Controller : MonoBehaviour {
 		canShield = false;
 
 	}
-	void TurnIntoNormal(){
+	public void TurnIntoNormal(){
+		Debug.Log ("normal");
 		maxSpeed = normalStats [0];
 		soloJumpForce = normalStats [1];
 		health.maxHealth = (int)normalStats [2];
