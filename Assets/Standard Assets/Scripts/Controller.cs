@@ -115,10 +115,9 @@ public class Controller : MonoBehaviour {
 	if (Input.GetButtonDown ("Bunny")) totem = 1;
 	if (Input.GetButtonDown ("Mole")) totem = 2;
     if (Input.GetButtonDown ("Mantis")) totem = 3;
+	//if (Input.GetButtonDown ("TransformForward")) totem=(totem+1)%4;
+	//if (Input.GetButtonDown ("TransformBackward")) totem=(totem+3)%4;
 
-						
-
-	
 	//Fixed jump
 	if (Input.GetButtonDown("Jump") && onGround){
 		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
@@ -135,7 +134,7 @@ public class Controller : MonoBehaviour {
 			if ((Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) && !onGround) {
 				glide = true;
 			}
-			}
+		}
 		/*animator variables
 		anim.SetFloat ("VerticalVelocity", rigidbody2D.velocity.y);
 		anim.SetBool ("Jump", JumpingPressed);
