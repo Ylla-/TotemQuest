@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 6aaba659e292eca45980476fd8691981
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - targetl: {instanceID: 0}
+  - energySprite: {fileID: 100000, guid: 0af8384325cacb243a13987e688c3a42, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
