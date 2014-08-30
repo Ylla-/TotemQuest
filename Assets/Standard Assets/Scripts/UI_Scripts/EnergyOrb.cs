@@ -10,23 +10,26 @@ public class EnergyOrb : MonoBehaviour {
 	public Transform target;
 	public int orbIndex; //index in OrbList of EnergyBar.cs
 
+
 	public float maximumSpeedRange = 1f; //Distance at which orb speed is at his maximum
 	public float speed; //current Speed
 	public bool playerFacingLeft = true;
+	[HideInInspector] public EnergyBar energyBar;
 
 	private Vector3 direction; //Current Direction
 	private Vector3 orbToModelStartDistance; //Distance between the orb and the player
 	private Vector3 orbToModelAdditionnalDistance; //Additionnal distance added for each orb
+	private Vector3 currentTargetPosition;
+
 
 	void Start () {
-		if(playerFacingLeft) {
-			orbToModelStartDistance = new Vector3 (-0.2f, 0.15f, 0);
-			orbToModelAdditionnalDistance = new Vector3( -0.1f, Random.Range (0f,0.1f),0);
-		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		UpdatePlayerFacing ();
 
 		direction = SetOrbDirection (); //Get Direction 
 		speed = SetOrbSpeed (); //Get Speed
@@ -34,35 +37,68 @@ public class EnergyOrb : MonoBehaviour {
 		transform.Translate(direction*speed*Time.deltaTime);  //Move
 	}
 
-	Vector3 SetOrbDirection() { //Find Direction to go in
-		Vector3 targetPosition = target.position; //Target's position
+	void UpdatePlayerFacing() { //TODO: Link this with the controller script
 		if(playerFacingLeft) {
-			targetPosition += new Vector3 (orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
-			targetPosition += new Vector3 (orbToModelAdditionnalDistance.x * orbIndex, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
+			orbToModelStartDistance = new Vector3 (-0.2f, 0.15f, 0);
+			orbToModelAdditionnalDistance = new Vector3( -0.14f, Random.Range (-0.05f,0.05f),0);
 		} else {
-			targetPosition += new Vector3 (-orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
-			targetPosition += new Vector3 (-orbToModelAdditionnalDistance.x * orbIndex, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
+			orbToModelStartDistance = new Vector3 (0.2f, 0.15f, 0);
+			orbToModelAdditionnalDistance = new Vector3( 0.14f, Random.Range (-0.05f,0.05f),0);
 		}
+	}
+	
 
-		Vector3 newDirection = (targetPosition - transform.position).normalized;
+	Vector3 SetOrbDirection() { //Get Direction in which the orb must move
+
+		Transform newTarget;
+
+		newTarget = FindNewTarget ();
+		
+		currentTargetPosition = newTarget.position; //Target's position
+		if(playerFacingLeft) {
+			if(orbIndex == 0) currentTargetPosition += new Vector3 (-orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
+			else currentTargetPosition = currentTargetPosition + new Vector3 (-orbToModelAdditionnalDistance.x, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
+		} else {
+			if(orbIndex == 0) currentTargetPosition += new Vector3 (orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
+			else currentTargetPosition = currentTargetPosition + new Vector3 (orbToModelAdditionnalDistance.x, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
+		}
+		if (orbIndex == 0)
+						Debug.Log (currentTargetPosition + "        " + playerFacingLeft);
+		Vector3 newDirection = (currentTargetPosition - transform.position).normalized;
 		return newDirection;
 	}
 
-	float SetOrbSpeed() {
-		float targetRange = 0.08f * (orbIndex+1); //Set Different ranges for every orb.
-		Vector3 range = transform.position - target.position;
-		range -= (targetRange * range.normalized);
-
-		float speedStep = Mathf.Clamp ((range.magnitude / maximumSpeedRange),0,1);
-		float newSpeed = Mathf.Lerp (0.1f, 35f, speedStep);
-
-		if(range.magnitude > targetRange) {
-			return newSpeed;
+	Transform FindNewTarget() { //Find the new orb's target
+		if(orbIndex == 0) {
+			return target;
 		} else {
-			return 0f;
+			return (energyBar.orbList[orbIndex -1].transform);
+		}
+	}
+
+	float SetOrbSpeed() { //Find the Orb's speed
+
+		Vector3 range = transform.position - currentTargetPosition;
+		
+		float speedStep = Mathf.Clamp ((range.magnitude / maximumSpeedRange),0,1);
+		float newSpeed = Mathf.Lerp (0.5f, 35f, speedStep);
+		
+		if(range.magnitude >  0.04f) {
+			Debug.Log ("orb > 0.04f");
+			return newSpeed;
+		} else if(range.magnitude > 0.015f) {
+			Debug.Log ("orb > 0.015f");
+			return newSpeed/3f;
+		} else {
+			transform.position = currentTargetPosition;
+			return 0;
 		}
 
+	}
 
+	IEnumerator changeOrbMouvement(float time) {
+		yield return new WaitForSeconds (time);
+		StopAllCoroutines ();
 	}
 
 }

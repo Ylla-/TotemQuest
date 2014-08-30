@@ -48,6 +48,8 @@ public class EnergyBar : MonoBehaviour {
 		if(orbList.Count < maxEnergy) {
 			orbList.Add ((Instantiate(energySprite, target.position, Quaternion.identity) as GameObject).GetComponent<EnergyOrb>()); //Create Orb & add to List
 			orbList[orbList.Count-1].target = target; // Set Orb's Target
+			orbList[orbList.Count-1].energyBar = this; 
+
 			UpdateList();
 			currentEnergy++;
 		}
