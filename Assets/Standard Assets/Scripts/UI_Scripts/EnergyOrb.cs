@@ -9,27 +9,33 @@ public class EnergyOrb : MonoBehaviour {
 	/// 
 	public Transform target;
 	public int orbIndex; //index in OrbList of EnergyBar.cs
-
+	public Controller controller;
 
 	public float maximumSpeedRange = 1f; //Distance at which orb speed is at his maximum
 	public float speed; //current Speed
-	public bool playerFacingLeft = true;
+	public bool playerFacingRight = true;
 	[HideInInspector] public EnergyBar energyBar;
 
+	private SpriteRenderer spriteRenderer;
 	private Vector3 direction; //Current Direction
 	private Vector3 orbToModelStartDistance; //Distance between the orb and the player
 	private Vector3 orbToModelAdditionnalDistance; //Additionnal distance added for each orb
 	private Vector3 currentTargetPosition;
 
-
+	void Awake() {
+		spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer> ();
+	}
 	void Start () {
-
+		UpdatePlayerFacing (); //Update the facing so the orb position themselves correctly on spawn.
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		UpdatePlayerFacing ();
+		if(playerFacingRight != controller.facingRight) { 
+			playerFacingRight = !playerFacingRight;
+			UpdatePlayerFacing ();
+		}
 
 		direction = SetOrbDirection (); //Get Direction 
 		speed = SetOrbSpeed (); //Get Speed
@@ -37,33 +43,38 @@ public class EnergyOrb : MonoBehaviour {
 		transform.Translate(direction*speed*Time.deltaTime);  //Move
 	}
 
-	void UpdatePlayerFacing() { //TODO: Link this with the controller script
-		if(playerFacingLeft) {
+	public void LerpColor(Color newColor) {  //Lerp to the new color
+		StartCoroutine (LerpColor (spriteRenderer.color,newColor,2f));
+	}
+	public void SetColor(Color newColor) { //Change to the new color, WITHOUT lerp.
+		spriteRenderer.color = newColor;
+	}
+
+
+	void UpdatePlayerFacing() { 
+
+		if(playerFacingRight) { //Change Orb Standard position
 			orbToModelStartDistance = new Vector3 (-0.2f, 0.15f, 0);
 			orbToModelAdditionnalDistance = new Vector3( -0.14f, Random.Range (-0.05f,0.05f),0);
 		} else {
 			orbToModelStartDistance = new Vector3 (0.2f, 0.15f, 0);
-			orbToModelAdditionnalDistance = new Vector3( 0.14f, Random.Range (-0.05f,0.05f),0);
+			orbToModelAdditionnalDistance = new Vector3( 0.14f, Random.Range (-0.02f,0.02f),0);
 		}
 	}
 	
 
 	Vector3 SetOrbDirection() { //Get Direction in which the orb must move
+		//TODO: Give a y value to the orb depending on its orbIndex to have a straight line of orbs. 
 
 		Transform newTarget;
 
 		newTarget = FindNewTarget ();
 		
 		currentTargetPosition = newTarget.position; //Target's position
-		if(playerFacingLeft) {
-			if(orbIndex == 0) currentTargetPosition += new Vector3 (-orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
-			else currentTargetPosition = currentTargetPosition + new Vector3 (-orbToModelAdditionnalDistance.x, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
-		} else {
-			if(orbIndex == 0) currentTargetPosition += new Vector3 (orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
-			else currentTargetPosition = currentTargetPosition + new Vector3 (orbToModelAdditionnalDistance.x, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
-		}
-		if (orbIndex == 0)
-						Debug.Log (currentTargetPosition + "        " + playerFacingLeft);
+
+		if(orbIndex == 0) currentTargetPosition += new Vector3 (orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
+		else currentTargetPosition = currentTargetPosition + new Vector3 (orbToModelAdditionnalDistance.x, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
+
 		Vector3 newDirection = (currentTargetPosition - transform.position).normalized;
 		return newDirection;
 	}
@@ -84,11 +95,11 @@ public class EnergyOrb : MonoBehaviour {
 		float newSpeed = Mathf.Lerp (0.5f, 35f, speedStep);
 		
 		if(range.magnitude >  0.04f) {
-			Debug.Log ("orb > 0.04f");
+			//Debug.Log ("orb > 0.04f");
 			return newSpeed;
 		} else if(range.magnitude > 0.015f) {
-			Debug.Log ("orb > 0.015f");
-			return newSpeed/3f;
+			//Debug.Log ("orb > 0.015f");
+			return newSpeed/2f;
 		} else {
 			transform.position = currentTargetPosition;
 			return 0;
@@ -96,9 +107,13 @@ public class EnergyOrb : MonoBehaviour {
 
 	}
 
-	IEnumerator changeOrbMouvement(float time) {
-		yield return new WaitForSeconds (time);
-		StopAllCoroutines ();
+
+	IEnumerator LerpColor(Color startColor, Color endColor, float time) {
+		for(float i=0; i < 1; i += Time.deltaTime/time) {
+			spriteRenderer.color = Color.Lerp (startColor,endColor,i);
+			yield return null;
+		}
+
 	}
 
 }
