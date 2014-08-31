@@ -17,6 +17,7 @@ public class EnergyOrb : MonoBehaviour {
 	public bool playerFacingRight = true;
 	[HideInInspector] public EnergyBar energyBar;
 	[HideInInspector] public int maximumEnergy;
+	 public Vector2 totemOrbPosition; //Position of the orb on current totem
 
 	private SpriteRenderer spriteRenderer;
 	private Vector3 direction; //Current Direction
@@ -86,10 +87,10 @@ public class EnergyOrb : MonoBehaviour {
 	void UpdatePlayerFacing() { 
 
 		if(playerFacingRight) { //Change Orb Standard position
-			orbToModelStartDistance = new Vector3 (-0.2f, 0.15f, 0);
+			orbToModelStartDistance = new Vector3 (-totemOrbPosition.x, totemOrbPosition.y, 0);
 			orbToModelAdditionnalDistance = new Vector3( -0.14f, Random.Range (-0.05f,0.05f),0);
 		} else {
-			orbToModelStartDistance = new Vector3 (0.2f, 0.15f, 0);
+			orbToModelStartDistance = new Vector3 (totemOrbPosition.x, totemOrbPosition.y, 0);
 			orbToModelAdditionnalDistance = new Vector3( 0.14f, Random.Range (-0.02f,0.02f),0);
 		}
 	}

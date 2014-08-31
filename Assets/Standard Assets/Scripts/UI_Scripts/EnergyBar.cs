@@ -24,6 +24,10 @@ public class EnergyBar : MonoBehaviour {
 	public List<EnergyOrb> orbList;
 
 	private int currentTotem = 0;
+	private Vector2 totemOrbPosition_0;
+	private Vector2 totemOrbPosition_1;
+	private Vector2 totemOrbPosition_2;
+	private Vector2 totemOrbPosition_3;
 
 
 	void Awake () {
@@ -34,7 +38,11 @@ public class EnergyBar : MonoBehaviour {
 	}
 
 	void Start () {
-	
+		//Setting up the positions of the orbs for the different totems
+		totemOrbPosition_0 = new Vector2 (0.3f, 0.00f);
+		totemOrbPosition_1 = new Vector2 (0.2f, 0.15f);
+		totemOrbPosition_2 = new Vector2 (0.2f, 0.05f);
+		totemOrbPosition_3 = new Vector2 (0.2f, 0.15f);;
 	}
 	
 	// Update is called once per frame
@@ -77,15 +85,19 @@ public class EnergyBar : MonoBehaviour {
 			if(currentTotem == 0) { // 0 = normal
 				ChangeOrbsColor(color1);
 				CurrentColor = color1;
+				ChangeOrbsPosition(totemOrbPosition_0);
 			} else if(currentTotem == 1) { //1 = rabbit
 				ChangeOrbsColor(color2);
 				CurrentColor = color2;
+				ChangeOrbsPosition(totemOrbPosition_1);
 			} else if(currentTotem == 2) { //2 = mole
 				ChangeOrbsColor(color3);
 				CurrentColor = color3;
+				ChangeOrbsPosition(totemOrbPosition_2);
 			} else { //3 = mantis
 				ChangeOrbsColor(color4);
 				CurrentColor = color4;
+				ChangeOrbsPosition(totemOrbPosition_3);
 			}
 		}
 	}
@@ -144,7 +156,7 @@ public class EnergyBar : MonoBehaviour {
 			orbList[orbList.Count-1].SetColor(CurrentColor);
 			orbList[orbList.Count-1].maximumEnergy = energyPerOrb;
 			orbList[orbList.Count-1].InitializeEnergy();
-
+			orbList[orbList.Count-1].totemOrbPosition = totemOrbPosition_0;
 			UpdateList();
 		}
 	}
@@ -162,6 +174,12 @@ public class EnergyBar : MonoBehaviour {
 	public void ChangeOrbsColor(Color newColor) {
 		for(int i = 0; i < orbList.Count; i++) {
 			orbList[i].LerpColor(newColor);
+		}
+	}
+
+	private void ChangeOrbsPosition(Vector2 newPosition){
+		for(int i = 0; i < orbList.Count; i++) {
+			orbList[i].totemOrbPosition = newPosition;
 		}
 	}
 

@@ -40,9 +40,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  energySprite: {fileID: 100000, guid: 0af8384325cacb243a13987e688c3a42, type: 2}
-  maxEnergy: 10
-  currentEnergy: 5
+  energySprite: {fileID: 100002, guid: 0af8384325cacb243a13987e688c3a42, type: 2}
+  controller: {fileID: 0}
+  color1: {r: 1, g: 1, b: 1, a: 1}
+  color2: {r: 0, g: .670588255, b: 1, a: 1}
+  color3: {r: .933333337, g: .309803933, b: .31764707, a: 1}
+  color4: {r: 0, g: .807843149, b: .427450985, a: 1}
+  energyPerOrb: 5
+  maxOrb: 5
+  currentEnergy: 0
   orbList: []
 --- !u!1001 &100100000
 Prefab:
