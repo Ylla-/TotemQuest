@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour {
 	public float[] moleStats   = {3f,400f,15f};
 	public float[] mantisStats = {6f,440f,8f};
 	public float[] normalStats = {5f,440f,10f};
-	public bool canDash, canGlide, canShield, canSlowTime;
+	public bool canDash, canGlide, canShield, canSlowTime, canFloat;
 
 
 	Health health;
@@ -43,6 +43,11 @@ public class Controller : MonoBehaviour {
 	//for slo-mo
 	bool slowMo = false;
 
+	// for floating
+	public float gravityMod = 20f;
+	public bool Floating;
+	public float floatJumpForce = 350f;
+
 	// ground check
 	public bool onGround = false;
 	public Transform groundCheckL, groundCheckR;
@@ -55,6 +60,8 @@ public class Controller : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		moveAllowed = true;
 		health = (Health)gameObject.GetComponent ("Health");
+		//if yuo start as Mabellle, which i think should bwe default
+		TurnIntoNormal ();
 	}
 	
 	
@@ -136,12 +143,18 @@ public class Controller : MonoBehaviour {
 				glide = true;
 			}
 		}
-
+		// time slow
 		if (canSlowTime) {
 			if (Input.GetButtonDown ("Ability2")) {
 				RabbitSlowMotion ();
 					}
 				}
+		// float mabelle
+		if (canFloat) {
+			if (Input.GetButtonDown ("Ability2")) {
+				MaBellesFloat();
+				}
+			}
 		/*animator variables
 		anim.SetFloat ("VerticalVelocity", rigidbody2D.velocity.y);
 		anim.SetBool ("Jump", JumpingPressed);
@@ -190,6 +203,18 @@ public class Controller : MonoBehaviour {
 				}
 			}
 
+	void MaBellesFloat(){
+		if (!Floating) {
+				rigidbody2D.drag = gravityMod;
+				soloJumpForce += floatJumpForce;
+				Floating = true;
+				} else {
+					rigidbody2D.drag = 0f;
+		            soloJumpForce -= floatJumpForce;
+					Floating = false;
+				}
+	}
+
 	void MantisGlide(){
 		// Glide mantis
 		if (glide){
@@ -225,6 +250,7 @@ public class Controller : MonoBehaviour {
 		canGlide = false;
 		canShield = false;
 		canSlowTime = true;
+		canFloat = false;
 
 	}
 	public void TurnIntoMole(){
@@ -236,6 +262,7 @@ public class Controller : MonoBehaviour {
 		canGlide = false;
 		canShield = true;
 		canSlowTime = false;
+		canFloat = false;
 
 
 	}
@@ -248,6 +275,7 @@ public class Controller : MonoBehaviour {
 		canGlide = true;
 		canShield = false;
 		canSlowTime = false;
+		canFloat = false;
 
 
 	}
@@ -260,6 +288,7 @@ public class Controller : MonoBehaviour {
 		canGlide = false;
 		canShield = false;
 		canSlowTime = false;
+		canFloat = true;
 
 
 	}

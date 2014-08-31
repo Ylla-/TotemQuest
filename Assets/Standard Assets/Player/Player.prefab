@@ -45,9 +45,9 @@ GameObject:
   - 61: {fileID: 6100000}
   - 58: {fileID: 5800000}
   - 58: {fileID: 5800002}
-  - 61: {fileID: 6100002}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.436743855, y: 1.24571276, z: 0}
+  m_LocalPosition: {x: 14.4694777, y: -6.63802338, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -147,7 +147,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Radius: .0900000036
-  m_Center: {x: -.100000001, y: -.300000012}
+  m_Center: {x: -.0500000007, y: -.379999995}
 --- !u!58 &5800002
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -158,7 +158,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Radius: .0900000036
-  m_Center: {x: .0599999987, y: -.300000012}
+  m_Center: {x: .0500000007, y: -.379999995}
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -166,21 +166,10 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a7edadae22e088d48b9c0dda1a5097b1, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .31978327, y: .428248465}
-  m_Center: {x: -.0190690756, y: -.108369112}
---- !u!61 &6100002
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Size: {x: .0739048719, y: .29793644}
-  m_Center: {x: .0969523191, y: .232083559}
+  m_Size: {x: .280000001, y: .639999986}
+  m_Center: {x: -0, y: -0}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 3
@@ -207,10 +196,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13aa592a0a95b164692c5e0530a4af73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totem: 0
+  rabbitStats:
+  - 5
+  - 440
+  - 8
+  moleStats:
+  - 3
+  - 400
+  - 15
+  mantisStats:
+  - 6
+  - 440
+  - 8
+  normalStats:
+  - 5
+  - 440
+  - 10
+  canDash: 0
+  canGlide: 0
+  canShield: 0
+  canSlowTime: 0
+  canFloat: 0
   maxSpeed: 4
   move: 0
-  JumpDuration: .150000006
-  jumpForce: 60
   soloJumpForce: 440
   facingRight: 1
   anim: {fileID: 0}
@@ -218,6 +227,9 @@ MonoBehaviour:
   dashSpeed: 20
   glideDuration: .25
   glideSpeed: 10
+  gravityMod: 20
+  Floating: 0
+  floatJumpForce: 140
   onGround: 0
   groundCheckL: {fileID: 400002}
   groundCheckR: {fileID: 400000}
@@ -266,6 +278,17 @@ MonoBehaviour:
   curHealth: 10
   healthBarLength: 0
   pos: 10
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad898f86bdcc72d4bac948031c6feb6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
