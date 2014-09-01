@@ -1,11 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 0e86fa110713c774aab8c7da401a2ec1
-ModelImporter:
-  serializedVersion: 16
-  fileIDToRecycleName: {}
-=======
-guid: 9a6c577dce30705478aabb704b7adfab
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -36,7 +30,6 @@ ModelImporter:
     9500000: //RootNode
     13700000: Cube_000
     13700002: Text
->>>>>>> a72a893ed0dd9a191503ba51ffcbc222fe0cfd82
   materials:
     importMaterials: 1
     materialName: 0
