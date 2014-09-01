@@ -15,6 +15,7 @@ public class SceneTransitionGUI : MonoBehaviour {
 		if(isCreated == false) { //If GUI already exists, destroy this instance.
 			isCreated = true; 
 			GameObject.DontDestroyOnLoad(gameObject);
+			gameObject.tag = "TransitionGUI";
 		} else {
 			Destroy (gameObject);
 		}
