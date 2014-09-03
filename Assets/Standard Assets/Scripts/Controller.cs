@@ -4,7 +4,7 @@ using System.Collections;
 public class Controller : MonoBehaviour {
 	public int totem; // 0 = normal, 1 = rabbit, 2 = mole, 3 = mantis
 
-	// in order: maxSpeed, soloJumpForce, maxHealth,
+	// in order: maxSpeed, soloJumpForce, maxHealth
 	public float[] rabbitStats = {5f,440f,8f};
 	public float[] moleStats   = {3f,400f,15f};
 	public float[] mantisStats = {6f,440f,8f};
@@ -252,6 +252,12 @@ public class Controller : MonoBehaviour {
 		canSlowTime = true;
 		canFloat = false;
 
+		slowMo = true; //so it can be set to false with the method
+		Floating = false; //deactivates mabelle float
+		rigidbody2D.drag = 0f;
+		RabbitSlowMotion ();
+
+
 	}
 	public void TurnIntoMole(){
 		Debug.Log ("mole");
@@ -263,6 +269,11 @@ public class Controller : MonoBehaviour {
 		canShield = true;
 		canSlowTime = false;
 		canFloat = false;
+
+		slowMo = true;
+		Floating = false;
+		rigidbody2D.drag = 0f;
+		RabbitSlowMotion ();
 
 
 	}
@@ -277,6 +288,11 @@ public class Controller : MonoBehaviour {
 		canSlowTime = false;
 		canFloat = false;
 
+		slowMo = true;
+		Floating = false;
+		rigidbody2D.drag = 0f;
+		RabbitSlowMotion ();
+
 
 	}
 	public void TurnIntoNormal(){
@@ -290,6 +306,10 @@ public class Controller : MonoBehaviour {
 		canSlowTime = false;
 		canFloat = true;
 
+		slowMo = true;
+		Floating = false;
+		rigidbody2D.drag = 0;
+		RabbitSlowMotion ();
 
 	}
 
