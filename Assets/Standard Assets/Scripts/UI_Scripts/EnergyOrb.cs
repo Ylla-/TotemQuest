@@ -17,8 +17,9 @@ public class EnergyOrb : MonoBehaviour {
 	public bool playerFacingRight = true;
 	[HideInInspector] public EnergyBar energyBar;
 	[HideInInspector] public int maximumEnergy;
-	 public Vector2 totemOrbPosition; //Position of the orb on current totem
+	[HideInInspector] public Vector2 totemOrbPosition; //Position of the orb on current totem
 
+	private Light orbLight;
 	private SpriteRenderer spriteRenderer;
 	private Vector3 direction; //Current Direction
 	private Vector3 orbToModelStartDistance; //Distance between the orb and the player
@@ -30,6 +31,7 @@ public class EnergyOrb : MonoBehaviour {
 
 	void Awake() {
 		spriteRenderer = gameObject.GetComponentInChildren<SpriteRenderer> ();
+		orbLight = gameObject.GetComponentInChildren<Light> ();
 	}
 	void Start () {
 		UpdatePlayerFacing (); //Update the facing so the orb position themselves correctly on spawn.
@@ -61,6 +63,7 @@ public class EnergyOrb : MonoBehaviour {
 	}
 	public void SetColor(Color newColor) { //Change to the new color, WITHOUT lerp.
 		spriteRenderer.color = newColor;
+		orbLight.color = newColor;
 	}
 
 	public void AddEnergy() {
@@ -104,7 +107,7 @@ public class EnergyOrb : MonoBehaviour {
 		
 		currentTargetPosition = newTarget.position; //Target's position
 
-		if(orbIndex == 0) currentTargetPosition += new Vector3 (orbToModelStartDistance.x,orbToModelStartDistance.y,0); //Basic Target Position
+		if(orbIndex == 0) currentTargetPosition += new Vector3 (orbToModelStartDistance.x,orbToModelStartDistance.y,-1); //Basic Target Position
 		else currentTargetPosition = currentTargetPosition + new Vector3 (orbToModelAdditionnalDistance.x, orbToModelAdditionnalDistance.y, 0);// Target Position based on current Index
 
 		Vector3 newDirection = (currentTargetPosition - transform.position).normalized;
@@ -143,6 +146,7 @@ public class EnergyOrb : MonoBehaviour {
 	IEnumerator LerpColor(Color startColor, Color endColor, float time) {
 		for(float i=0; i < 1; i += Time.deltaTime/time) {
 			spriteRenderer.color = Color.Lerp (startColor,endColor,i);
+			orbLight.color = Color.Lerp (startColor,endColor,i);
 			yield return null;
 		}
 

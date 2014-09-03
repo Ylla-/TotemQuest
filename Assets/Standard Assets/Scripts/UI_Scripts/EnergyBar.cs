@@ -174,6 +174,7 @@ public class EnergyBar : MonoBehaviour {
 	public void ChangeOrbsColor(Color newColor) {
 		for(int i = 0; i < orbList.Count; i++) {
 			orbList[i].LerpColor(newColor);
+
 		}
 	}
 
