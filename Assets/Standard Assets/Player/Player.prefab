@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroundCheckR
   m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400002}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroundCheckL
   m_TagString: Untagged
   m_Icon: {fileID: -2065832391, guid: 0000000000000000d000000000000000, type: 0}
@@ -48,7 +48,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400008}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400006}
   - 114: {fileID: 11400004}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ProjectileEmitter
   m_TagString: Untagged
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.4694777, y: -6.63802338, z: 0}
+  m_LocalPosition: {x: 18.1993389, y: -7.08839083, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -229,13 +229,13 @@ MonoBehaviour:
   glideSpeed: 10
   gravityMod: 20
   Floating: 0
-  floatJumpForce: 140
+  floatJumpForce: 350
   onGround: 0
   groundCheckL: {fileID: 400002}
   groundCheckR: {fileID: 400000}
   theGround:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 2048
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
