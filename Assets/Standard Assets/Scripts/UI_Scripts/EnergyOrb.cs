@@ -12,6 +12,7 @@ public class EnergyOrb : MonoBehaviour {
 	public Controller controller;
 
 	public float sizePerEnergy = 0.15f;
+	public float lightSizePerEnergy = 0.03f;
 	public float maximumSpeedRange = 1f; //Distance at which orb speed is at his maximum
 	public float speed; //current Speed
 	public bool playerFacingRight = true;
@@ -68,9 +69,7 @@ public class EnergyOrb : MonoBehaviour {
 
 	public void AddEnergy() {
 		if(currentEnergy <= maximumEnergy) {
-			Debug.Log ("Before Adding Energy. Current Energy : " + currentEnergy); 
 			currentEnergy++;
-			Debug.Log ("Added Energy. Current Energy : " + currentEnergy + "      maximum Energy : " + maximumEnergy);
 			ChangeOrbSize();
 		}
 	}
@@ -84,11 +83,11 @@ public class EnergyOrb : MonoBehaviour {
 	void ChangeOrbSize(){
 		float finalSize = (sizePerEnergy * currentEnergy) + 0.15f;
 		transform.localScale = new Vector3 (finalSize, finalSize, 0);
+		orbLight.intensity = lightSizePerEnergy * currentEnergy;
 	}
 
 
 	void UpdatePlayerFacing() { 
-
 		if(playerFacingRight) { //Change Orb Standard position
 			orbToModelStartDistance = new Vector3 (-totemOrbPosition.x, totemOrbPosition.y, 0);
 			orbToModelAdditionnalDistance = new Vector3( -0.14f, Random.Range (-0.05f,0.05f),0);

@@ -15,8 +15,10 @@ public class SceneTransitionGUI : MonoBehaviour {
 		if(isCreated == false) { //If GUI already exists, destroy this instance.
 			isCreated = true; 
 			GameObject.DontDestroyOnLoad(gameObject);
+			gameObject.AddComponent("Pause");
 			gameObject.tag = "TransitionGUI";
 		} else {
+			Debug.Log ("Destroying UI");
 			Destroy (gameObject);
 		}
 	}
@@ -30,10 +32,6 @@ public class SceneTransitionGUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.anyKeyDown) {
-			//FadeUI(0.6f,0.4f,Color.red); //For test Purposes only
-
-		}
 	}
 	 
 	public void FadeUI() {
