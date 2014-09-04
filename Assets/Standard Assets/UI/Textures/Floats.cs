@@ -48,13 +48,11 @@ public class Floats : MonoBehaviour {
 		float step = 0f; //raw step
 		float rate = 1f/floatTime; //amount to add to raw step
 		float smoothStep = 0f; //current smooth step
-		float lastStep = 0f; //previous smooth step
 		while(step < 1f) { // until we're done
 			step += Time.deltaTime * rate; 
 			smoothStep = Mathf.SmoothStep(0f, 1f, step); //Smooth The mouvement
 	
 			transform.localPosition = new Vector3 (transform.localPosition.x,Mathf.Lerp(startingPosition, endingPosition, (smoothStep)),transform.localPosition.z); //lerp position
-			lastStep = smoothStep; //get previous smoothStep
 			yield return null;
 		}
 

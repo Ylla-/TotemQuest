@@ -31473,8 +31473,9 @@ GameObject:
   - 4: {fileID: 792099302}
   - 212: {fileID: 792099304}
   - 61: {fileID: 792099303}
+  - 114: {fileID: 792099305}
   m_Layer: 11
-  m_Name: Tile
+  m_Name: LOG
   m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31527,6 +31528,22 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: 329ed4b3b987e014291dce1a09f33fa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &792099305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 792099301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f05b2ee1261e442865aa2a8af25fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationAxis: {fileID: 0}
+  player: {fileID: 0}
+  activationCollider: {fileID: 0}
+  rotationDegrees: 70
+  swingTime: 0
 --- !u!1 &793488972
 GameObject:
   m_ObjectHideFlags: 0
@@ -71464,11 +71481,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400004, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -29.366684
+      value: 5.63751411
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -52.8499641
+      value: 1.45734215
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -71497,6 +71514,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: floatJumpForce
       value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
@@ -76622,7 +76643,7 @@ Transform:
   m_PrefabInternal: {fileID: 1736025645}
   m_GameObject: {fileID: 1864323935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.366684, y: -52.8499641, z: 0}
+  m_LocalPosition: {x: 5.63751411, y: 1.45734215, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 59803785}

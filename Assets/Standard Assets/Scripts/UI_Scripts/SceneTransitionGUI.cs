@@ -18,7 +18,6 @@ public class SceneTransitionGUI : MonoBehaviour {
 			gameObject.AddComponent("Pause");
 			gameObject.tag = "TransitionGUI";
 		} else {
-			Debug.Log ("Destroying UI");
 			Destroy (gameObject);
 		}
 	}
