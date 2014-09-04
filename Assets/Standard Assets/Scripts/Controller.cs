@@ -1,4 +1,4 @@
- using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Controller : MonoBehaviour {
@@ -21,9 +21,9 @@ public class Controller : MonoBehaviour {
 	//public float HorizontalForceonAir = 8f;
 
 	//for non fixed jump UNUSUED
-	float JumpDuration = 0.150f;
+	//float JumpDuration = 0.150f;
 	float JumpPressedTime, JumpingPressed;
-	float jumpForce = 50f;
+	//float jumpForce = 50f;
 	//for fixed jump
 	public float soloJumpForce = 440;
 
@@ -60,7 +60,7 @@ public class Controller : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		moveAllowed = true;
 		health = (Health)gameObject.GetComponent ("Health");
-		//if yuo start as Mabellle, which i think should bwe default
+		//if you start as Mabellle, which I think should be default
 		TurnIntoNormal ();
 	}
 	
@@ -123,8 +123,8 @@ public class Controller : MonoBehaviour {
 	if (Input.GetButtonDown ("Bunny")) totem = 1;
 	if (Input.GetButtonDown ("Mole")) totem = 2;
     if (Input.GetButtonDown ("Mantis")) totem = 3;
-	//if (Input.GetButtonDown ("TransformForward")) totem=(totem+1)%4;
-	//if (Input.GetButtonDown ("TransformBackward")) totem=(totem+3)%4;
+	if (Input.GetButtonDown ("TransformForward")) totem=(totem+1)%4;
+	if (Input.GetButtonDown ("TransformBackward")) totem=(totem+3)%4;
 
 	//Fixed jump
 	if (Input.GetButtonDown("Jump") && onGround){
