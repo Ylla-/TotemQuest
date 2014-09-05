@@ -11,6 +11,7 @@ public class ProjectileScript : MonoBehaviour
 	
 	void Start()
 	{
+		gameObject.layer = 15; //This is the player's attack layer
 		Destroy(gameObject, 10); 
 		
 		

@@ -13,7 +13,10 @@ public class FlashSprite : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if(Input.GetKeyDown (KeyCode.V)){
+			Debug.Log ("Test Purpose : Testing Flash Animation on Log (KEY V)");
+			Flash(Color.white);
+		}
 	}
 
 	public void Flash(Color FlashColor){

@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if (other is BoxCollider2D) {
-			Debug.Log ("HIT");
+			Debug.Log ("HIT - PLAYER ATTACK");
 			Health h = (Health)other.gameObject.GetComponent ("Health");
 			
 		}

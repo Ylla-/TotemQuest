@@ -11,32 +11,53 @@ public class SwingingLog : MonoBehaviour {
 	public float rotationDegrees = 70;
 	public float swingTime = 3f; //time it takes to swing RotationDegrees degrees
 	public int rotateDirection = 1; //-1 for ClockWise, 1 for CounterClockwise.
+	[HideInInspector] public int health;
 
-	private bool isIdle = true;
+	private bool isActive = false;
+	private int startHealth = 10;
+	private int logDamage = 4;
 
 
 	// Use this for initialization
 	void Start () {
 		if (player == null) player = GameObject.FindGameObjectWithTag ("Player");
 		if (flashSprite == null) gameObject.GetComponentInChildren<FlashSprite>();
-
+		health = startHealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown (KeyCode.V)){
-			Debug.Log ("Test Purpose : Testing Flash Animation on Log (KEY V)");
-			Flash(Color.white);
+		if(health <= 0) {
+			DestroyLog();
 		}
+
+
+		//FOR TESTING :
 		if(Input.GetKeyDown (KeyCode.B)){
 			Debug.Log ("Test Purpose : Breaking Vine (KEY B)");
 			Activate ();
 		}
 	}
 
+	void  OnTriggerEnter2D(Collider2D other) {
+		if(other.gameObject.layer == 13 && isActive == true) { //If it hits the player
+			Health playerHp = other.gameObject.GetComponent<Health>();
+			playerHp.AdjustCurrentHealth(-logDamage);
+			DestroyLog();
+		}
+	}
+
+	public void DestroyLog() {
+		isActive = false;
+		StopAllCoroutines ();
+		Flash (Color.white);
+		StartCoroutine (DestroyLogAnimation ());
+	}
+
 	public void Activate() {
-		isIdle = false; 
-		StartCoroutine (DestroyVine ()); //Start Vine destroy animation
+		gameObject.tag = "Enemy"; //changes the tag once the vine is broken so the log cant be broken before.
+		DestroyableVine.transform.parent = null;
+		isActive = true; 
 		StartCoroutine (LogFalling (rotationAxis.transform.position,rotationDegrees,swingTime,rotateDirection)); //Start Log Falling animation
 	}
 
@@ -56,15 +77,17 @@ public class SwingingLog : MonoBehaviour {
 		StartCoroutine (LogFalling (rotationAxis.transform.position,rotationDegrees,swingTime,-direction)); //Start Log Falling animation
 	}
 
-	IEnumerator DestroyVine() {
-		DestroyableVine.transform.parent = null;
-		SpriteRenderer vineSprite = DestroyableVine.GetComponent<SpriteRenderer> ();
+
+
+	IEnumerator DestroyLogAnimation(){
+		SpriteRenderer[] logSprites = gameObject.GetComponentsInChildren<SpriteRenderer> ();
 		for(float i = 0; i < 1; i += Time.deltaTime/0.5f) {
-			vineSprite.color = new Color(1,1,1,1-i);
+			for(int j = 0; j < logSprites.Length; j++) {
+				logSprites[j].color = new Color(1,1,1,1-i);
+			}
 			yield return null;
 		}
-		Destroy (DestroyableVine);
-
+		Destroy (gameObject);
 	}
 
 	void Flash(Color flashColor) {
