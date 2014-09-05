@@ -63,20 +63,6 @@ public class EnergyBar : MonoBehaviour {
 			Debug.Log ("Test Purpose : Removing an Orb (Key C)");
 			RemoveEnergyOrb();
 		}
-		if(Input.GetKeyDown (KeyCode.V)){
-			Debug.Log ("Test Purpose : Changing to Red (Key V)");
-			ChangeOrbsColor(color2);
-		}
-		if(Input.GetKeyDown (KeyCode.B)){
-			Debug.Log ("Test Purpose : Changing to Blue (Key B)");
-			ChangeOrbsColor(color3);
-		}
-		if(Input.GetKeyDown (KeyCode.N)){
-			Debug.Log ("Test Purpose : Changing to Green (Key N)");
-			ChangeOrbsColor(color4);
-		}
-
-
 	}
 
 	void CheckTotemType() { //TODO : Add different orb position for each transformation;
