@@ -25,7 +25,7 @@ public class Door : MonoBehaviour {
 	
 
 	void Update () {
-		if(Input.GetKeyDown (key1) || Input.GetKeyDown (key2)) {
+		if(Input.GetButtonDown("Vertical")) {
 			if(gameObject.renderer.bounds.Intersects(player.renderer.bounds)){
 				UseDoor ();
 			} 
