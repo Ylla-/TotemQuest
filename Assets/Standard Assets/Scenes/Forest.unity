@@ -71979,6 +71979,10 @@ Prefab:
       propertyPath: ShowHealthOnScreen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: theGround.m_Bits
+      value: 18432
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
   m_RootGameObject: {fileID: 1864323935}
@@ -77171,13 +77175,12 @@ MonoBehaviour:
   glideSpeed: 10
   gravityMod: 20
   Floating: 0
-  floatJumpForce: 350
   onGround: 0
   groundCheckL: {fileID: 747834039}
   groundCheckR: {fileID: 59803785}
   theGround:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 18432
 --- !u!58 &1864323937
 CircleCollider2D:
   m_ObjectHideFlags: 0
