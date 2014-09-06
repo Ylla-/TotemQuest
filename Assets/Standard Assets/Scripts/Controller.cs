@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour {
 	public float[] moleStats   = {3f,400f,15f};
 	public float[] mantisStats = {6f,440f,8f};
 	public float[] normalStats = {5f,440f,10f};
-	public bool canDash, canGlide, canShield, canSlowTime, canFloat;
+	bool canDash, canGlide, canShield, canSlowTime, canFloat;
 
 
 	Health health;
@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour {
 	//for horizontal movement
 	public float maxSpeed = 5f;
 	public float move;
-	bool moveAllowed;
+	public bool moveAllowed;
 	//public float HorizontalForceonAir = 8f;
 
 	//for non fixed jump UNUSUED
@@ -45,8 +45,13 @@ public class Controller : MonoBehaviour {
 	bool slowMo = false;
 
 	// for floating
-	public float gravityMod = 20f;
-	public bool Floating;
+	float gravityMod = 20f;
+	bool Floating;
+
+	// for shielding
+	public float shieldRatio = 0.5f;
+	public bool Shield;
+
 
 	// ground check
 	public bool onGround = false;
@@ -115,6 +120,7 @@ public class Controller : MonoBehaviour {
 		}
 
 	}
+	// it seems you cant use GetButtonDown in the FixedUpdate() 
 	
 	//For totem transformations
 	void Update(){
@@ -130,7 +136,7 @@ public class Controller : MonoBehaviour {
 		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
 		}
 
-		// it seems you cant use GetButtonDown in the FixedUpdate() DASH
+		//DASH
 		if (canDash) {
 			if (( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) && onGround) {
 				dash = true;
@@ -164,6 +170,14 @@ public class Controller : MonoBehaviour {
 			if(onGround){
 				Floating = false;
 				MaBellesFloat (Floating);
+			}
+			}
+
+		//shield mole
+		if (canShield) {
+			if ( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) {
+				Shield = !Shield;
+				MoleShield(Shield);
 			}
 			}
 
@@ -236,11 +250,18 @@ public class Controller : MonoBehaviour {
 			if (facingRight) rigidbody2D.velocity = new Vector2 (glideSpeed, 0);
 			else rigidbody2D.velocity = new Vector2 (-glideSpeed, 0);
 		}
-
-
-
 	}
 
+	void MoleShield(bool shielding){
+		if (Shield) {
+			Debug.Log("shield");
+			health.shield = true;
+			health.shieldRatio = shieldRatio;
+				}
+		if (!Shield) {
+			health.shield = false;
+				}
+		}
 	public void TurnIntoRabbit(){
 		Debug.Log ("rabbit");
 		maxSpeed = rabbitStats [0];
