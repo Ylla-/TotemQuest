@@ -44,3 +44,11 @@ TagManager:
     userID: 0
     uniqueID: 0
     locked: 0
+  - name: Player
+    userID: 1
+    uniqueID: 3581888837
+    locked: 0
+  - name: Collision
+    userID: 2
+    uniqueID: 431246077
+    locked: 0
