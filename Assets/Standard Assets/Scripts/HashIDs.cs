@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class HashIDs : MonoBehaviour {
-	public static int rabbitRunState, rabbitIdleState, rabbitJumpState, rabbitDashState, rabbitTransitionState;
+	public static int rabbitRunState, rabbitIdleState, rabbitJumpState, rabbitDashState, rabbitTransitionState,
+						mantisGlideState;
 	public static int SpeedFloat, DashBool, GroundedBool, GlideBool, TotemInt;
 
 	void Awake () {
@@ -11,6 +12,7 @@ public class HashIDs : MonoBehaviour {
 		rabbitJumpState = Animator.StringToHash("Base Layer.BunnyJump");
 		rabbitDashState = Animator.StringToHash("Base Layer.Dash");
 		rabbitTransitionState = Animator.StringToHash("Base Layer.BunnyTransition");
+		mantisGlideState = Animator.StringToHash ("Base Layer.MantisGlide");
 
 		SpeedFloat = Animator.StringToHash("Speed");
 		DashBool = Animator.StringToHash("Dash");

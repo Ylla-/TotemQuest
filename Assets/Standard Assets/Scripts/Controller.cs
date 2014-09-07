@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour {
 	public float[] moleStats   = {3f,400f,15f};
 	public float[] mantisStats = {6f,440f,8f};
 	public float[] normalStats = {5f,440f,10f};
-	public bool canDash, canGlide, canShield, canSlowTime, canFloat;
+	bool canDash, canGlide, canShield, canSlowTime, canFloat;
 
 
 	Health health;
@@ -17,7 +17,7 @@ public class Controller : MonoBehaviour {
 	//for horizontal movement
 	public float maxSpeed = 5f;
 	public float move;
-	bool moveAllowed;
+	public bool moveAllowed;
 	//public float HorizontalForceonAir = 8f;
 
 	//for non fixed jump UNUSUED
@@ -38,15 +38,20 @@ public class Controller : MonoBehaviour {
 
 	//for gliding
 	public float glideDuration = 0.25f, glideSpeed = 10f;
-	float glideStartTime; bool glide, gliding;
+	float glideStartTime; bool glide; 
+	bool airCounter = true;
 
 	//for slo-mo
 	bool slowMo = false;
 
 	// for floating
-	public float gravityMod = 20f;
-	public bool Floating;
-	public float floatJumpForce = 350f;
+	float gravityMod = 20f;
+	bool Floating;
+
+	// for shielding
+	public float shieldRatio = 0.5f;
+	public bool Shield;
+
 
 	// ground check
 	public bool onGround = false;
@@ -73,9 +78,8 @@ public class Controller : MonoBehaviour {
 		else {
 			onGround = Physics2D.OverlapCircle(groundCheckR.position, groundRadius, theGround);
 		}
-
-		RabbitDash();
-		MantisGlide();
+		if (canDash) {RabbitDash ();}
+		if (canGlide) {MantisGlide ();}
 
 		//moving in the x axis, moveAllowed allows to take away the movement control from the player
 		if(moveAllowed){
@@ -116,6 +120,7 @@ public class Controller : MonoBehaviour {
 		}
 
 	}
+	// it seems you cant use GetButtonDown in the FixedUpdate() 
 	
 	//For totem transformations
 	void Update(){
@@ -131,18 +136,25 @@ public class Controller : MonoBehaviour {
 		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
 		}
 
-		// it seems you cant use GetButtonDown in the FixedUpdate() DASH
+		//DASH
 		if (canDash) {
-			if ((Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) && onGround) {
+			if (( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) && onGround) {
 				dash = true;
 				}
 		}
 		// GLIDE
 		if (canGlide) {
-			if ((Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) && !onGround) {
+			if (( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) && (!onGround)) {
+				if(airCounter){
 				glide = true;
+				airCounter = false;
+				}
+			}
+			if(onGround){
+				airCounter = true;
 			}
 		}
+
 		// time slow
 		if (canSlowTime) {
 			if (Input.GetButtonDown ("Ability2")) {
@@ -151,10 +163,25 @@ public class Controller : MonoBehaviour {
 				}
 		// float mabelle
 		if (canFloat) {
-			if (Input.GetButtonDown ("Ability2")) {
-				MaBellesFloat();
+			if (Input.GetButtonDown ("Ability2") && onGround == false) {
+				Floating = !Floating;
+				MaBellesFloat (Floating);  
 				}
+			if(onGround){
+				Floating = false;
+				MaBellesFloat (Floating);
 			}
+			}
+
+		//shield mole
+		if (canShield) {
+			if ( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) {
+				Shield = !Shield;
+				MoleShield(Shield);
+			}
+			}
+
+
 		/*animator variables
 		anim.SetFloat ("VerticalVelocity", rigidbody2D.velocity.y);
 		anim.SetBool ("Jump", JumpingPressed);
@@ -179,17 +206,13 @@ public class Controller : MonoBehaviour {
 			Debug.Log ("Dash");
 			moveAllowed = false;
 		   //if and else just to dash in the right direction
-			if (facingRight)rigidbody2D.velocity = new Vector2 (dashSpeed, rigidbody2D.velocity.y); 
-			else rigidbody2D.velocity = new Vector2 (-dashSpeed, rigidbody2D.velocity.y);
-			dash = false; //i set dash to false so this if block only executes once
+			if (facingRight)rigidbody2D.velocity = new Vector2 (dashSpeed, 0); 
+			else rigidbody2D.velocity = new Vector2 (-dashSpeed, 0);
+			dash = false; // set dash to false so this if block only executes once
 		}
 		else if (anim.GetCurrentAnimatorStateInfo(0).nameHash == HashIDs.rabbitDashState) { //executes ever frame when dashing
-				if (facingRight) rigidbody2D.velocity = new Vector2 (dashSpeed, rigidbody2D.velocity.y);
-				else rigidbody2D.velocity = new Vector2 (-dashSpeed, rigidbody2D.velocity.y);
-			}
-		else{ //executes when dashing is done
-				rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
-				moveAllowed = true;
+				if (facingRight) rigidbody2D.velocity = new Vector2 (dashSpeed, 0);
+				else rigidbody2D.velocity = new Vector2 (-dashSpeed, 0);
 			}
 		}
 	void RabbitSlowMotion(){
@@ -203,44 +226,42 @@ public class Controller : MonoBehaviour {
 				}
 			}
 
-	void MaBellesFloat(){
-		if (!Floating) {
+	void MaBellesFloat(bool Floating){
+		if (Floating) {
 				rigidbody2D.drag = gravityMod;
-				soloJumpForce += floatJumpForce;
-				Floating = true;
+				//Floating = true;
 				} else {
 					rigidbody2D.drag = 0f;
-		            soloJumpForce -= floatJumpForce;
-					Floating = false;
+					//Floating = false;
 				}
 	}
 
 	void MantisGlide(){
-		// Glide mantis
-		if (glide){
+
+		if (glide && anim.GetCurrentAnimatorStateInfo(0).nameHash == HashIDs.mantisGlideState){
 			Debug.Log ("Glide");
-			glide = false;
 			moveAllowed = false;
-			glideStartTime = Time.time;            //if and else just to dash in the right direction
+			//if and else just to glide in the right direction
 			if (facingRight)rigidbody2D.velocity = new Vector2 (glideSpeed, 0); 
 			else rigidbody2D.velocity = new Vector2 (-glideSpeed, 0);
-			rigidbody2D.gravityScale = 0f;
-			gliding = true;
+			glide = false; // set glide to false so this if block only executes once
 		}
-		if (gliding == true){
-			if ((Time.time - glideStartTime) < glideDuration) {
-				if (facingRight)rigidbody2D.velocity = new Vector2 (glideSpeed, 0);
-				else rigidbody2D.velocity = new Vector2 (-glideSpeed, 0);
-			} else {
-				rigidbody2D.velocity = new Vector2 (move*maxSpeed, rigidbody2D.velocity.y);
-				moveAllowed = true;
-				rigidbody2D.gravityScale = 1f;
-				gliding = false;
-			} 
+		else if (anim.GetCurrentAnimatorStateInfo(0).nameHash == HashIDs.mantisGlideState) { //executes ever frame when gliding
+			if (facingRight) rigidbody2D.velocity = new Vector2 (glideSpeed, 0);
+			else rigidbody2D.velocity = new Vector2 (-glideSpeed, 0);
 		}
-
 	}
 
+	void MoleShield(bool shielding){
+		if (Shield) {
+			Debug.Log("shield");
+			health.shield = true;
+			health.shieldRatio = shieldRatio;
+				}
+		if (!Shield) {
+			health.shield = false;
+				}
+		}
 	public void TurnIntoRabbit(){
 		Debug.Log ("rabbit");
 		maxSpeed = rabbitStats [0];
@@ -311,6 +332,13 @@ public class Controller : MonoBehaviour {
 		rigidbody2D.drag = 0;
 		RabbitSlowMotion ();
 
+	}
+
+	public void AllowMovement(){
+		moveAllowed = true;
+	                            }
+	public void PreventMovement(){
+		moveAllowed = false;
 	}
 
 

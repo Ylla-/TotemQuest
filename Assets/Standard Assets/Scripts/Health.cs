@@ -8,6 +8,10 @@ public class Health : MonoBehaviour {
 	public int pos = 40;
 	public bool ShowHealthOnScreen = false;
 
+	//mole shield
+	public bool shield;
+	public float shieldRatio;
+
 	private float healthBarMaxLength;
 	private GUIStyle centeredText;
 	private FlashSprite flashSprite;
@@ -41,8 +45,9 @@ public class Health : MonoBehaviour {
 		if(value < 0 && flashSprite != null) { //If damage taken is >1. Flash Sprite.
 			flashSprite.Flash(Color.white);
 		}
+		if (shield)	curHealth = curHealth + (int)(value * shieldRatio); //for mole shielding
+		else        curHealth += value;
 
-		curHealth += value;
 		if (curHealth < 1) {
 			curHealth = 0;
 			Die();
