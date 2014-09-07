@@ -31,12 +31,6 @@ public class SwingingLog : MonoBehaviour {
 			DestroyLog();
 		}
 
-
-		//FOR TESTING :
-		if(Input.GetKeyDown (KeyCode.B)){
-			Debug.Log ("Test Purpose : Breaking Vine (KEY B)");
-			Activate ();
-		}
 	}
 
 	void  OnTriggerEnter2D(Collider2D other) {

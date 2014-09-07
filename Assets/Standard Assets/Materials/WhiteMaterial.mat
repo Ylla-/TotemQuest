@@ -57,7 +57,7 @@ Material:
       data:
         first:
           name: _SelfIllum
-        second: 0
+        second: 1
       data:
         first:
           name: _FlashAmount

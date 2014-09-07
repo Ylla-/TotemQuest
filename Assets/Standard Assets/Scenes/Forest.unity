@@ -35165,7 +35165,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 855911288}
   - 212: {fileID: 855911291}
-  - 95: {fileID: 855911290}
   - 114: {fileID: 855911292}
   m_Layer: 13
   m_Name: Player FlashSprite
@@ -35186,22 +35185,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1864323940}
   m_RootOrder: 3
---- !u!95 &855911290
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 748be64ffe1d0e94999d1c9ccf3281dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1718660403}
-  m_GameObject: {fileID: 855911287}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6c218936a8a683748a8762d8c87b1cae, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 1
-  m_ApplyRootMotion: 0
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &855911291
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35237,6 +35220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1be9e00bbe3ae48bed0be4c14a47bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentRenderer: {fileID: 0}
 --- !u!1 &855997403
 GameObject:
   m_ObjectHideFlags: 0
@@ -54948,6 +54932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1be9e00bbe3ae48bed0be4c14a47bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentRenderer: {fileID: 0}
 --- !u!1001 &1326890006
 Prefab:
   m_ObjectHideFlags: 0
@@ -71199,11 +71184,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.50710058
+      value: 1.35881352
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.06004477
+      value: -56.9583626
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -71245,7 +71230,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
   m_RootGameObject: {fileID: 1864323935}
   m_IsPrefabParent: 0
@@ -74637,6 +74623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1be9e00bbe3ae48bed0be4c14a47bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentRenderer: {fileID: 0}
 --- !u!212 &1799288276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77327,7 +77314,7 @@ Transform:
   m_PrefabInternal: {fileID: 1718660403}
   m_GameObject: {fileID: 1864323935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.50710058, y: 1.06004477, z: -.100000001}
+  m_LocalPosition: {x: 1.35881352, y: -56.9583626, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 59803785}

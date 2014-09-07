@@ -8,8 +8,6 @@ public class Door : MonoBehaviour {
 	public float fadeTime = 1f;
 
 	private SceneTransitionGUI transitionGUI;
-	private KeyCode key1; //Keys to activate
-	private KeyCode key2; 
 
 
 	void Start () { 
@@ -19,8 +17,7 @@ public class Door : MonoBehaviour {
 
 		transitionGUI = (SceneTransitionGUI) GameObject.FindGameObjectWithTag ("TransitionGUI").GetComponent<SceneTransitionGUI> ();
 
-		key1 = KeyCode.UpArrow;
-		key2 = KeyCode.UpArrow;
+
 	}
 	
 

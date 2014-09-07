@@ -20,6 +20,11 @@ public class SwingingLogVine : MonoBehaviour {
 		if(health.curHealth <= 0 && wasActivated == false) {
 			StartCoroutine(DestroyVine ());
 		}
+		//FOR TESTING :
+		if(Input.GetKeyDown (KeyCode.B)){
+			Debug.Log ("Test Purpose : Breaking Vine (KEY B)");
+			health.AdjustCurrentHealth(-10);
+		}
 	}
 
 	IEnumerator DestroyVine() {
