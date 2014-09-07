@@ -11,44 +11,67 @@ public class SwingingLog : MonoBehaviour {
 	public float rotationDegrees = 70;
 	public float swingTime = 3f; //time it takes to swing RotationDegrees degrees
 	public int rotateDirection = 1; //-1 for ClockWise, 1 for CounterClockwise.
-	[HideInInspector] public int health;
+
+	[HideInInspector] public Health health;
 
 	private bool isActive = false;
-	private int startHealth = 10;
+	private bool triggerStayActive = false; //are we using TriggerStay function ?
+	private bool isDestroyed = false;
 	private int logDamage = 4;
 
 
-	// Use this for initialization
+	void Awake() {
+		health = transform.GetComponent<Health> ();
+	}
 	void Start () {
 		if (player == null) player = GameObject.FindGameObjectWithTag ("Player");
 		if (flashSprite == null) gameObject.GetComponentInChildren<FlashSprite>();
-		health = startHealth;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(health <= 0) {
+		if(health.curHealth <= 0) {
 			DestroyLog();
 		}
+	}
+	void LateUpdate(){
 
 	}
 
 	void  OnTriggerEnter2D(Collider2D other) {
-		if(other.gameObject.layer == 13 && isActive == true) { //If it hits the player
+		if(other.gameObject.layer == 13 && isDestroyed == false && isActive == true && isDestroyed == false) { //If it hits the player
 			Health playerHp = other.gameObject.GetComponent<Health>();
 			playerHp.AdjustCurrentHealth(-logDamage);
 			DestroyLog();
+		} else if(other.gameObject.layer == 14 && isActive == true && isDestroyed == false) { //If it another enemy and it is moving
+			Health enemyHp = other.gameObject.GetComponent<Health>();
+			enemyHp.AdjustCurrentHealth(-10);
+			health.AdjustCurrentHealth(-5);
 		}
+	}
+
+	void OnTriggerStay2D(Collider2D other) { //This is activated for 1 frame when the log is activated. 
+		//We're doing this so the object that are already colliding with the log when it is released are Damaged as well. 
+		if(triggerStayActive == true && other.gameObject.layer == 14 && isActive == true && isDestroyed == false) { //If it another enemy
+			Health enemyHp = other.gameObject.GetComponent<Health>();
+			enemyHp.AdjustCurrentHealth(-10);
+			health.AdjustCurrentHealth(-5);
+			triggerStayActive = false;
+		}
+
 	}
 
 	public void DestroyLog() {
 		isActive = false;
+		isDestroyed = true;
 		StopAllCoroutines ();
 		Flash (Color.white);
 		StartCoroutine (DestroyLogAnimation ());
 	}
 
 	public void Activate() {
+		triggerStayActive = true; //Activate Trigger stay for the next frame
 		gameObject.tag = "Enemy"; //changes the tag once the vine is broken so the log cant be broken before.
 		DestroyableVine.transform.parent = null;
 		isActive = true; 
@@ -86,6 +109,7 @@ public class SwingingLog : MonoBehaviour {
 
 	void Flash(Color flashColor) {
 		flashSprite.Flash (flashColor);
+
 	}
 
 

@@ -30,7 +30,6 @@ public class FlashSprite : MonoBehaviour {
 	}
 
 	void GetParentSprite (){
-		Debug.Log ("Curr : " + spriteRenderer.sprite + "       new : " + parentRenderer.sprite);
 		spriteRenderer.sprite = parentRenderer.sprite;
 	}
 
