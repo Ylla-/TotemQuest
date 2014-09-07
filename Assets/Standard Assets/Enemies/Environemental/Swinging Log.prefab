@@ -297,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1be9e00bbe3ae48bed0be4c14a47bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentRenderer: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,6 +314,8 @@ MonoBehaviour:
   healthBarLength: 200
   pos: 40
   ShowHealthOnScreen: 0
+  shield: 0
+  shieldRatio: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,6 +332,8 @@ MonoBehaviour:
   healthBarLength: 200
   pos: 40
   ShowHealthOnScreen: 0
+  shield: 0
+  shieldRatio: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -340,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1be9e00bbe3ae48bed0be4c14a47bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentRenderer: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -358,7 +364,7 @@ MonoBehaviour:
   rotationDegrees: 70
   swingTime: 2
   rotateDirection: 1
-  health: 0
+  health: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
