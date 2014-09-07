@@ -3690,6 +3690,8 @@ MonoBehaviour:
   healthBarLength: 200
   pos: 40
   ShowHealthOnScreen: 0
+  shield: 0
+  shieldRatio: 0
 --- !u!61 &96090052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32190,6 +32192,8 @@ MonoBehaviour:
   healthBarLength: 200
   pos: 40
   ShowHealthOnScreen: 0
+  shield: 0
+  shieldRatio: 0
 --- !u!1 &801670446
 GameObject:
   m_ObjectHideFlags: 0
@@ -71151,6 +71155,10 @@ Prefab:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
   m_RootGameObject: {fileID: 1864323935}
@@ -77156,13 +77164,9 @@ MonoBehaviour:
   - 5
   - 440
   - 10
-  canDash: 0
-  canGlide: 0
-  canShield: 0
-  canSlowTime: 0
-  canFloat: 0
   maxSpeed: 4
   move: 0
+  moveAllowed: 0
   soloJumpForce: 440
   facingRight: 1
   anim: {fileID: 0}
@@ -77170,8 +77174,8 @@ MonoBehaviour:
   dashSpeed: 20
   glideDuration: .25
   glideSpeed: 10
-  gravityMod: 20
-  Floating: 0
+  shieldRatio: .5
+  Shield: 0
   onGround: 0
   groundCheckL: {fileID: 747834039}
   groundCheckR: {fileID: 59803785}
@@ -77328,6 +77332,8 @@ MonoBehaviour:
   healthBarLength: 0
   pos: 10
   ShowHealthOnScreen: 1
+  shield: 0
+  shieldRatio: 0
 --- !u!1 &1865007995
 GameObject:
   m_ObjectHideFlags: 0
