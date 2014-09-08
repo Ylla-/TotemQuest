@@ -59,6 +59,10 @@ public class Controller : MonoBehaviour {
 	float groundRadius = 0.1f;
 	public LayerMask theGround;
 
+	//for invincibility frame
+	public float invincibilityTime = 0.3f; //Time for invulnerability when hit.
+	private bool isInvincible = false; //Is the player currently invincible ?
+
 
 	
 	void Start () {
@@ -339,6 +343,20 @@ public class Controller : MonoBehaviour {
 	                            }
 	public void PreventMovement(){
 		moveAllowed = false;
+	}
+
+	//Function Used when taking Damage. When hit, Call THIS function instead of changing the player's health through Health Script.
+	public void DamagePlayer(int damage) {
+		if(isInvincible == false) {
+			health.AdjustCurrentHealth(-damage);
+			StartCoroutine(InvincibilityTimer());
+		}
+	}
+
+	IEnumerator InvincibilityTimer() {
+		isInvincible = true;
+		yield return new WaitForSeconds (invincibilityTime);
+		isInvincible = false;
 	}
 
 

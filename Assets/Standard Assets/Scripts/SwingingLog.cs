@@ -41,8 +41,8 @@ public class SwingingLog : MonoBehaviour {
 
 	void  OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.layer == 13 && isDestroyed == false && isActive == true && isDestroyed == false) { //If it hits the player
-			Health playerHp = other.gameObject.GetComponent<Health>();
-			playerHp.AdjustCurrentHealth(-logDamage);
+			Controller playerController = other.gameObject.GetComponent<Controller>();
+			playerController.DamagePlayer(logDamage);
 			DestroyLog();
 		} else if(other.gameObject.layer == 14 && isActive == true && isDestroyed == false) { //If it another enemy and it is moving
 			Health enemyHp = other.gameObject.GetComponent<Health>();

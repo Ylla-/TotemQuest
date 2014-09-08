@@ -12,13 +12,18 @@ public class Behaviour_Goomba : MonoBehaviour {
 	/// 
 	/// </summary>
 
+
 	public float speed = 1f;
 	public bool goingLeft = true; //which direction is the enemy moving
 	public CircleCollider2D frontCollider;
+	public BoxCollider2D stompCollider;
 	public LayerMask theGround;
+	public LayerMask playerLayer;
+	public int damage = 1;
 
 	private bool canRotate = true;
 	private Vector3 overlapSpherePosition;
+
 
 	// Use this for initialization
 	void Start () {;
@@ -26,14 +31,13 @@ public class Behaviour_Goomba : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-	
-
 		//Check Wall Collision
-		if (Physics2D.OverlapCircle (transform.position + overlapSpherePosition, frontCollider.radius, theGround) == true
-		    && canRotate == true) {
+		if (Physics2D.OverlapCircle (transform.position + overlapSpherePosition, frontCollider.radius, theGround) == true && canRotate == true) {
 			StartCoroutine (Flip ());
 			Debug.Log ("collision !");
 		}
+		//Check Stomp Collision
+		//TODO : If collision of player's feet with enemy's head, Kill enemy
 
 		//Move()
 		if(goingLeft == true) {
@@ -42,6 +46,13 @@ public class Behaviour_Goomba : MonoBehaviour {
 			rigidbody2D.velocity = new Vector2(speed,rigidbody2D.velocity.y);
 		}
 
+	}
+
+	void  OnTriggerEnter2D(Collider2D other) {
+		if(other.gameObject.layer == 13) { //If it hits the player
+			Controller playerController = other.gameObject.GetComponent<Controller>();
+			playerController.DamagePlayer(damage);
+		}
 	}
 
 	void updateDirection(){
