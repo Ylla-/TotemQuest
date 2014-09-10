@@ -63,7 +63,9 @@ public class Controller : MonoBehaviour {
 	public float invincibilityTime = 0.3f; //Time for invulnerability when hit.
 	private bool isInvincible = false; //Is the player currently invincible ?
 
-
+	//on moving platform
+	public bool onMovingPlatform;
+	public Rigidbody2D movingRigidbody2D;
 	
 	void Start () {
 		anim = GetComponent<Animator> ();
@@ -82,16 +84,24 @@ public class Controller : MonoBehaviour {
 		else {
 			onGround = Physics2D.OverlapCircle(groundCheckR.position, groundRadius, theGround);
 		}
+
+
+
+
 		if (canDash) {RabbitDash ();}
 		if (canGlide) {MantisGlide ();}
 
 		//moving in the x axis, moveAllowed allows to take away the movement control from the player
-		if(moveAllowed){
 		move = Input.GetAxis ("Horizontal");
-		//if(onGround)
-			rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
-		//if(!onGround)
-		//	rigidbody2D.AddForce(new Vector2 (move * HorizontalForceonAir, 0));
+		if(moveAllowed){
+			if(!onMovingPlatform){
+				 //if(onGround)
+				rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
+			}
+			else{
+				rigidbody2D.velocity = new Vector2 ((move * maxSpeed) + movingRigidbody2D.velocity.x, rigidbody2D.velocity.y);
+			}
+
 	    }
 
 		/*jumping hold to go higher
