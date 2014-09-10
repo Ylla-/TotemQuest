@@ -138,13 +138,13 @@ public class Controller : MonoBehaviour {
 	
 	//For totem transformations
 	void Update(){
-	if (Input.GetButtonDown ("Normal")) totem = 0;
-	if (Input.GetButtonDown ("Bunny")) totem = 1;
-	if (Input.GetButtonDown ("Mole")) totem = 2;
-    if (Input.GetButtonDown ("Mantis")) totem = 3;
+	if (Input.GetButtonDown ("Normal")||Input.GetAxis("DPadYAxis")>0) totem = 0;
+		if (Input.GetButtonDown ("Bunny")||Input.GetAxis("DPadXAxis")>0) totem = 1;
+		if (Input.GetButtonDown ("Mole")||Input.GetAxis("DPadXAxis")<0) totem = 2;
+		if (Input.GetButtonDown ("Mantis")||Input.GetAxis("DPadYAxis")<0) totem = 3;
 	if (Input.GetButtonDown ("TransformForward")) totem=(totem+1)%4;
 	if (Input.GetButtonDown ("TransformBackward")) totem=(totem+3)%4;
-
+		//"DPadXAxis">0
 	//Fixed jump
 	if (Input.GetButtonDown("Jump") && onGround){
 		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
