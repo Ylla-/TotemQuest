@@ -48,7 +48,6 @@ public class Behaviour_Goomba : MonoBehaviour {
 		//Check Wall Collision
 		if (Physics2D.OverlapCircle (transform.position + overlapSpherePosition, frontCollider.radius, theGround) == true && canRotate == true) {
 			StartCoroutine (Flip ());
-			Debug.Log ("collision !");
 		}
 
 

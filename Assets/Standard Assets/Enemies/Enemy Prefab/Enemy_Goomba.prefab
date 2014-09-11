@@ -33,7 +33,6 @@ GameObject:
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
   - 61: {fileID: 6100002}
-  - 61: {fileID: 6100004}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -105,7 +104,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.84203029, y: -7.15028858, z: -.100000001}
+  m_LocalPosition: {x: 18.0861855, y: 73.1286774, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -132,8 +131,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .250323534, y: .00298595428, z: 0}
+  m_LocalRotation: {x: 0, y: .00872773211, z: 0, w: .999961913}
+  m_LocalPosition: {x: .250324249, y: .00298309326, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400002}
@@ -198,17 +197,6 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .200000003, y: .200000003}
   m_Center: {x: -.25, y: 0}
---- !u!61 &6100004
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: .5, y: .100000001}
-  m_Center: {x: 0, y: .200000003}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,17 +220,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5abb3b9938ee240a31f1bc759e11b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.20000005
+  damage: 1
   goingLeft: 1
   frontCollider: {fileID: 5800000}
-  stompCollider: {fileID: 6100000}
+  stompCollider: {fileID: 0}
   theGround:
     serializedVersion: 2
     m_Bits: 10240
   playerLayer:
     serializedVersion: 2
     m_Bits: 8192
-  damage: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,6 +242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d237f784852efe54a97cbb3884292c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activationCollider: {fileID: 0}
+  isActivated: 0
+  monosToActivate: []
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
