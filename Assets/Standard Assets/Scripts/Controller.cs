@@ -147,7 +147,7 @@ public class Controller : MonoBehaviour {
 		//"DPadXAxis">0
 	//Fixed jump
 	if (Input.GetButtonDown("Jump") && onGround){
-		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+			Jump ();
 		}
 
 		//DASH
@@ -207,7 +207,9 @@ public class Controller : MonoBehaviour {
 		anim.SetInteger ("Totem", totem);
 		
 	}
-	
+	public void Jump(){ //Jump
+		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+	}
 	
 	void Flip(){
 		Vector3 theScale = transform.localScale;

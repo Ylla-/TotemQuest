@@ -13,21 +13,35 @@ public class Behaviour_Goomba : MonoBehaviour {
 	/// </summary>
 
 
-	public float speed = 1f;
+	public float speed = 1f; //Mouvement Speed
+	public int damage = 1; // Damage done to the player when hit
+
 	public bool goingLeft = true; //which direction is the enemy moving
-	public CircleCollider2D frontCollider;
-	public BoxCollider2D stompCollider;
+	public CircleCollider2D frontCollider; //Collider used to turn when hitting wall/object
+	public BoxCollider2D stompCollider; //Collider used to verify if player is jumping on this enemy
+
+	//Layers
 	public LayerMask theGround;
 	public LayerMask playerLayer;
-	public int damage = 1;
-
-	private bool canRotate = true;
-	private Vector3 overlapSpherePosition;
 
 
-	// Use this for initialization
+	private int stompDamage; //Damage the enemy takes when stomped
+	private bool canRotate = true; //Can the enemy rotate right now ?
+	private bool canStomp = true; //Can the enemy be stomped right now ?
+	private Vector3 overlapSpherePosition; 
+	private Controller playerController;
+	private Health hp;
+
+
+
+	void Awake() {
+		hp = gameObject.GetComponent<Health> ();
+		stompDamage = hp.maxHealth;
+	}
+
 	void Start () {;
 		updateDirection ();
+		CreateStompCollider ();
 	}
 
 	void FixedUpdate() {
@@ -36,8 +50,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 			StartCoroutine (Flip ());
 			Debug.Log ("collision !");
 		}
-		//Check Stomp Collision
-		//TODO : If collision of player's feet with enemy's head, Kill enemy
+
 
 		//Move()
 		if(goingLeft == true) {
@@ -47,12 +60,31 @@ public class Behaviour_Goomba : MonoBehaviour {
 		}
 
 	}
-
-	void  OnTriggerEnter2D(Collider2D other) {
+	void  OnTriggerEnter2D(Collider2D other) { //Damage Player when touching him
 		if(other.gameObject.layer == 13) { //If it hits the player
-			Controller playerController = other.gameObject.GetComponent<Controller>();
+			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 		}
+	}
+	void  OnCollisionEnter2D(Collision2D coll) { //Check if player is stomping the enemy
+		if(coll.collider.gameObject.layer == 13 && canStomp == true) { //If it hits the player
+			foreach (ContactPoint2D contact in coll.contacts) {
+				if( stompCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) {
+					StartCoroutine (stompTimer()); //Start timer for next stomp
+					Debug.Log ("StompCollider hit !");
+					if(playerController == null) playerController = coll.collider.gameObject.GetComponent<Controller>(); //Get controller and Jump
+					playerController.Jump();
+					hp.AdjustCurrentHealth(-stompDamage);
+				}
+			}
+		}
+	}
+
+	void CreateStompCollider(){
+		stompCollider = gameObject.AddComponent<BoxCollider2D> ();
+		stompCollider.isTrigger = false;
+		stompCollider.size = new Vector2 (0.45f, 0.1f);
+		stompCollider.center = new Vector2 (0, 0.25f);
 	}
 
 	void updateDirection(){
@@ -73,6 +105,12 @@ public class Behaviour_Goomba : MonoBehaviour {
 		canRotate = false;
 		yield return new WaitForSeconds (0.5f);
 		canRotate = true;
+	}
+
+	IEnumerator stompTimer() {
+		canStomp = false;
+		yield return new WaitForSeconds(0.5f);
+		canStomp = true;
 	}
 
 }

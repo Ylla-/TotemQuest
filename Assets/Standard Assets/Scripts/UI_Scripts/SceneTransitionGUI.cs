@@ -14,7 +14,8 @@ public class SceneTransitionGUI : MonoBehaviour {
 	void Awake() {
 		if(isCreated == false) { //If GUI already exists, destroy this instance.
 			isCreated = true; 
-			GameObject.DontDestroyOnLoad(gameObject);
+			transform.parent = null; //No parents so it doesnt get deleted on switch scene.
+			GameObject.DontDestroyOnLoad(this.gameObject);
 			gameObject.AddComponent("Pause");
 			gameObject.tag = "TransitionGUI";
 		} else {
