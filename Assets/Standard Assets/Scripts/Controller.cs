@@ -26,7 +26,7 @@ public class Controller : MonoBehaviour {
 	//float jumpForce = 50f;
 	//for fixed jump
 	public float soloJumpForce = 440;
-
+	public bool jumpAllowed = true;
 
 	//for animation
 	public bool facingRight = true;
@@ -208,7 +208,17 @@ public class Controller : MonoBehaviour {
 		
 	}
 	public void Jump(){ //Jump
-		rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+		Debug.Log ("jump called, allowed :" + jumpAllowed);
+		if(jumpAllowed == true) {
+			StartCoroutine(JumpTimer ());
+			rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+		}
+	}
+
+	public void Knockback(Vector2 hitDirection) {
+		//TODO : This function is called when the player is hit to give a knockback to the player.
+		// The vector2 hitDirection is the normalized vector of the direction from the ennemy to the player. (direction player should be knocked in)  
+
 	}
 	
 	void Flip(){
@@ -369,6 +379,11 @@ public class Controller : MonoBehaviour {
 		isInvincible = true;
 		yield return new WaitForSeconds (invincibilityTime);
 		isInvincible = false;
+	}
+	IEnumerator JumpTimer() { //makes sure the Jump dont get called multiple times (ex: stomping on two enemies at once would trigger jump twice).
+		jumpAllowed = false;
+		yield return new WaitForSeconds(0.1f);
+		jumpAllowed = true;
 	}
 
 
