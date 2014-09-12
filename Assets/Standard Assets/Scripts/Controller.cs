@@ -5,9 +5,9 @@ public class Controller : MonoBehaviour {
 	public int totem; // 0 = normal, 1 = rabbit, 2 = mole, 3 = mantis
 
 	// in order: maxSpeed, soloJumpForce, maxHealth
-	public float[] rabbitStats = {5f,440f,8f};
-	public float[] moleStats   = {3f,400f,15f};
-	public float[] mantisStats = {6f,440f,8f};
+	public float[] rabbitStats = {6.5f,460f,8f};
+	public float[] moleStats   = {3f,440f,15f};
+	public float[] mantisStats = {5f,440f,8f};
 	public float[] normalStats = {5f,440f,10f};
 	bool canDash, canGlide, canShield, canSlowTime, canFloat;
 
