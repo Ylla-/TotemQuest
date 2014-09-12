@@ -10541,6 +10541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisTransform: {fileID: 0}
   interval: 4
+  delay: 0
   limitX1: .5
   limitX2: 4
   limitY1: .75
@@ -19819,6 +19820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisTransform: {fileID: 0}
   interval: 4
+  delay: 0
   limitX1: -3
   limitX2: -3
   limitY1: .25
@@ -49789,6 +49791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisTransform: {fileID: 0}
   interval: 4
+  delay: 0
   limitX1: -2
   limitX2: 5
   limitY1: 5
@@ -72176,11 +72179,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5800002, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_Center.y
-      value: -.419999987
+      value: -.370000005
       objectReference: {fileID: 0}
     - target: {fileID: 5800000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_Center.y
-      value: -.419999987
+      value: -.370000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800002, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
@@ -87329,7 +87340,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Radius: .0199999996
-  m_Center: {x: -.0500000007, y: -.419999987}
+  m_Center: {x: -.0500000007, y: -.370000005}
 --- !u!50 &1864323938
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -87424,7 +87435,7 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Radius: .0199999996
-  m_Center: {x: .0500000007, y: -.419999987}
+  m_Center: {x: .0500000007, y: -.370000005}
 --- !u!114 &1864323944
 MonoBehaviour:
   m_ObjectHideFlags: 0
