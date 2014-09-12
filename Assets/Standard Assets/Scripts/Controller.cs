@@ -56,7 +56,7 @@ public class Controller : MonoBehaviour {
 	// ground check
 	public bool onGround = false;
 	public Transform groundCheckL, groundCheckR;
-	float groundRadius = 0.1f;
+	float groundRadius = 0.01f;
 	public LayerMask theGround;
 
 	//for invincibility frame
@@ -211,7 +211,6 @@ public class Controller : MonoBehaviour {
 		
 	}
 	public void Jump(){ //Jump
-		Debug.Log ("jump called, allowed :" + jumpAllowed);
 		if(jumpAllowed == true) {
 			StartCoroutine(JumpTimer ());
 			rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
