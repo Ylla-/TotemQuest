@@ -2,19 +2,24 @@
 using System.Collections;
 
 public class MovingPlatform : MonoBehaviour {
-	Transform thisTransform;
+	public Transform thisTransform;
 	Rigidbody2D thisRigidbody2D;
 	public float interval = 1f;
 	public float limitX1, limitX2, limitY1, limitY2;
-	public float distanceX, speedX;
+	float distanceX, speedX, speedY, distanceY;
 	public bool moving, left;
+
 	
 	
 	void Start () {
 		thisTransform = GetComponent<Transform>();
 		thisRigidbody2D = GetComponent<Rigidbody2D> ();
+
+
 		distanceX = Mathf.Abs (limitX2 - limitX1);
 		speedX = distanceX / interval;
+		distanceY = Mathf.Abs (limitY2 - limitY1);
+		speedY = distanceY / interval;
 	}
 	
 	// Update is called once per frame
@@ -22,25 +27,33 @@ public class MovingPlatform : MonoBehaviour {
 				if ((Time.time / interval) == 0) {
 						moving = true;
 				}
-		
+
 		
 				if (moving) { 
 			
-						if (!left && (limitX2 >= rigidbody2D.position.x)) { //moving right
-								rigidbody2D.velocity = new Vector2 (speedX, rigidbody2D.velocity.y);
-						} else if (!left) {
-								rigidbody2D.velocity = new Vector2 (0, 0);
-								left = true;
+						if (!left) {
+								if (limitX2 >= rigidbody2D.position.x && limitY2 >= rigidbody2D.position.y) {
+										rigidbody2D.velocity = new Vector2 (speedX, rigidbody2D.velocity.y);
+										rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, +speedY);
+								} else if (!left) {
+										rigidbody2D.velocity = new Vector2 (0, 0);
+										left = true;
+								}
 						}
-			
-						if (left && (limitX1 <= rigidbody2D.position.x)) { //moving left
-								rigidbody2D.velocity = new Vector2 (-speedX, rigidbody2D.velocity.y);
-						} else if (left) {
-								rigidbody2D.velocity = new Vector2 (0, 0);
-								left = false;
+							
+						if (left) {
+							if (limitX1 <= rigidbody2D.position.x && limitY1 <= rigidbody2D.position.y) { 
+										rigidbody2D.velocity = new Vector2 (-speedX, rigidbody2D.velocity.y);
+										rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -speedY);
+								} else if (left) {
+										rigidbody2D.velocity = new Vector2 (0, 0);
+										left = false;
+								}
 						}
-			
+
+						
 				}
+
 		}
 
 
