@@ -83,6 +83,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 531733}
   - 212: {fileID: 531734}
+  - 61: {fileID: 531736}
+  - 114: {fileID: 531735}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -124,6 +126,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &531735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &531736
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531732}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1808684
 Prefab:
   m_ObjectHideFlags: 0
@@ -335,7 +361,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100002, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 7451004}
@@ -352,7 +378,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400002, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 7451003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -365,7 +391,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 7451003}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -378,7 +404,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21200000, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 7451003}
   m_Enabled: 1
   m_CastShadows: 0
@@ -2176,6 +2202,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 53594808}
   - 212: {fileID: 53594809}
+  - 61: {fileID: 53594811}
+  - 114: {fileID: 53594810}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -2217,6 +2245,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &53594810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53594807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &53594811
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53594807}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &54459758
 GameObject:
   m_ObjectHideFlags: 0
@@ -4077,6 +4129,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 97284923}
   - 212: {fileID: 97284924}
+  - 61: {fileID: 97284926}
+  - 114: {fileID: 97284925}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -4118,6 +4172,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &97284925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97284922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &97284926
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97284922}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &97591425
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,6 +4360,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 99823760}
   - 212: {fileID: 99823761}
+  - 61: {fileID: 99823763}
+  - 114: {fileID: 99823762}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -4323,6 +4403,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &99823762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 99823759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &99823763
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 99823759}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &99827553
 Prefab:
   m_ObjectHideFlags: 0
@@ -4470,6 +4574,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 102479377}
   - 212: {fileID: 102479378}
+  - 61: {fileID: 102479380}
+  - 114: {fileID: 102479379}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -4511,6 +4617,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &102479379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 102479376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &102479380
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 102479376}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &105875422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4750,6 +4880,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 111918058}
   - 212: {fileID: 111918059}
+  - 61: {fileID: 111918061}
+  - 114: {fileID: 111918060}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -4791,6 +4923,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &111918060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111918057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &111918061
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111918057}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &114116488
 Prefab:
   m_ObjectHideFlags: 0
@@ -7252,7 +7408,6 @@ Transform:
   - {fileID: 531733}
   - {fileID: 1131402994}
   - {fileID: 97284923}
-  - {fileID: 1922484424}
   - {fileID: 1241596513}
   - {fileID: 1499531413}
   - {fileID: 1259084293}
@@ -8385,54 +8540,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b6143ac935e4cc4288af0d84eb9d322, type: 2}
   m_RootGameObject: {fileID: 1281228187}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
---- !u!1001 &178937952
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1814348214}
-    m_Modifications:
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 20.4777451
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 74.9943466
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -.100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-      propertyPath: activationCollider
-      value: 
-      objectReference: {fileID: 752670006}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_RootGameObject: {fileID: 589673086}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &179582552
@@ -10125,6 +10232,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 214364487}
   - 212: {fileID: 214364488}
+  - 61: {fileID: 214364490}
+  - 114: {fileID: 214364489}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -10166,6 +10275,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &214364489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 214364486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &214364490
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 214364486}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &214569541
 Prefab:
   m_ObjectHideFlags: 0
@@ -10543,6 +10676,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 227143309}
   - 212: {fileID: 227143310}
+  - 61: {fileID: 227143312}
+  - 114: {fileID: 227143311}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -10584,6 +10719,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &227143311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 227143308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &227143312
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 227143308}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &227612627
 GameObject:
   m_ObjectHideFlags: 0
@@ -11205,6 +11364,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 243838683}
   - 212: {fileID: 243838684}
+  - 61: {fileID: 243838686}
+  - 114: {fileID: 243838685}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -11246,6 +11407,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &243838685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243838682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &243838686
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 243838682}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &246312096
 GameObject:
   m_ObjectHideFlags: 0
@@ -11437,6 +11622,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 249652215}
   - 212: {fileID: 249652216}
+  - 61: {fileID: 249652218}
+  - 114: {fileID: 249652217}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -11478,6 +11665,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &249652217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 249652214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &249652218
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 249652214}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &255512187
 Prefab:
   m_ObjectHideFlags: 0
@@ -11886,6 +12097,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 263478735}
   - 212: {fileID: 263478736}
+  - 61: {fileID: 263478738}
+  - 114: {fileID: 263478737}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -11927,6 +12140,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &263478737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263478734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &263478738
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 263478734}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &263745108
 Prefab:
   m_ObjectHideFlags: 0
@@ -13147,6 +13384,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 296754267}
   - 212: {fileID: 296754268}
+  - 61: {fileID: 296754270}
+  - 114: {fileID: 296754269}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -13188,6 +13427,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &296754269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296754266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &296754270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 296754266}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &297377902
 GameObject:
   m_ObjectHideFlags: 0
@@ -14341,6 +14604,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 318372416}
   - 212: {fileID: 318372417}
+  - 61: {fileID: 318372419}
+  - 114: {fileID: 318372418}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -14382,6 +14647,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &318372418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318372415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &318372419
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318372415}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &321301467
 Prefab:
   m_ObjectHideFlags: 0
@@ -15711,6 +16000,58 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300042, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &348084702
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1049837827}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.72592449
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -14.1994362
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .100097656
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_Name
+      value: Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+  m_RootGameObject: {fileID: 1922484423}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &348132874
 GameObject:
   m_ObjectHideFlags: 0
@@ -16646,6 +16987,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 362634456}
   - 212: {fileID: 362634457}
+  - 61: {fileID: 362634459}
+  - 114: {fileID: 362634458}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -16664,7 +17007,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 76
+  m_RootOrder: 75
 --- !u!212 &362634457
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16687,6 +17030,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &362634458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362634455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &362634459
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 362634455}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &365104447
 GameObject:
   m_ObjectHideFlags: 0
@@ -18592,6 +18959,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 391653998}
   - 212: {fileID: 391653999}
+  - 61: {fileID: 391654001}
+  - 114: {fileID: 391654000}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -18633,6 +19002,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &391654000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391653997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &391654001
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391653997}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &391756978
 GameObject:
   m_ObjectHideFlags: 0
@@ -18706,6 +19099,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 392116072}
   - 212: {fileID: 392116073}
+  - 61: {fileID: 392116075}
+  - 114: {fileID: 392116074}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -18747,6 +19142,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &392116074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 392116071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &392116075
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 392116071}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &392479960
 GameObject:
   m_ObjectHideFlags: 0
@@ -19985,6 +20404,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 427222978}
   - 212: {fileID: 427222979}
+  - 61: {fileID: 427222981}
+  - 114: {fileID: 427222980}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -20026,6 +20447,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &427222980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427222977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &427222981
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 427222977}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &427384118
 GameObject:
   m_ObjectHideFlags: 0
@@ -21205,6 +21650,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 459606368}
   - 212: {fileID: 459606369}
+  - 61: {fileID: 459606371}
+  - 114: {fileID: 459606370}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -21246,6 +21693,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &459606370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 459606367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &459606371
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 459606367}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &459848639
 Prefab:
   m_ObjectHideFlags: 0
@@ -22384,6 +22855,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 485819910}
   - 212: {fileID: 485819911}
+  - 61: {fileID: 485819913}
+  - 114: {fileID: 485819912}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -22425,6 +22898,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &485819912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485819909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &485819913
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 485819909}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &488035439
 GameObject:
   m_ObjectHideFlags: 0
@@ -24009,6 +24506,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 532521776}
   - 212: {fileID: 532521777}
+  - 61: {fileID: 532521779}
+  - 114: {fileID: 532521778}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -24050,6 +24549,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &532521778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532521775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &532521779
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 532521775}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &533749386
 GameObject:
   m_ObjectHideFlags: 0
@@ -25486,54 +26009,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: 329ed4b3b987e014291dce1a09f33fa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!1001 &557175539
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1814348214}
-    m_Modifications:
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 23.087986
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 72.7070465
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -.100000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-      propertyPath: activationCollider
-      value: 
-      objectReference: {fileID: 61896562}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_RootGameObject: {fileID: 1362838117}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &558858992
 GameObject:
   m_ObjectHideFlags: 0
@@ -25684,6 +26159,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 572545009}
   - 212: {fileID: 572545010}
+  - 61: {fileID: 572545012}
+  - 114: {fileID: 572545011}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -25725,6 +26202,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &572545011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 572545008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &572545012
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 572545008}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &573307205
 Prefab:
   m_ObjectHideFlags: 0
@@ -26527,7 +27028,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 589673087}
@@ -26551,7 +27052,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 20.4777451, y: 74.9943466, z: -.100000001}
@@ -26568,7 +27069,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -26580,7 +27081,7 @@ CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 5800000, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -26592,7 +27093,7 @@ Rigidbody2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 5000000, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Mass: 1
   m_LinearDrag: 0
@@ -26608,7 +27109,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100004, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -26620,7 +27121,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400006, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -26644,7 +27145,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -26659,7 +27160,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -26678,7 +27179,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21200002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_CastShadows: 0
@@ -26701,7 +27202,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100000, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
     type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 589673086}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -26919,6 +27420,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 591625018}
   - 212: {fileID: 591625019}
+  - 61: {fileID: 591625021}
+  - 114: {fileID: 591625020}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -26960,6 +27463,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &591625020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591625017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &591625021
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 591625017}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &593454212
 GameObject:
   m_ObjectHideFlags: 0
@@ -27980,6 +28507,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 615297126}
   - 212: {fileID: 615297127}
+  - 61: {fileID: 615297129}
+  - 114: {fileID: 615297128}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -27998,7 +28527,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 79
+  m_RootOrder: 78
 --- !u!212 &615297127
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28021,6 +28550,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &615297128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 615297125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &615297129
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 615297125}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &617555547
 Prefab:
   m_ObjectHideFlags: 0
@@ -32800,6 +33353,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 726872511}
   - 212: {fileID: 726872512}
+  - 61: {fileID: 726872514}
+  - 114: {fileID: 726872513}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -32841,6 +33396,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &726872513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726872510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &726872514
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 726872510}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &728431494
 GameObject:
   m_ObjectHideFlags: 0
@@ -33382,6 +33961,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 748072785}
   - 212: {fileID: 748072786}
+  - 61: {fileID: 748072788}
+  - 114: {fileID: 748072787}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -33400,7 +33981,7 @@ Transform:
   m_LocalScale: {x: 3, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 75
+  m_RootOrder: 74
 --- !u!212 &748072786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -33423,6 +34004,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &748072787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748072784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &748072788
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 748072784}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .500000119, y: .500000119}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &750609470
 Prefab:
   m_ObjectHideFlags: 0
@@ -34021,6 +34626,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 760595463}
   - 212: {fileID: 760595464}
+  - 61: {fileID: 760595466}
+  - 114: {fileID: 760595465}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -34062,6 +34669,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &760595465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 760595462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &760595466
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 760595462}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &767609334
 GameObject:
   m_ObjectHideFlags: 0
@@ -34732,7 +35363,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100006, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 785523977}
@@ -34747,7 +35378,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400006, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 785523976}
   m_LocalRotation: {x: 0, y: .00872773211, z: 0, w: .999961913}
   m_LocalPosition: {x: .250324249, y: .00298309326, z: 0}
@@ -35676,6 +36307,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 801670447}
   - 212: {fileID: 801670448}
+  - 61: {fileID: 801670450}
+  - 114: {fileID: 801670449}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -35694,7 +36327,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 85
+  m_RootOrder: 84
 --- !u!212 &801670448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35717,6 +36350,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &801670449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801670446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &801670450
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801670446}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &802484738
 GameObject:
   m_ObjectHideFlags: 0
@@ -36759,6 +37416,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 818310476}
   - 212: {fileID: 818310475}
+  - 61: {fileID: 818310478}
+  - 114: {fileID: 818310477}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -36800,6 +37459,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 166226152}
   m_RootOrder: 28
+--- !u!114 &818310477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818310474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &818310478
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818310474}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &820066943
 GameObject:
   m_ObjectHideFlags: 0
@@ -38437,6 +39120,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 848224850}
   - 212: {fileID: 848224851}
+  - 61: {fileID: 848224853}
+  - 114: {fileID: 848224852}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -38478,6 +39163,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &848224852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848224849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &848224853
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848224849}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &850949943
 Prefab:
   m_ObjectHideFlags: 0
@@ -40940,6 +41649,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 898644375}
   - 212: {fileID: 898644376}
+  - 61: {fileID: 898644378}
+  - 114: {fileID: 898644377}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -40981,6 +41692,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &898644377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898644374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &898644378
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 898644374}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &901095419
 GameObject:
   m_ObjectHideFlags: 0
@@ -41564,6 +42299,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 918341079}
   - 212: {fileID: 918341080}
+  - 61: {fileID: 918341082}
+  - 114: {fileID: 918341081}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -41605,6 +42342,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &918341081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918341078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &918341082
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918341078}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &925966548
 Prefab:
   m_ObjectHideFlags: 0
@@ -41742,7 +42503,7 @@ SpriteRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100008, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 932433507}
@@ -41757,7 +42518,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400008, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 932433506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.257022142, y: .00298547745, z: 0}
@@ -42577,6 +43338,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 953930491}
   - 212: {fileID: 953930492}
+  - 61: {fileID: 953930494}
+  - 114: {fileID: 953930493}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -42618,6 +43381,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &953930493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 953930490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &953930494
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 953930490}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &955090365
 Prefab:
   m_ObjectHideFlags: 0
@@ -43954,6 +44741,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 985170862}
   - 212: {fileID: 985170863}
+  - 61: {fileID: 985170865}
+  - 114: {fileID: 985170864}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -43995,6 +44784,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &985170864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985170861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &985170865
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 985170861}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &986443078
 GameObject:
   m_ObjectHideFlags: 0
@@ -44137,6 +44950,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 990377288}
   - 212: {fileID: 990377289}
+  - 61: {fileID: 990377291}
+  - 114: {fileID: 990377290}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -44178,6 +44993,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &990377290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 990377287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &990377291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 990377287}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &992860637
 GameObject:
   m_ObjectHideFlags: 0
@@ -44187,6 +45026,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 992860638}
   - 212: {fileID: 992860639}
+  - 61: {fileID: 992860641}
+  - 114: {fileID: 992860640}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -44228,6 +45069,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &992860640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 992860637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &992860641
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 992860637}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &992964199
 GameObject:
   m_ObjectHideFlags: 0
@@ -44903,6 +45768,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 999092306}
   - 212: {fileID: 999092307}
+  - 61: {fileID: 999092309}
+  - 114: {fileID: 999092308}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -44944,6 +45811,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &999092308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 999092305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &999092309
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 999092305}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &999548667
 GameObject:
   m_ObjectHideFlags: 0
@@ -46685,6 +47576,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1028750889}
   - 212: {fileID: 1028750890}
+  - 61: {fileID: 1028750892}
+  - 114: {fileID: 1028750891}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -46726,6 +47619,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1028750891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028750888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1028750892
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028750888}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1029391772
 GameObject:
   m_ObjectHideFlags: 0
@@ -47087,6 +48004,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1041724773}
   - 212: {fileID: 1041724774}
+  - 61: {fileID: 1041724776}
+  - 114: {fileID: 1041724775}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -47128,6 +48047,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1041724775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041724772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1041724776
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1041724772}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1041855129
 GameObject:
   m_ObjectHideFlags: 0
@@ -47362,6 +48305,34 @@ Transform:
   - {fileID: 96241736}
   m_Father: {fileID: 1507538649}
   m_RootOrder: 176
+--- !u!1 &1049837826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1049837827}
+  m_Layer: 0
+  m_Name: Spikes Enemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1049837827
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1049837826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1922484424}
+  m_Father: {fileID: 1690188122}
+  m_RootOrder: 4
 --- !u!1 &1055446165
 GameObject:
   m_ObjectHideFlags: 0
@@ -49461,6 +50432,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1095355628}
   - 212: {fileID: 1095355629}
+  - 61: {fileID: 1095355631}
+  - 114: {fileID: 1095355630}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -49479,7 +50452,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 84
+  m_RootOrder: 83
 --- !u!212 &1095355629
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49502,6 +50475,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1095355630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1095355627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1095355631
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1095355627}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1096351916
 GameObject:
   m_ObjectHideFlags: 0
@@ -51177,6 +52174,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1131402994}
   - 212: {fileID: 1131402995}
+  - 61: {fileID: 1131402997}
+  - 114: {fileID: 1131402996}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -51218,6 +52217,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1131402996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131402993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1131402997
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1131402993}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1132625150
 GameObject:
   m_ObjectHideFlags: 0
@@ -52264,6 +53287,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1148327325}
   - 212: {fileID: 1148327326}
+  - 61: {fileID: 1148327328}
+  - 114: {fileID: 1148327327}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -52305,6 +53330,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1148327327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148327324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1148327328
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1148327324}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1150270331
 GameObject:
   m_ObjectHideFlags: 0
@@ -52965,6 +54014,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1162438955}
   - 212: {fileID: 1162438956}
+  - 61: {fileID: 1162438958}
+  - 114: {fileID: 1162438957}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -52983,7 +54034,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 88
+  m_RootOrder: 87
 --- !u!212 &1162438956
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53006,6 +54057,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1162438957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162438954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1162438958
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162438954}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1163992071
 GameObject:
   m_ObjectHideFlags: 0
@@ -53408,7 +54483,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169491237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.29788494, y: -63.2147751, z: .93847698}
+  m_LocalPosition: {x: 4.38525772, y: -66.7131805, z: .93847698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 656379631}
@@ -53568,6 +54643,54 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300014, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &1173135753
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1814348214}
+    m_Modifications:
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 20.4777451
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 74.9943466
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: activationCollider
+      value: 
+      objectReference: {fileID: 752670006}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+  m_RootGameObject: {fileID: 589673086}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1173266395
 GameObject:
   m_ObjectHideFlags: 0
@@ -54104,6 +55227,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1185044241}
   - 212: {fileID: 1185044242}
+  - 61: {fileID: 1185044244}
+  - 114: {fileID: 1185044243}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -54145,6 +55270,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1185044243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185044240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1185044244
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185044240}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1187537536
 GameObject:
   m_ObjectHideFlags: 0
@@ -54678,6 +55827,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1190412887}
   - 212: {fileID: 1190412888}
+  - 61: {fileID: 1190412890}
+  - 114: {fileID: 1190412889}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -54719,6 +55870,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1190412889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190412886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1190412890
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1190412886}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1190847705
 GameObject:
   m_ObjectHideFlags: 0
@@ -57016,6 +58191,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1241596513}
   - 212: {fileID: 1241596514}
+  - 61: {fileID: 1241596516}
+  - 114: {fileID: 1241596515}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -57034,7 +58211,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 72
+  m_RootOrder: 71
 --- !u!212 &1241596514
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -57057,6 +58234,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1241596515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1241596512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1241596516
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1241596512}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1244197109
 GameObject:
   m_ObjectHideFlags: 0
@@ -57714,6 +58915,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1259084293}
   - 212: {fileID: 1259084292}
+  - 61: {fileID: 1259084295}
+  - 114: {fileID: 1259084294}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -57754,7 +58957,31 @@ Transform:
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 74
+  m_RootOrder: 73
+--- !u!114 &1259084294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1259084291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1259084295
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1259084291}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1259293599
 GameObject:
   m_ObjectHideFlags: 0
@@ -59682,6 +60909,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1313411659}
   - 212: {fileID: 1313411660}
+  - 61: {fileID: 1313411662}
+  - 114: {fileID: 1313411661}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -59723,6 +60952,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1313411661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313411658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1313411662
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313411658}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1315077484
 Prefab:
   m_ObjectHideFlags: 0
@@ -61601,7 +62854,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100006, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1343952969}
@@ -61616,7 +62869,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400006, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1343952968}
   m_LocalRotation: {x: 0, y: .00872773211, z: 0, w: .999961913}
   m_LocalPosition: {x: .250324249, y: .00298309326, z: 0}
@@ -62053,6 +63306,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1359597098}
   - 212: {fileID: 1359597099}
+  - 61: {fileID: 1359597101}
+  - 114: {fileID: 1359597100}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -62094,6 +63349,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1359597100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1359597097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1359597101
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1359597097}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1359984477
 GameObject:
   m_ObjectHideFlags: 0
@@ -62212,7 +63491,7 @@ SpriteRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1362838118}
@@ -62235,7 +63514,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 23.087986, y: 72.7070465, z: -.100000001}
@@ -62252,7 +63531,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400002, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -62275,7 +63554,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400004, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -62290,7 +63569,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400006, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -62309,7 +63588,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21200002, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Enabled: 1
   m_CastShadows: 0
@@ -62332,7 +63611,7 @@ Rigidbody2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 5000000, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Mass: 1
   m_LinearDrag: 0
@@ -62348,7 +63627,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100000, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -62360,7 +63639,7 @@ CircleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 5800000, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -62372,7 +63651,7 @@ BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 6100002, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1362838117}
   m_Enabled: 1
   m_Material: {fileID: 0}
@@ -63667,6 +64946,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1388686524}
   - 212: {fileID: 1388686525}
+  - 61: {fileID: 1388686527}
+  - 114: {fileID: 1388686526}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -63708,6 +64989,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1388686526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388686523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1388686527
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1388686523}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1390158432
 GameObject:
   m_ObjectHideFlags: 0
@@ -63850,6 +65155,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1393841066}
   - 212: {fileID: 1393841067}
+  - 61: {fileID: 1393841069}
+  - 114: {fileID: 1393841068}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -63891,6 +65198,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1393841068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393841065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1393841069
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1393841065}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1393848728
 Prefab:
   m_ObjectHideFlags: 0
@@ -64309,6 +65640,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1398733642}
   - 212: {fileID: 1398733643}
+  - 61: {fileID: 1398733645}
+  - 114: {fileID: 1398733644}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -64350,6 +65683,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1398733644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1398733641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1398733645
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1398733641}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1399166587
 GameObject:
   m_ObjectHideFlags: 0
@@ -65064,6 +66421,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1416880549}
   - 212: {fileID: 1416880550}
+  - 61: {fileID: 1416880552}
+  - 114: {fileID: 1416880551}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -65082,7 +66441,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 86
+  m_RootOrder: 85
 --- !u!212 &1416880550
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65105,6 +66464,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1416880551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1416880548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1416880552
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1416880548}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1417242652
 GameObject:
   m_ObjectHideFlags: 0
@@ -65114,6 +66497,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1417242653}
   - 212: {fileID: 1417242654}
+  - 61: {fileID: 1417242656}
+  - 114: {fileID: 1417242655}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -65155,6 +66540,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1417242655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417242652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1417242656
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1417242652}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1421116780
 Prefab:
   m_ObjectHideFlags: 0
@@ -65469,6 +66878,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1428426255}
   - 212: {fileID: 1428426256}
+  - 61: {fileID: 1428426258}
+  - 114: {fileID: 1428426257}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -65510,6 +66921,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1428426257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428426254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1428426258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428426254}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1428972864
 GameObject:
   m_ObjectHideFlags: 0
@@ -67446,6 +68881,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1483833501}
   - 212: {fileID: 1483833502}
+  - 61: {fileID: 1483833504}
+  - 114: {fileID: 1483833503}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -67464,7 +68901,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 81
+  m_RootOrder: 80
 --- !u!212 &1483833502
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -67487,6 +68924,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1483833503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483833500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1483833504
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1483833500}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1485322911
 GameObject:
   m_ObjectHideFlags: 0
@@ -68269,6 +69730,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1499531413}
   - 212: {fileID: 1499531414}
+  - 61: {fileID: 1499531416}
+  - 114: {fileID: 1499531415}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -68287,7 +69750,7 @@ Transform:
   m_LocalScale: {x: 12, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 73
+  m_RootOrder: 72
 --- !u!212 &1499531414
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68310,6 +69773,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1499531415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499531412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1499531416
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499531412}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .500000119, y: .500000119}
+  m_Center: {x: 1.1920929e-07, y: 0}
 --- !u!1 &1499995656
 GameObject:
   m_ObjectHideFlags: 0
@@ -68559,6 +70046,10 @@ Prefab:
       propertyPath: activationCollider
       value: 
       objectReference: {fileID: 111313429}
+    - target: {fileID: 5800000, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
   m_RootGameObject: {fileID: 2080707527}
@@ -69004,6 +70495,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1510114403}
   - 212: {fileID: 1510114404}
+  - 61: {fileID: 1510114406}
+  - 114: {fileID: 1510114405}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -69045,6 +70538,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1510114405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510114402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1510114406
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1510114402}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1510345496
 GameObject:
   m_ObjectHideFlags: 0
@@ -70016,6 +71533,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1531547563}
   - 212: {fileID: 1531547564}
+  - 61: {fileID: 1531547566}
+  - 114: {fileID: 1531547565}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -70057,6 +71576,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1531547565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531547562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1531547566
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1531547562}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1532852893
 GameObject:
   m_ObjectHideFlags: 0
@@ -70622,6 +72165,22 @@ Prefab:
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800002, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_Radius
+      value: .0199999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_Radius
+      value: .0199999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800002, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_Center.y
+      value: -.419999987
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_Center.y
+      value: -.419999987
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
@@ -72258,6 +73817,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1571475993}
   - 212: {fileID: 1571475994}
+  - 61: {fileID: 1571475996}
+  - 114: {fileID: 1571475995}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -72299,6 +73860,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1571475995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571475992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1571475996
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1571475992}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1571930491
 Prefab:
   m_ObjectHideFlags: 0
@@ -73027,6 +74612,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1589110760}
   - 212: {fileID: 1589110761}
+  - 61: {fileID: 1589110763}
+  - 114: {fileID: 1589110762}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -73068,6 +74655,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1589110762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1589110759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1589110763
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1589110759}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1590530598
 Prefab:
   m_ObjectHideFlags: 0
@@ -73917,6 +75528,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1611131715}
   - 212: {fileID: 1611131716}
+  - 61: {fileID: 1611131718}
+  - 114: {fileID: 1611131717}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -73958,6 +75571,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1611131717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611131714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1611131718
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1611131714}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1611533150
 Prefab:
   m_ObjectHideFlags: 0
@@ -74558,6 +76195,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1619155363}
   - 212: {fileID: 1619155364}
+  - 61: {fileID: 1619155366}
+  - 114: {fileID: 1619155365}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -74599,6 +76238,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1619155365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619155362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1619155366
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1619155362}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1624672195
 GameObject:
   m_ObjectHideFlags: 0
@@ -74946,6 +76609,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1630730257}
   - 212: {fileID: 1630730258}
+  - 61: {fileID: 1630730260}
+  - 114: {fileID: 1630730259}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -74987,6 +76652,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1630730259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1630730256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1630730260
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1630730256}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1632687426
 GameObject:
   m_ObjectHideFlags: 0
@@ -75041,7 +76730,7 @@ SpriteRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1634639934}
@@ -75058,7 +76747,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1634639933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
@@ -75071,7 +76760,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1634639933}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -75084,7 +76773,7 @@ SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 21200000, guid: b3c9006995525a7439ae1720bd5158d7,
     type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1634639933}
   m_Enabled: 1
   m_CastShadows: 0
@@ -75465,6 +77154,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1642525014}
   - 212: {fileID: 1642525015}
+  - 61: {fileID: 1642525017}
+  - 114: {fileID: 1642525016}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -75506,6 +77197,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1642525016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642525013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1642525017
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1642525013}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1644072211
 Prefab:
   m_ObjectHideFlags: 0
@@ -75653,6 +77368,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1649154492}
   - 212: {fileID: 1649154493}
+  - 61: {fileID: 1649154495}
+  - 114: {fileID: 1649154494}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -75694,6 +77411,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1649154494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649154491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1649154495
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649154491}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1649187335
 GameObject:
   m_ObjectHideFlags: 0
@@ -76624,6 +78365,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1669657022}
   - 212: {fileID: 1669657023}
+  - 61: {fileID: 1669657025}
+  - 114: {fileID: 1669657024}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -76665,6 +78408,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1669657024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669657021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1669657025
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1669657021}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1670509246
 Prefab:
   m_ObjectHideFlags: 0
@@ -77211,7 +78978,7 @@ Renderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100004, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1682824743}
@@ -77226,7 +78993,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400004, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
-  m_PrefabInternal: {fileID: 557175539}
+  m_PrefabInternal: {fileID: 2089034929}
   m_GameObject: {fileID: 1682824742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.00334882736, y: .202685356, z: 0}
@@ -77618,6 +79385,7 @@ Transform:
   - {fileID: 1803137460}
   - {fileID: 419004260}
   - {fileID: 1965663097}
+  - {fileID: 1049837827}
   m_Father: {fileID: 1689635146}
   m_RootOrder: 0
 --- !u!1001 &1691947361
@@ -78115,6 +79883,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1704690730}
   - 212: {fileID: 1704690731}
+  - 61: {fileID: 1704690733}
+  - 114: {fileID: 1704690732}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -78156,6 +79926,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1704690732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704690729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1704690733
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704690729}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1704936524
 GameObject:
   m_ObjectHideFlags: 0
@@ -79240,6 +81034,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1731496661}
   - 212: {fileID: 1731496662}
+  - 61: {fileID: 1731496664}
+  - 114: {fileID: 1731496663}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -79281,6 +81077,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1731496663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731496660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1731496664
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1731496660}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1732285569
 GameObject:
   m_ObjectHideFlags: 0
@@ -81212,7 +83032,7 @@ SpriteRenderer:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100008, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1763360541}
@@ -81227,7 +83047,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400008, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 1763360540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.257022142, y: .00298547745, z: 0}
@@ -81491,7 +83311,7 @@ Prefab:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1773718411}
@@ -81506,7 +83326,7 @@ GameObject:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: a85cd6106c92a4f42a2f10f298c4fa2a, type: 2}
-  m_PrefabInternal: {fileID: 178937952}
+  m_PrefabInternal: {fileID: 1173135753}
   m_GameObject: {fileID: 1773718410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.00334882736, y: .202685356, z: 0}
@@ -81523,6 +83343,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1775972999}
   - 212: {fileID: 1775973000}
+  - 61: {fileID: 1775973002}
+  - 114: {fileID: 1775973001}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -81564,6 +83386,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1775973001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775972998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1775973002
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775972998}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1776665850
 GameObject:
   m_ObjectHideFlags: 0
@@ -82376,6 +84222,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1798758217}
   - 212: {fileID: 1798758218}
+  - 61: {fileID: 1798758220}
+  - 114: {fileID: 1798758219}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -82417,6 +84265,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1798758219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798758216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1798758220
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1798758216}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1799288273
 GameObject:
   m_ObjectHideFlags: 0
@@ -82975,6 +84847,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1804652481}
   - 212: {fileID: 1804652482}
+  - 61: {fileID: 1804652484}
+  - 114: {fileID: 1804652483}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -83016,6 +84890,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1804652483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804652480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1804652484
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804652480}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1806901020
 GameObject:
   m_ObjectHideFlags: 0
@@ -83394,6 +85292,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1819319337}
   - 212: {fileID: 1819319338}
+  - 61: {fileID: 1819319340}
+  - 114: {fileID: 1819319339}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -83435,6 +85335,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1819319339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819319336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1819319340
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1819319336}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1820174574
 Prefab:
   m_ObjectHideFlags: 0
@@ -84760,6 +86684,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1853248421}
   - 212: {fileID: 1853248422}
+  - 61: {fileID: 1853248424}
+  - 114: {fileID: 1853248423}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -84801,6 +86727,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1853248423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853248420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1853248424
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853248420}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1856279900
 Prefab:
   m_ObjectHideFlags: 0
@@ -85378,8 +87328,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .0900000036
-  m_Center: {x: -.0500000007, y: -.319999993}
+  m_Radius: .0199999996
+  m_Center: {x: -.0500000007, y: -.419999987}
 --- !u!50 &1864323938
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -85473,8 +87423,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .0900000036
-  m_Center: {x: .0500000007, y: -.319999993}
+  m_Radius: .0199999996
+  m_Center: {x: .0500000007, y: -.419999987}
 --- !u!114 &1864323944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87141,6 +89091,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1906265617}
   - 212: {fileID: 1906265618}
+  - 61: {fileID: 1906265620}
+  - 114: {fileID: 1906265619}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -87159,7 +89111,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 83
+  m_RootOrder: 82
 --- !u!212 &1906265618
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87182,6 +89134,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1906265619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906265616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1906265620
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906265616}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1908108875
 Prefab:
   m_ObjectHideFlags: 0
@@ -87311,6 +89287,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1909055837}
   - 212: {fileID: 1909055838}
+  - 61: {fileID: 1909055840}
+  - 114: {fileID: 1909055839}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -87352,6 +89330,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1909055839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909055836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1909055840
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909055836}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1909101548
 Prefab:
   m_ObjectHideFlags: 0
@@ -87874,6 +89876,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1919073324}
   - 212: {fileID: 1919073325}
+  - 61: {fileID: 1919073327}
+  - 114: {fileID: 1919073326}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -87892,7 +89896,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 87
+  m_RootOrder: 86
 --- !u!212 &1919073325
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -87915,6 +89919,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1919073326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919073323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1919073327
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919073323}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1919535496
 Prefab:
   m_ObjectHideFlags: 0
@@ -88441,14 +90469,16 @@ Prefab:
 --- !u!1 &1922484423
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+  m_PrefabInternal: {fileID: 348084702}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1922484424}
   - 212: {fileID: 1922484425}
-  m_Layer: 0
-  m_Name: Damaging Unmoving Obstacle
+  - 114: {fileID: 1922484426}
+  - 61: {fileID: 1922484427}
+  m_Layer: 14
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88457,20 +90487,21 @@ GameObject:
 --- !u!4 &1922484424
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400000, guid: 405a13253f441f24b91bd0bf916abdf8, type: 2}
+  m_PrefabInternal: {fileID: 348084702}
   m_GameObject: {fileID: 1922484423}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.20389271, y: -18.3900719, z: 0}
+  m_LocalPosition: {x: 6.72592449, y: -14.1994362, z: .100097656}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 166226152}
-  m_RootOrder: 71
+  m_Father: {fileID: 1049837827}
+  m_RootOrder: 0
 --- !u!212 &1922484425
 SpriteRenderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 21200000, guid: 405a13253f441f24b91bd0bf916abdf8,
+    type: 2}
+  m_PrefabInternal: {fileID: 348084702}
   m_GameObject: {fileID: 1922484423}
   m_Enabled: 1
   m_CastShadows: 0
@@ -88488,6 +90519,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1922484426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1922484423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1922484427
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1922484423}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1924529750
 Prefab:
   m_ObjectHideFlags: 0
@@ -88704,6 +90759,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1930879304}
   - 212: {fileID: 1930879305}
+  - 61: {fileID: 1930879307}
+  - 114: {fileID: 1930879306}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -88722,7 +90779,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 80
+  m_RootOrder: 79
 --- !u!212 &1930879305
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -88745,6 +90802,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1930879306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930879303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1930879307
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930879303}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1934982524
 GameObject:
   m_ObjectHideFlags: 0
@@ -89191,6 +91272,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1946922173}
   - 212: {fileID: 1946922174}
+  - 61: {fileID: 1946922176}
+  - 114: {fileID: 1946922175}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -89232,6 +91315,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1946922175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946922172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1946922176
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1946922172}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1947810863
 GameObject:
   m_ObjectHideFlags: 0
@@ -90322,6 +92429,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1967034731}
   - 212: {fileID: 1967034732}
+  - 61: {fileID: 1967034734}
+  - 114: {fileID: 1967034733}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -90363,6 +92472,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1967034733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1967034730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1967034734
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1967034730}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1967606419
 GameObject:
   m_ObjectHideFlags: 0
@@ -90569,6 +92702,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1979273355}
   - 212: {fileID: 1979273356}
+  - 61: {fileID: 1979273358}
+  - 114: {fileID: 1979273357}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -90610,6 +92745,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1979273357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1979273354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1979273358
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1979273354}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &1981142581
 GameObject:
   m_ObjectHideFlags: 0
@@ -90857,6 +93016,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1985984838}
   - 212: {fileID: 1985984839}
+  - 61: {fileID: 1985984841}
+  - 114: {fileID: 1985984840}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -90875,7 +93036,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 77
+  m_RootOrder: 76
 --- !u!212 &1985984839
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -90898,6 +93059,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &1985984840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1985984837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &1985984841
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1985984837}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &1986859033
 Prefab:
   m_ObjectHideFlags: 0
@@ -92911,6 +95096,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2027120376}
   - 212: {fileID: 2027120377}
+  - 61: {fileID: 2027120379}
+  - 114: {fileID: 2027120378}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -92952,6 +95139,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &2027120378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2027120375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &2027120379
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2027120375}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &2027464451
 Prefab:
   m_ObjectHideFlags: 0
@@ -93282,6 +95493,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2038303766}
   - 212: {fileID: 2038303767}
+  - 61: {fileID: 2038303769}
+  - 114: {fileID: 2038303768}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -93300,7 +95513,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 82
+  m_RootOrder: 81
 --- !u!212 &2038303767
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93323,6 +95536,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &2038303768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038303765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &2038303769
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038303765}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2039094614
 GameObject:
   m_ObjectHideFlags: 0
@@ -93662,6 +95899,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2045338015}
   - 212: {fileID: 2045338016}
+  - 61: {fileID: 2045338018}
+  - 114: {fileID: 2045338017}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -93703,6 +95942,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &2045338017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045338014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &2045338018
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2045338014}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2047326804
 GameObject:
   m_ObjectHideFlags: 0
@@ -94272,6 +96535,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2055255445}
   - 212: {fileID: 2055255446}
+  - 61: {fileID: 2055255448}
+  - 114: {fileID: 2055255447}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -94313,6 +96578,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &2055255447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055255444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &2055255448
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2055255444}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2057183562
 GameObject:
   m_ObjectHideFlags: 0
@@ -95149,6 +97438,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2072545412}
   - 212: {fileID: 2072545413}
+  - 61: {fileID: 2072545415}
+  - 114: {fileID: 2072545414}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -95190,6 +97481,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &2072545414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2072545411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &2072545415
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2072545411}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1001 &2073352388
 Prefab:
   m_ObjectHideFlags: 0
@@ -95515,7 +97830,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 2080707527}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Radius: .100000001
   m_Center: {x: .200000003, y: 0}
 --- !u!50 &2080707532
@@ -95822,6 +98137,54 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3b6143ac935e4cc4288af0d84eb9d322, type: 2}
   m_RootGameObject: {fileID: 1485330534}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &2089034929
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1814348214}
+    m_Modifications:
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 23.087986
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 72.7070465
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+      propertyPath: activationCollider
+      value: 
+      objectReference: {fileID: 61896562}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b3c9006995525a7439ae1720bd5158d7, type: 2}
+  m_RootGameObject: {fileID: 1362838117}
   m_IsPrefabParent: 0
   m_IsExploded: 1
 --- !u!1 &2089128329
@@ -96345,6 +98708,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2097765076}
   - 212: {fileID: 2097765077}
+  - 61: {fileID: 2097765079}
+  - 114: {fileID: 2097765078}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -96386,6 +98751,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &2097765078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2097765075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &2097765079
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2097765075}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2099870403
 GameObject:
   m_ObjectHideFlags: 0
@@ -97222,6 +99611,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2115459776}
   - 212: {fileID: 2115459777}
+  - 61: {fileID: 2115459779}
+  - 114: {fileID: 2115459778}
   m_Layer: 0
   m_Name: Damaging Unmoving Obstacle
   m_TagString: Untagged
@@ -97240,7 +99631,7 @@ Transform:
   m_LocalScale: {x: 1.20000005, y: 1.20000005, z: 1}
   m_Children: []
   m_Father: {fileID: 166226152}
-  m_RootOrder: 78
+  m_RootOrder: 77
 --- !u!212 &2115459777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -97263,6 +99654,30 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300060, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
   m_Color: {r: .595588207, g: 0, b: 0, a: 1}
+--- !u!114 &2115459778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115459775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f8d6a0f04dd6d4fa0f90579e94a4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 2
+  enemyDamage: 10
+--- !u!61 &2115459779
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2115459775}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .5}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2115775492
 GameObject:
   m_ObjectHideFlags: 0

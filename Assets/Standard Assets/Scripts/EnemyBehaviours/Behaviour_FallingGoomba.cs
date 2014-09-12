@@ -45,18 +45,13 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 	void Start () {;
 		updateDirection ();
 		CreateStompCollider ();
+		AdjustFrontCollider ();
 	}
 	
 	void FixedUpdate() {
 		if(isGrounded == true) { //dont do while still suspended in the wait
 
-			//Check Wall Collision
-			if (Physics2D.OverlapCircle (transform.position + overlapSpherePosition, frontCollider.radius, theGround) == true && canRotate == true) {
-				StartCoroutine (Flip ());
-			}
-			
-			
-			//Move()
+		//Move()
 			if(goingLeft == true) {
 				rigidbody2D.velocity = new Vector2(-speed,rigidbody2D.velocity.y);
 			} else {
@@ -67,29 +62,46 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 		}
 		
 	}
-	void  OnTriggerEnter2D(Collider2D other) { //Damage Player when touching him
+	void  OnTriggerEnter2D(Collider2D other) { 
+
+		//Damage Check 
 		if(other.gameObject.layer == 13) { //If it hits the player
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
 			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
 		} 
+
+		//Ground Check
 		if(other.gameObject.layer == 11) {
 			hasHitGround = true;
 		}
 	}
-	void  OnCollisionEnter2D(Collision2D coll) { //Check if player is stomping the enemy
+	void  OnCollisionEnter2D(Collision2D coll) { 
+		//Check if player is stomping the enemy
 		if(coll.collider.gameObject.layer == 13 && canStomp == true) { //If it hits the player
 			foreach (ContactPoint2D contact in coll.contacts) {
-				if( stompCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) {
+				if( stompCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) { //If it collided with the stomp collider
 					StartCoroutine (stompTimer()); //Start timer for next stomp
-					Debug.Log ("StompCollider hit !");
 					if(playerController == null) playerController = coll.collider.gameObject.GetComponent<Controller>(); //Get controller and Jump
 					playerController.Jump();
 					hp.AdjustCurrentHealth(-stompDamage);
 				}
 			}
 		}
+
+		//Direction Change check
+		if(canRotate == true && coll.collider.gameObject.layer == 11  || coll.collider.gameObject.layer == 13 || coll.collider.gameObject.layer == 14) { //If it hits wall/player/enemy
+			Debug.Log ("Collider hit !");
+			foreach (ContactPoint2D contact in coll.contacts) {
+				if( frontCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) { //If it collided with the front
+					StartCoroutine (Flip ());
+		
+				}
+			}
+		}
+
+
 	}
 
 
@@ -98,6 +110,15 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 		stompCollider.isTrigger = false;
 		stompCollider.size = new Vector2 (0.45f, 0.1f);
 		stompCollider.center = new Vector2 (0, 0.25f);
+	}
+
+	void AdjustFrontCollider(){
+		frontCollider.isTrigger = false;
+		//Creation of a trigger collider exactly like the front collider to register player hit and give damage.
+		CircleCollider2D newTrigger = gameObject.AddComponent<CircleCollider2D> ();
+		newTrigger.isTrigger = true;
+		newTrigger.center = frontCollider.center;
+		newTrigger.radius = frontCollider.radius;
 	}
 	
 	void updateDirection(){
@@ -119,12 +140,13 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 	}
 	
 	IEnumerator Flip(){ //Flip enemy position and mouvement
+		canRotate = false;
+		yield return new WaitForSeconds (0.05f); // Little wait before flipping so if it hit an ennemy, Both can register the hit.
+
 		goingLeft = !goingLeft;//change direction
 		updateDirection(); //Update direction
-		
-		//This flip can only happen every 0.5 seconds to avoid constant flipping.
-		canRotate = false;
-		yield return new WaitForSeconds (0.5f);
+
+		yield return new WaitForSeconds (0.5f); //This flip can only happen every 0.5 seconds to avoid constant flipping.
 		canRotate = true;
 	}
 	

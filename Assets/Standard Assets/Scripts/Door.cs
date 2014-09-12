@@ -38,7 +38,7 @@ public class Door : MonoBehaviour {
 	IEnumerator PlayDoorTransition(){
 		transitionGUI.FadeUI (fadeTime / 2, fadeTime / 2);
 		yield return new WaitForSeconds(fadeTime/2);
-		player.transform.position = targetAnchor.transform.position;
+		player.transform.position = new Vector3(targetAnchor.transform.position.x,targetAnchor.transform.position.y,player.transform.position.z);
 	}
 
 }
