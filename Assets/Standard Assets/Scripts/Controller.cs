@@ -4,11 +4,11 @@ using System.Collections;
 public class Controller : MonoBehaviour {
 	public int totem; // 0 = normal, 1 = rabbit, 2 = mole, 3 = mantis
 
-	// in order: maxSpeed, soloJumpForce, maxHealth
-	public float[] rabbitStats = {6.5f,460f,8f};
-	public float[] moleStats   = {3f,440f,15f};
-	public float[] mantisStats = {5f,440f,8f};
-	public float[] normalStats = {5f,440f,10f};
+	// in order: maxSpeed, soloJumpForce, maxHealth, fireRate, shotDMG
+	float[] rabbitStats = {6.5f,460f,8f, 0.5f,  4f};
+	float[] moleStats   = {3f,  440f,15f,1.5f,  11f};
+	float[] mantisStats = {5f,  440f,8f, 0.75f, 4f};
+	float[] normalStats = {5f,  440f,10f,0.75f, 5f};
 	bool canDash, canGlide, canShield, canSlowTime, canFloat;
 
 
@@ -66,14 +66,22 @@ public class Controller : MonoBehaviour {
 	//on moving platform
 	public bool onMovingPlatform;
 	public Rigidbody2D movingRigidbody2D;
-	
+
+	PlayerAttack att;
+
 	void Start () {
 		anim = GetComponent<Animator> ();
 		moveAllowed = true;
+		att = (PlayerAttack)gameObject.GetComponent ("PlayerAttack");
 		health = (Health)gameObject.GetComponent ("Health");
+
 		//if you start as Mabellle, which I think should be default
 		TurnIntoNormal ();
 	}
+	void Awake(){
+
+				
+		}
 	
 	
 	void FixedUpdate () {
@@ -246,6 +254,7 @@ public class Controller : MonoBehaviour {
 		if (dash && anim.GetCurrentAnimatorStateInfo(0).nameHash == HashIDs.rabbitDashState){
 			Debug.Log ("Dash");
 			moveAllowed = false;
+			gameObject.layer = 16;
 		   //if and else just to dash in the right direction
 			if (facingRight)rigidbody2D.velocity = new Vector2 (dashSpeed, 0); 
 			else rigidbody2D.velocity = new Vector2 (-dashSpeed, 0);
@@ -303,6 +312,9 @@ public class Controller : MonoBehaviour {
 			health.shield = false;
 				}
 		}
+
+	//TOTEM TRANSFORMATIONS
+
 	public void TurnIntoRabbit(){
 		Debug.Log ("rabbit");
 		maxSpeed = rabbitStats [0];
@@ -319,6 +331,8 @@ public class Controller : MonoBehaviour {
 		rigidbody2D.drag = 0f;
 		RabbitSlowMotion ();
 
+		att.Damage = (int)rabbitStats[4];
+		att.ShootDelay = rabbitStats[3];
 
 	}
 	public void TurnIntoMole(){
@@ -337,6 +351,8 @@ public class Controller : MonoBehaviour {
 		rigidbody2D.drag = 0f;
 		RabbitSlowMotion ();
 
+		att.Damage = (int)moleStats[4];
+		att.ShootDelay = moleStats[3];
 
 	}
 	public void TurnIntoMantis(){
@@ -355,6 +371,8 @@ public class Controller : MonoBehaviour {
 		rigidbody2D.drag = 0f;
 		RabbitSlowMotion ();
 
+		att.Damage = (int)mantisStats[4];
+		att.ShootDelay = mantisStats[3];
 
 	}
 	public void TurnIntoNormal(){
@@ -373,11 +391,19 @@ public class Controller : MonoBehaviour {
 		rigidbody2D.drag = 0;
 		RabbitSlowMotion ();
 
+		att.Damage = (int)normalStats[4];
+		att.ShootDelay = normalStats[3];
 	}
 
 	public void AllowMovement(){
 		moveAllowed = true;
 	                            }
+	public void Invulnerable(){
+		gameObject.layer = 16;
+		}
+	public void Vulnerable(){
+		gameObject.layer = 13;
+	}
 	public void PreventMovement(){
 		moveAllowed = false;
 	}
