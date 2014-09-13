@@ -75172,10 +75172,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
-      propertyPath: rabbitStats.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 6.88831997
@@ -75231,14 +75227,6 @@ Prefab:
     - target: {fileID: 5800000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_IsTrigger
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
-      propertyPath: rabbitStats.Array.data[3]
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
-      propertyPath: rabbitStats.Array.data[4]
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
@@ -91221,6 +91209,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totem: 0
+  rabbitStats:
+  - 6.5
+  - 460
+  - 8
+  moleStats:
+  - 3
+  - 440
+  - 15
+  mantisStats:
+  - 5.5
+  - 440
+  - 8
+  normalStats:
+  - 5
+  - 440
+  - 10
   maxSpeed: 4
   move: 0
   moveAllowed: 0
@@ -91375,7 +91379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DMG: 20
-  shootDelay: 1
   shoot1: {fileID: 860100992}
 --- !u!114 &1864323946
 MonoBehaviour:

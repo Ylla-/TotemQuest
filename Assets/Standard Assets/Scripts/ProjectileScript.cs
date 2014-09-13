@@ -54,9 +54,4 @@ public class ProjectileScript : MonoBehaviour
 		angles.x *= -1; angles.y *= -1; angles.z *= -1;
 		transform.localEulerAngles = angles;
 	}
-
-	public int Damage{
-		get{ return DMG;}
-		set{ DMG = value;}
-	}
 }

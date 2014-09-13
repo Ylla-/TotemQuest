@@ -3,14 +3,12 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
 	public int DMG = 20;
-	public float shootDelay = 1;
 	Animator anim;
 	bool canShoot, shoot;
 	public ThrowProjectile shoot1;
-	Controller controller;
 	
 	void Start () {
-		controller = (Controller)gameObject.GetComponent ("Controller");
+		//controller = (Controller)gameObject.GetComponent ("Controller");
 		anim = GetComponentInParent<Animator> ();
 		canShoot = true;
 	}
@@ -28,7 +26,7 @@ public class PlayerAttack : MonoBehaviour {
 	void FixedUpdate (){
 			if (shoot){
 			shoot = false;
-			shoot1.ThrowFireball(DMG);
+			shoot1.ThrowFireball();
 			           }
 		}
 	
@@ -45,23 +43,11 @@ public class PlayerAttack : MonoBehaviour {
 
 	IEnumerator FiringRate() {
 		canShoot = false;
-		yield return new WaitForSeconds(shootDelay);
+		yield return new WaitForSeconds(2);
 		canShoot = true;
 	}
 	
-
-	public int Damage{
-		get{ return DMG;}
-		set{ DMG = value;}
-	}
 	
-
-	public float ShootDelay{
-		get{ return shootDelay;}
-		set{ shootDelay = value;}
-	}
-	
-
 	
 	
 }

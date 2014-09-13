@@ -28,7 +28,7 @@ public class ThrowProjectile : MonoBehaviour {
 	
 	
 	
-	public void ThrowFireball(int dmg){
+	public void ThrowFireball(){
 		
 		// Create a new shot
 		var fireballTransform = Instantiate (Fireball) as Transform;
@@ -38,7 +38,6 @@ public class ThrowProjectile : MonoBehaviour {
 		fireballTransform.position = transform.position;
 		
 		ProjectileScript shot = fireballTransform.gameObject.GetComponent<ProjectileScript> ();
-		shot.Damage = dmg;
 		//direction of the shot
 		shot.facingRight = cont.facingRight;
 		// Assign position
