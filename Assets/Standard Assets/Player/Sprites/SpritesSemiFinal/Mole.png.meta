@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67e68f02b07519d46b0ae85ea3efd1ea
+guid: a65cbe7c850cc6844a35efc3c82be3d7
 TextureImporter:
   fileIDToRecycleName:
     21300000: Mole
@@ -8,6 +8,22 @@ TextureImporter:
     21300006: Mole_2
     21300008: Mole_3
     21300010: Mole_4
+    21300012: Mole_5
+    21300014: Mole_6
+    21300016: Mole_7
+    21300018: Mole_8
+    21300020: Mole_9
+    21300022: Mole_10
+    21300024: Mole_11
+    21300026: Mole_12
+    21300028: Mole_13
+    21300030: Mole_14
+    21300032: Mole_15
+    21300034: Mole_16
+    21300036: Mole_17
+    21300038: Mole_18
+    21300040: Mole_19
+    21300042: Mole_20
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,8 +78,8 @@ TextureImporter:
     - name: Mole_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 104
+        x: 104
+        y: 208
         width: 104
         height: 104
       alignment: 0
@@ -72,8 +88,8 @@ TextureImporter:
     - name: Mole_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 208
+        y: 208
         width: 104
         height: 104
       alignment: 0
@@ -82,8 +98,8 @@ TextureImporter:
     - name: Mole_3
       rect:
         serializedVersion: 2
-        x: 104
-        y: 0
+        x: 312
+        y: 208
         width: 104
         height: 104
       alignment: 0
@@ -92,7 +108,167 @@ TextureImporter:
     - name: Mole_4
       rect:
         serializedVersion: 2
+        x: 416
+        y: 208
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 208
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_6
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 208
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_7
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 208
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_8
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 208
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_10
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_11
+      rect:
+        serializedVersion: 2
         x: 208
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_12
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_14
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_15
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_16
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_17
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 104
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_18
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_19
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 0
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Mole_20
+      rect:
+        serializedVersion: 2
+        x: 832
         y: 0
         width: 104
         height: 104
