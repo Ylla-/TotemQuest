@@ -23,8 +23,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 	//Layers
 	public LayerMask theGround;
 	public LayerMask playerLayer;
-
-
+	
 	private int stompDamage; //Damage the enemy takes when stomped
 	private bool canRotate = true; //Can the enemy rotate right now ?
 	private bool canStomp = true; //Can the enemy be stomped right now ?

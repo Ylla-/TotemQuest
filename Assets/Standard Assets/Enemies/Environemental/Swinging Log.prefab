@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400010}
   - 212: {fileID: 21200008}
-  m_Layer: 11
+  m_Layer: 17
   m_Name: Sprite
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - 114: {fileID: 11400010}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400006}
-  m_Layer: 14
+  m_Layer: 17
   m_Name: Swinging Log
   m_TagString: Terrain
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.14877415, y: -56.8357582, z: 0}
+  m_LocalPosition: {x: -3.62674236, y: -52.6451225, z: .100097656}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400012}
