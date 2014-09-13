@@ -30,7 +30,7 @@ public class Door : MonoBehaviour {
 	}
 
 	void UseDoor() { //Could Add animtion here (or maybe a fade ?)
-		Debug.Log ("Used Door to position" + targetAnchor.transform.position);
+		//Debug.Log ("Used Door to position" + targetAnchor.transform.position);
 		StartCoroutine (PlayDoorTransition ());
 
 	}

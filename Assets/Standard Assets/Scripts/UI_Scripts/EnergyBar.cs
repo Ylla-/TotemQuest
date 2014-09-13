@@ -23,14 +23,21 @@ public class EnergyBar : MonoBehaviour {
 	public int currentEnergy = 0;
 	public List<EnergyOrb> orbList;
 
+	//Different positions of the orb depending on which totem is being used
 	private int currentTotem = 0;
 	private Vector2 totemOrbPosition_0;
 	private Vector2 totemOrbPosition_1;
 	private Vector2 totemOrbPosition_2;
 	private Vector2 totemOrbPosition_3;
 
+	//Used to correctly destroy orbs on death and on clising the app.
+	private bool isDestroying = false; //True when this object is being destroyed
+
+
+
 
 	void Awake () {
+		transform.tag = "EnergyBar";
 		orbList = new List<EnergyOrb>();
 		CurrentColor = color1;
 		if(controller == null) GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
@@ -53,7 +60,7 @@ public class EnergyBar : MonoBehaviour {
 		//******* Feel Free to comment this out if you need those keys. This is purely for testing as this will be linked with the controller later ! *********//
 		if(Input.GetKeyDown (KeyCode.Z)){
 			Debug.Log ("Test Purpose : Added energy (Key Z)");
-			AddEnergy(1);
+			AddEnergy(1,transform.position);
 		}
 		if(Input.GetKeyDown (KeyCode.X)){
 			Debug.Log ("Test Purpose : Removed energy (Key X)");
@@ -63,6 +70,10 @@ public class EnergyBar : MonoBehaviour {
 			Debug.Log ("Test Purpose : Removing an Orb (Key C)");
 			RemoveEnergyOrb();
 		}
+	}
+
+	void OnDestroy() {
+		isDestroying = true;
 	}
 
 	void CheckTotemType() { //TODO : Add different orb position for each transformation;
@@ -95,10 +106,10 @@ public class EnergyBar : MonoBehaviour {
 		}
 	}
 
-	public void AddEnergy(int amount){ //Add "amount" energy to the bar
+	public void AddEnergy(int amount, Vector3 OrbCreationPosition){ //Add "amount" energy to the bar
 		for(int i=0; i< amount; i++) {
 			if(currentEnergy < (maxOrb*energyPerOrb) && currentEnergy%5 == 0) { //If this equals 0, we need to create a new orb.
-				CreateOrb ();
+				CreateOrb (OrbCreationPosition);
 				currentEnergy++;
 			} else if(currentEnergy < (maxOrb*energyPerOrb)) {
 				orbList[orbList.Count-1].AddEnergy();
@@ -132,10 +143,10 @@ public class EnergyBar : MonoBehaviour {
 		}
 	}
 
-	private void CreateOrb() { //Create an Orb and add energy
-		if(orbList.Count < maxOrb) {
-			orbList.Add ((Instantiate(energySprite, target.position, Quaternion.identity) as GameObject).GetComponent<EnergyOrb>()); //Create Orb & add to List
-			Debug.Log (orbList[orbList.Count-1]);
+	private void CreateOrb(Vector3 CreationPosition) { //Create an Orb and add energy
+		if(orbList.Count < maxOrb && isDestroying == false) {
+			orbList.Add ((Instantiate(energySprite, CreationPosition, Quaternion.identity) as GameObject).GetComponent<EnergyOrb>()); //Create Orb & add to List
+			//Debug.Log (orbList[orbList.Count-1]);
 			orbList[orbList.Count-1].target = target; // Set Orb's Target
 			orbList[orbList.Count-1].energyBar = this; 
 			orbList[orbList.Count-1].controller = controller;

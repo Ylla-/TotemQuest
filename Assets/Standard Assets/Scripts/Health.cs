@@ -64,6 +64,8 @@ public class Health : MonoBehaviour {
 		if (gameObject.tag == "Player") {
 			Application.LoadLevel (Application.loadedLevel);
 		} else {
+			GiveEnergyOnDeath giveEnergy = gameObject.GetComponent<GiveEnergyOnDeath>();
+			if(giveEnergy != null) giveEnergy.GiveEnergy();
 			StartCoroutine (DestroyAnimation ());
 		}
 	}

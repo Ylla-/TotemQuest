@@ -92,7 +92,7 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 
 		//Direction Change check
 		if(canRotate == true && coll.collider.gameObject.layer == 11  || coll.collider.gameObject.layer == 13 || coll.collider.gameObject.layer == 14) { //If it hits wall/player/enemy
-			Debug.Log ("Collider hit !");
+			//Debug.Log ("Collider hit !");
 			foreach (ContactPoint2D contact in coll.contacts) {
 				if( frontCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) { //If it collided with the front
 					StartCoroutine (Flip ());
@@ -133,7 +133,6 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 
 	void Fall(){ // This will make the enemy start falling. Then become a normal goomba when the ground is hit.
 		if(hasHitGround == true) {
-			Debug.Log ("f");
 			rigidbody2D.velocity = new Vector2(0,0);
 			isGrounded = true;
 		}

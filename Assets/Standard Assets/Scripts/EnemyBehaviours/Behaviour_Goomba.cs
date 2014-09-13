@@ -70,7 +70,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 			foreach (ContactPoint2D contact in coll.contacts) {
 				if( stompCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) {
 					StartCoroutine (stompTimer()); //Start timer for next stomp
-					Debug.Log ("StompCollider hit !");
+					//Debug.Log ("StompCollider hit !");
 					if(playerController == null) playerController = coll.collider.gameObject.GetComponent<Controller>(); //Get controller and Jump
 					playerController.Jump();
 					hp.AdjustCurrentHealth(-stompDamage);
@@ -84,7 +84,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 			foreach (ContactPoint2D contact in coll.contacts) {
 				if( frontCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) { //If it collided with the front
 					StartCoroutine (Flip ());
-					Debug.Log ("FrontCollider hit !");
+					//Debug.Log ("FrontCollider hit !");
 				}
 			}
 		}
