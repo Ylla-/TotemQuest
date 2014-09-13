@@ -77,6 +77,9 @@ public class Controller : MonoBehaviour {
 	
 	
 	void FixedUpdate () {
+
+		if (isInvincible == true) return; //While the knockback method is not properly implemented, this will stop the update function while the player  is hit for invincibility time
+
 		//on ground check
 		if (Physics2D.OverlapCircle (groundCheckL.position, groundRadius, theGround) == true) {
 			onGround = true;
@@ -141,6 +144,9 @@ public class Controller : MonoBehaviour {
 	
 	//For totem transformations
 	void Update(){
+	
+	
+
 	if (Input.GetButtonDown ("Normal")||Input.GetAxis("DPadYAxis")>0) totem = 0;
 		if (Input.GetButtonDown ("Bunny")||Input.GetAxis("DPadXAxis")>0) totem = 1;
 		if (Input.GetButtonDown ("Mole")||Input.GetAxis("DPadXAxis")<0) totem = 2;
@@ -219,7 +225,16 @@ public class Controller : MonoBehaviour {
 
 	public void Knockback(Vector2 hitDirection) {
 		//TODO : This function is called when the player is hit to give a knockback to the player.
-		// The vector2 hitDirection is the normalized vector of the direction from the ennemy to the player. (direction player should be knocked in)  
+		// The vector2 hitDirection is the normalized vector of the direction from the ennemy to the player. (direction player should be knocked in, Or not if hit from top !)  
+
+		//THis is a placeholder to a better knockback that should be implemented later :
+		if(hitDirection.x > 0) {
+			rigidbody2D.velocity = new Vector2( 4f, 6f);
+		} else {
+			rigidbody2D.velocity = new Vector2( -4f, 6f);
+		}
+
+
 
 	}
 	
@@ -379,8 +394,10 @@ public class Controller : MonoBehaviour {
 
 	IEnumerator InvincibilityTimer() {
 		isInvincible = true;
+		gameObject.layer = 16;
 		yield return new WaitForSeconds (invincibilityTime);
 		isInvincible = false;
+		gameObject.layer = 13;
 	}
 	IEnumerator JumpTimer() { //makes sure the Jump dont get called multiple times (ex: stomping on two enemies at once would trigger jump twice).
 		jumpAllowed = false;
