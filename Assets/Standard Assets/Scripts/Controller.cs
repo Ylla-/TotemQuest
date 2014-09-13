@@ -77,7 +77,7 @@ public class Controller : MonoBehaviour {
 	
 	
 	void FixedUpdate () {
-
+		Debug.Log ("Velo : " + rigidbody2D.velocity);
 		if (isInvincible == true) return; //While the knockback method is not properly implemented, this will stop the update function while the player  is hit for invincibility time
 
 		//on ground check
@@ -233,7 +233,7 @@ public class Controller : MonoBehaviour {
 		} else {
 			rigidbody2D.velocity = new Vector2( -4f, 6f);
 		}
-
+		Debug.Log ("new Velo : " + rigidbody2D.velocity);
 
 
 	}

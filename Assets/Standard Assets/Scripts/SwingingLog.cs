@@ -43,6 +43,8 @@ public class SwingingLog : MonoBehaviour {
 		if(other.gameObject.layer == 13 && isDestroyed == false && isActive == true && isDestroyed == false) { //If it hits the player
 			Controller playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(logDamage);
+			Vector3 positionDiff = playerController.transform.position - transform.position;
+			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized));
 			DestroyLog();
 		} else if(other.gameObject.layer == 14 && isActive == true && isDestroyed == false) { //If it another enemy and it is moving
 			Health enemyHp = other.gameObject.GetComponent<Health>();
