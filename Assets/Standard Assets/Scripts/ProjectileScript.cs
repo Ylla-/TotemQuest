@@ -65,7 +65,7 @@ public class ProjectileScript : MonoBehaviour
 		}
 	}
 
-	public int Damage{
+	public int Damage{ 
 		get{ return DMG;}
 		set{ DMG = value;}
 	}

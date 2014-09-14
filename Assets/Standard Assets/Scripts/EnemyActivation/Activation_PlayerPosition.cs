@@ -40,7 +40,7 @@ public class Activation_PlayerPosition : MonoBehaviour {
 		for(int i = 0; i < monosToActivate.Length; i++) {
 			if(this.GetInstanceID() != monosToActivate[i].GetInstanceID()) monosToActivate[i].enabled =  true;
 		}
-		rigidBody.isKinematic = false;
+
 		isActivated = true;
 	}
 
