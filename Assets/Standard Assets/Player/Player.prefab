@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0986408442, y: -.401623785, z: 0}
+  m_LocalPosition: {x: .0900000036, y: -.423327386, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -107,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.163762569, y: -.401623368, z: 0}
+  m_LocalPosition: {x: -.0900000036, y: -.423327446, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
@@ -123,7 +123,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!4 &400006
 Transform:
   m_ObjectHideFlags: 1
@@ -135,7 +135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &400008
 Transform:
   m_ObjectHideFlags: 1
@@ -143,13 +143,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.25866365, y: 1.12582016, z: -.100000001}
+  m_LocalPosition: {x: 7.03591967, y: 1.69440055, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
   - {fileID: 400002}
-  - {fileID: 400006}
   - {fileID: 400004}
+  - {fileID: 400006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!50 &5000000
@@ -176,8 +176,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .0900000036
-  m_Center: {x: -.0500000007, y: -.319999993}
+  m_Radius: .0505000018
+  m_Center: {x: .0900000036, y: -.370000005}
 --- !u!58 &5800002
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -187,8 +187,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Radius: .0900000036
-  m_Center: {x: .0500000007, y: -.319999993}
+  m_Radius: .0505000018
+  m_Center: {x: -.0900000036, y: -.370000005}
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -198,8 +198,8 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: a7edadae22e088d48b9c0dda1a5097b1, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .280000001, y: .639999986}
-  m_Center: {x: -0, y: -0}
+  m_Size: {x: .280000001, y: .680000007}
+  m_Center: {x: -0, y: -.0299999993}
 --- !u!95 &9500002
 Animator:
   serializedVersion: 3
@@ -227,22 +227,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totem: 0
-  rabbitStats:
-  - 6.5
-  - 460
-  - 8
-  moleStats:
-  - 3
-  - 440
-  - 15
-  mantisStats:
-  - 5.5
-  - 440
-  - 8
-  normalStats:
-  - 5
-  - 440
-  - 10
   maxSpeed: 4
   move: 0
   moveAllowed: 0
@@ -277,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DMG: 20
+  shootDelay: 1
   shoot1: {fileID: 11400004}
 --- !u!114 &11400004
 MonoBehaviour:
