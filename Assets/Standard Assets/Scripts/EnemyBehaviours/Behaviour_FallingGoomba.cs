@@ -30,6 +30,7 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 	private int stompDamage; //Damage the enemy takes when stomped
 	private bool canRotate = true; //Can the enemy rotate right now ?
 	private bool canStomp = true; //Can the enemy be stomped right now ?
+	private bool behaviourActivated = false; //Is the behaviour activated ?
 	private bool hasHitGround = false;
 	private Vector3 overlapSpherePosition; 
 	private Controller playerController;
@@ -49,8 +50,11 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 	}
 	
 	void FixedUpdate() {
+		if(behaviourActivated == false) {
+			rigidbody2D.isKinematic = false;
+			behaviourActivated = true;
+		}
 		if(isGrounded == true) { //dont do while still suspended in the wait
-
 		//Move()
 			if(goingLeft == true) {
 				rigidbody2D.velocity = new Vector2(-speed,rigidbody2D.velocity.y);

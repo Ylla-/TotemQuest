@@ -37,9 +37,12 @@ public class ProjectileScript : MonoBehaviour
 		
 		if (other is BoxCollider2D && other.tag == "Enemy") {
 			Debug.Log ("HIT FIREBALL");
+			//Get HealthScript and remove HP
 			Health h = (Health)other.gameObject.GetComponent ("Health");
-			
 			h.AdjustCurrentHealth (-DMG);
+			//Activate the MonoBehaviour of the enemy (if the enemy requires a specific condition to activate, getting hit by the player will fulfill it).
+			ActivateMonos(other.gameObject); //Activates the monobehaviours on target
+
 			Destroy(gameObject);
 		}
 	}
@@ -53,6 +56,13 @@ public class ProjectileScript : MonoBehaviour
 		Vector3 angles = transform.localEulerAngles;
 		angles.x *= -1; angles.y *= -1; angles.z *= -1;
 		transform.localEulerAngles = angles;
+	}
+
+	void ActivateMonos(GameObject obj){
+		MonoBehaviour[] behaviours = obj.GetComponentsInChildren<MonoBehaviour> ();
+		for(int i =0; i< behaviours.Length; i++) {
+			if(behaviours[i].enabled == false) behaviours[i].enabled = true;
+		}
 	}
 
 	public int Damage{

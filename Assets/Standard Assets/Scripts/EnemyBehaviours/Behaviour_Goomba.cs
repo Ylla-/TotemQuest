@@ -27,6 +27,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 	private int stompDamage; //Damage the enemy takes when stomped
 	private bool canRotate = true; //Can the enemy rotate right now ?
 	private bool canStomp = true; //Can the enemy be stomped right now ?
+	private bool behaviourActivated = false; //Is the behaviour activated ?
 	private Vector3 overlapSpherePosition; 
 	private Controller playerController;
 	private Health hp;
@@ -45,6 +46,10 @@ public class Behaviour_Goomba : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		if(behaviourActivated == false) {
+			rigidbody2D.isKinematic = false;
+			behaviourActivated = true;
+		}
 
 		//Move()
 		if(goingLeft == true) {
