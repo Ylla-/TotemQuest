@@ -22349,7 +22349,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 451386918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.02163315, y: 18.8578529, z: -.100000001}
+  m_LocalPosition: {x: -7.00666237, y: 20.2053528, z: -.100000001}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 1421589174}
@@ -22381,8 +22381,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb6c283bb3cd8648a2c97a27d8f34a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.20000005
   damage: 1
+  Projectile: {fileID: 100000, guid: 9a4a1b9ae9076884aa122d3b12b69bdb, type: 2}
+  wasAttacked: 0
+  playerController: {fileID: 0}
 --- !u!114 &451386922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26196,11 +26199,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.03591967
+      value: 6.09088802
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.69440055
+      value: 1.59736681
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -26230,6 +26233,10 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: a7edadae22e088d48b9c0dda1a5097b1, type: 2}
+    - target: {fileID: 100004, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
   m_RootGameObject: {fileID: 1864323935}
@@ -74304,7 +74311,7 @@ GameObject:
   - 114: {fileID: 1518695131}
   m_Layer: 13
   m_Name: Player FlashSprite
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91660,7 +91667,7 @@ Transform:
   m_PrefabInternal: {fileID: 532125556}
   m_GameObject: {fileID: 1864323935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.03591967, y: 1.69440055, z: -.100000001}
+  m_LocalPosition: {x: 6.09088802, y: 1.59736681, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 729291777}
