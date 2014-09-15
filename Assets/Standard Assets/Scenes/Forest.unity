@@ -22349,7 +22349,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 451386918}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.00666237, y: 20.2053528, z: -.100000001}
+  m_LocalPosition: {x: -7.1218605, y: 19.7711487, z: -.100000001}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children:
   - {fileID: 1421589174}
@@ -22383,9 +22383,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.20000005
   damage: 1
+  fadeTime: 2
   Projectile: {fileID: 100000, guid: 9a4a1b9ae9076884aa122d3b12b69bdb, type: 2}
+  ParticleSmoke: {fileID: 100000, guid: 10069fc748d6aa04e82bb084082bbbe0, type: 2}
+  playerController: {fileID: 1864323936}
   wasAttacked: 0
-  playerController: {fileID: 0}
 --- !u!114 &451386922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26199,11 +26201,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.09088802
+      value: 6.2267766
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.59736681
+      value: 1.19983292
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -91667,7 +91669,7 @@ Transform:
   m_PrefabInternal: {fileID: 532125556}
   m_GameObject: {fileID: 1864323935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.09088802, y: 1.59736681, z: -.100000001}
+  m_LocalPosition: {x: 6.2267766, y: 1.19983292, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 729291777}

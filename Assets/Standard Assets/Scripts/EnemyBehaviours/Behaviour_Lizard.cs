@@ -19,16 +19,23 @@ public class Behaviour_Lizard : MonoBehaviour {
 
 	public float speed = 1f; //Mouvement Speed. seconds it takes to move 1 unit.
 	public int damage = 1; // Damage done to the player when hit
+	public float fadeTime = 2f; // Fade time before teleporting
+
 	public GameObject Projectile;
+	public GameObject ParticleSmoke;
+	public Controller playerController;
 
 	public bool wasAttacked = false;
 
+	private int CollisionLayerMask = 1 << 11; //Create a layermask with Only Collision Layer
 	private float previousHp;
 	private float distanceToTeleport = 10f; //Distance between player and lizard at which he teleports instead of attacking.
+	private float safeDistanceFromPlayer = 1f; //Vertical distance to move away from player after a shot.
+	private float teleportDistance = 2.5f; // Distance to teleport to behind the player
 
-	public Controller playerController;
 	private Health hp;
 	private LizardState _state;
+
 
 	void Awake() {
 		hp = gameObject.GetComponent<Health> ();
@@ -37,7 +44,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 		previousHp = hp.curHealth;
 		if(playerController == null) playerController = (Controller) GameObject.FindGameObjectWithTag ("Player").GetComponent<Controller> ();
 
-		_state = new IdleState(this,2f);
+		_state = new IdleState(this,2f,-1);
 	}
 	
 	// Update is called once per frame
@@ -60,7 +67,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 	public abstract class LizardState {
 		// Attributs
 		protected Behaviour_Lizard _lizard;
-		
+
 		// Constructors
 		private LizardState() {}
 		public LizardState(Behaviour_Lizard lizard) {
@@ -150,8 +157,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 			} 
 			if (mouvementFinished == true) { //Once mouvement is done, Lizard fires
 				mouvementFinished = false;
-				Instantiate(_lizard.Projectile,_lizard.transform.position,Quaternion.identity);
-				_lizard._state = new IdleState(_lizard,0.8f,0);
+				Shoot ();
 
 			}
 			
@@ -166,6 +172,17 @@ public class Behaviour_Lizard : MonoBehaviour {
 				return true;
 			}
 		}
+
+		void Shoot() {
+			Lizard_Projectile projectile = ((GameObject) Instantiate (_lizard.Projectile, _lizard.transform.position, Quaternion.identity)).GetComponent<Lizard_Projectile> ();
+			if(_lizard.transform.position.x > _lizard.playerController.transform.position.x) {
+				projectile.facingRight = false;
+			} else {
+				projectile.facingRight = true;
+			}
+			_lizard._state = new IdleState(_lizard,0.5f,0);
+		}
+
 
 		private void FindAttackPlayerPosition() { //find the position the lizard must be in to hit the player
 			targetPosition = new Vector3 (_lizard.transform.position.x,
@@ -203,13 +220,61 @@ public class Behaviour_Lizard : MonoBehaviour {
 	
 	public class TeleportState : LizardState {
 		// Constructors
-		public TeleportState(Behaviour_Lizard lizard) : base(lizard) {}
-		
+		public TeleportState(Behaviour_Lizard lizard) : base(lizard) {currentTime = 0f; isFading = true; hasTeleported = false;}
+
+		//Variables
+		Vector3 teleportPosition;
+		bool isFading = true;
+		bool hasTeleported = false;
+		float currentTime = 0f;
+
 		// Methods
 		public override void Update() {
-			
+
+			if(isFading == true) {
+				if(currentTime > _lizard.fadeTime) {
+					isFading = false;
+				} else {
+					currentTime += Time.deltaTime;
+				}
+			} else if(hasTeleported == false){
+				hasTeleported = true;
+				FindTeleportLocation();
+				TeleportToNewLocation();
+				Shoot();
+
+			}
+
+
+
 			Debug.Log (_lizard.name + " : I AM TELEPORTING");
 		}
+
+		void FindTeleportLocation(){
+			if(_lizard.playerController.facingRight == true) {
+				teleportPosition = _lizard.playerController.transform.position + new Vector3(-_lizard.teleportDistance,0,0);
+			} else {
+				teleportPosition = _lizard.playerController.transform.position + new Vector3(_lizard.teleportDistance,0,0);
+			}
+
+		}
+
+		void TeleportToNewLocation() {
+			_lizard.transform.position = teleportPosition;
+			Instantiate (_lizard.ParticleSmoke, teleportPosition, Quaternion.identity);
+		}
+
+		void Shoot() {
+			Lizard_Projectile projectile = ((GameObject) Instantiate (_lizard.Projectile, _lizard.transform.position, Quaternion.identity)).GetComponent<Lizard_Projectile> ();
+			if(_lizard.transform.position.x > _lizard.playerController.transform.position.x) {
+				projectile.facingRight = false;
+			} else {
+				projectile.facingRight = true;
+			}
+			_lizard._state = new IdleState(_lizard,0.5f,0);
+		}
+
+
 	}
 
 
@@ -220,22 +285,83 @@ public class Behaviour_Lizard : MonoBehaviour {
 	
 	public class HideState : LizardState {
 		// Constructors
-		public HideState(Behaviour_Lizard lizard) : base(lizard) {}
+		public HideState(Behaviour_Lizard lizard) : base(lizard) {_lizard.wasAttacked = false;}
 
 		// variables 
 		bool isSafe = false;
+		bool mouvementStarted = false;
+		Vector3 targetPosition; //target position for lizard's mouvement
+		float mouvTime; //time to do lizard's mouvement
+
+
 
 		// Methods
 		public override void Update() {
-			isSafe = true;
-			//Once the mouvement is over, transition to new State
-			if(isSafe == true) {
-				_lizard._state = new IdleState(_lizard, 0.8f, -1);
+			if(_lizard.wasAttacked == true) {
+				_lizard.wasAttacked = false;
+				_lizard.StopAllCoroutines(); //Stop mouvement coroutine
+				_lizard._state = new TeleportState(_lizard);
+
 			}
 
+			//Once the mouvement is over, transition to new State
+			if(isSafe == true) {
+				_lizard._state = new IdleState(_lizard, 0.5f, -1);
+			}
 
-			
+			//This is only done once :
+			if (mouvementStarted == false) { 
+				mouvementStarted = true;
+				if(FindSafePosition () == true) {
+					_lizard.StartCoroutine(GoToPosition (_lizard.transform.position,targetPosition,mouvTime, this));
+				}
+			}
+	
 			Debug.Log (_lizard.name + " : I AM HIDING");
+		}
+
+		private bool FindSafePosition() { //find the position the lizard must be in to hit the player
+			bool mouving = false;
+	
+			targetPosition = new Vector3 (_lizard.transform.position.x, _lizard.playerController.transform.position.y,_lizard.transform.position.z);
+
+			//Verify Collisions
+			if(Physics2D.Raycast(_lizard.transform.position,Vector2.up,_lizard.safeDistanceFromPlayer, _lizard.CollisionLayerMask)){
+				if(Physics2D.Raycast(_lizard.transform.position,Vector2.up,_lizard.safeDistanceFromPlayer, _lizard.CollisionLayerMask)){
+					//Collision Bot AND Top, Change To Teleport
+					_lizard._state = new TeleportState(_lizard);
+				} else { 
+					//No collision Bot
+					targetPosition += new Vector3 (0,-_lizard.safeDistanceFromPlayer,0);
+					mouving = true;
+				}
+			} else { 
+				//No collision Top
+				targetPosition += new Vector3 (0,_lizard.safeDistanceFromPlayer,0);
+				mouving = true;
+			}
+
+			mouvTime = Mathf.Abs(targetPosition.y - _lizard.transform.position.y) / _lizard.speed; //Find time for the movement
+			return(mouving);
+		}
+
+		public IEnumerator GoToPosition(Vector3 startPosition, Vector3 endPosition, float t, HideState state) { //Makes the log rotate around the axis for x degrees over t seconds
+			float step = 0f; //raw step
+			float smoothStep = 0f; //current smooth step
+			float lastStep = 0f; //previous smooth step
+			Transform lizardTransform = _lizard.transform;
+			while(step < 1f) { // until we're done
+				step += Time.deltaTime / t; // for t seconds 
+				smoothStep = Mathf.SmoothStep(0f, 1f, step); // finding smooth step
+				
+				//Do Smooth Translation to position
+				lizardTransform.position = Vector3.Lerp(startPosition,endPosition,smoothStep);
+				
+				lastStep = smoothStep; //get previous last step
+				yield return null;
+			}
+			//once mouvement is over, Tell the state
+			state.isSafe = true;
 		}
 	}
 
