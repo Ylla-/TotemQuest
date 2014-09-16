@@ -7,8 +7,8 @@ public class Controller : MonoBehaviour {
 	// in order: maxSpeed, soloJumpForce, maxHealth, fireRate, shotDMG
 	float[] rabbitStats = {6.5f,460f,8f, 0.5f,  4f};
 	float[] moleStats   = {3f,  440f,15f,1.5f,  11f};
-	float[] mantisStats = {5f,  440f,8f, 0.75f, 4f};
-	float[] normalStats = {5f,  440f,10f,0.75f, 5f};
+	float[] mantisStats = {5f,  445f,8f, 0.75f, 4f};
+	float[] normalStats = {5f,  445f,10f,0.75f, 5f};
 	bool canDash, canGlide, canShield, canSlowTime, canFloat;
 
 
@@ -193,7 +193,7 @@ public class Controller : MonoBehaviour {
 				}
 		// float mabelle
 		if (canFloat) {
-			if (Input.GetButtonDown ("Ability2") && onGround == false) {
+			if (Input.GetButtonDown ("Ability1") && onGround == false) {
 				Floating = !Floating;
 				MaBellesFloat (Floating);  
 				}

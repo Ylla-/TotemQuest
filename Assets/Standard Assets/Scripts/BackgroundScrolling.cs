@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class BackgroundScrolling : MonoBehaviour {
-
-	public float scrollSpeed = 0.2f;
+	
 	public float maxScrollX = 1f; //Maximum scrolling of the background on X Axis
 	public float maxScrollY = 1f; //Maximum scrolling of the background on Y Axis.
 	public float mouvementOfPlayerX = 100f;
@@ -23,8 +22,9 @@ public class BackgroundScrolling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log (startPosition + "      " + player.position);
 		SetNewMouvement();
-		transform.localPosition = new Vector3(maxScrollX * currentXMouvement, maxScrollY + currentYMouvement,100);
+		transform.localPosition = new Vector3(maxScrollX * currentXMouvement, maxScrollY * currentYMouvement,100);
 	}
 
 	void SetNewMouvement() {
