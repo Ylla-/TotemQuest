@@ -244,7 +244,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 				Shoot();
 
 			}
-
+			_lizard.wasAttacked = false;
 
 
 			Debug.Log (_lizard.name + " : I AM TELEPORTING");
@@ -285,7 +285,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 	
 	public class HideState : LizardState {
 		// Constructors
-		public HideState(Behaviour_Lizard lizard) : base(lizard) {_lizard.wasAttacked = false;}
+		public HideState(Behaviour_Lizard lizard) : base(lizard) {}
 
 		// variables 
 		bool isSafe = false;
