@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Explosion : MonoBehaviour {
-	public float explosionDelay = 0f;
+	public float explosionDelay = 0.1f;
 	public float explosionRate = 1f;
 	public float explosionMaxSize = 5f;
 	public float explosionSpeed = 1f;
@@ -33,7 +33,7 @@ public class Explosion : MonoBehaviour {
 						if (currentRadius < explosionMaxSize) {
 								currentRadius += explosionRate;
 						} else
-								//Object.Destroy (this.gameObject);
+								Object.Destroy (this.gameObject);
 
 			explosionRadius.radius = currentRadius;
 				}

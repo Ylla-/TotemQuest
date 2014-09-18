@@ -56,7 +56,7 @@ public class Controller : MonoBehaviour {
 	bool moleSmash;
 	int moleDamage;
 	float moleStrength;
-	GameObject ExplosionPrefab;
+	public GameObject ExplosionPrefab;
 
 	// ground check
 	public bool onGround = false;
@@ -220,7 +220,7 @@ public class Controller : MonoBehaviour {
 						if ((Input.GetButtonDown ("Ability2") || Input.GetButtonDown ("Fire2"))) {
 				moleSmash = true;
 				moveAllowed = false;
-				//MoleExplo();
+				MoleExplo();
 						}
 				}
 
@@ -332,8 +332,8 @@ public class Controller : MonoBehaviour {
 		AllowMovement ();
 	}
 	void MoleExplo(){
-		ExplosionPrefab = new GameObject();
-		}
+		Instantiate(ExplosionPrefab, transform.position, transform.rotation);
+	}
 
 	//TOTEM TRANSFORMATIONS
 
