@@ -9,7 +9,7 @@ public class Controller : MonoBehaviour {
 	float[] moleStats   = {3f,  440f,15f,1.5f,  11f};
 	float[] mantisStats = {5f,  445f,8f, 0.75f, 4f};
 	float[] normalStats = {5f,  445f,10f,0.75f, 5f};
-	bool canDash, canGlide, canShield, canSlowTime, canFloat;
+	bool canDash, canGlide, canShield, canSlowTime, canFloat, canSmash;
 
 
 	Health health;
@@ -52,6 +52,11 @@ public class Controller : MonoBehaviour {
 	public float shieldRatio = 0.5f;
 	public bool Shield;
 
+	//for mole melee
+	bool moleSmash;
+	int moleDamage;
+	float moleStrength;
+	GameObject ExplosionPrefab;
 
 	// ground check
 	public bool onGround = false;
@@ -210,6 +215,14 @@ public class Controller : MonoBehaviour {
 				MoleShield(Shield);
 			}
 			}
+		//mole smash
+		if (canSmash) {
+						if ((Input.GetButtonDown ("Ability2") || Input.GetButtonDown ("Fire2"))) {
+				moleSmash = true;
+				moveAllowed = false;
+				//MoleExplo();
+						}
+				}
 
 
 		/*animator variables
@@ -219,6 +232,8 @@ public class Controller : MonoBehaviour {
 		anim.SetBool ("Grounded", onGround);
 		anim.SetBool ("Dash", dash);
 		anim.SetBool ("Glide", glide);
+		anim.SetBool ("Smash", moleSmash);
+
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 		anim.SetInteger ("Totem", totem);
 		
@@ -312,6 +327,13 @@ public class Controller : MonoBehaviour {
 			health.shield = false;
 				}
 		}
+	void MoleMeleeDeactivate(){
+		moleSmash = false;
+		AllowMovement ();
+	}
+	void MoleExplo(){
+		ExplosionPrefab = new GameObject();
+		}
 
 	//TOTEM TRANSFORMATIONS
 
@@ -325,6 +347,8 @@ public class Controller : MonoBehaviour {
 		canShield = false;
 		canSlowTime = true;
 		canFloat = false;
+		canSmash = false;
+
 
 		slowMo = true; //so it can be set to false with the method
 		Floating = false; //deactivates mabelle float
@@ -345,6 +369,8 @@ public class Controller : MonoBehaviour {
 		canShield = true;
 		canSlowTime = false;
 		canFloat = false;
+		canSmash = true;
+
 
 		slowMo = true;
 		Floating = false;
@@ -365,6 +391,8 @@ public class Controller : MonoBehaviour {
 		canShield = false;
 		canSlowTime = false;
 		canFloat = false;
+		canSmash = false;
+
 
 		slowMo = true;
 		Floating = false;
@@ -385,6 +413,7 @@ public class Controller : MonoBehaviour {
 		canShield = false;
 		canSlowTime = false;
 		canFloat = true;
+		canSmash = false;
 
 		slowMo = true;
 		Floating = false;
