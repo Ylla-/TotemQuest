@@ -53,3 +53,7 @@ TagManager:
     userID: 2
     uniqueID: 431246077
     locked: 0
+  - name: Background
+    userID: 3
+    uniqueID: 2168342895
+    locked: 0
