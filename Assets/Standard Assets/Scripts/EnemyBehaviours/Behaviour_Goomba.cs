@@ -24,10 +24,11 @@ public class Behaviour_Goomba : MonoBehaviour {
 	public LayerMask theGround;
 	public LayerMask playerLayer;
 	
-	private int stompDamage; //Damage the enemy takes when stomped
+	private int stompDamage = 1; //Damage the enemy takes when stomped
 	private bool canRotate = true; //Can the enemy rotate right now ?
 	private bool canStomp = true; //Can the enemy be stomped right now ?
 	private bool behaviourActivated = false; //Is the behaviour activated ?
+	private bool isDying = true; //can the enemy damage the player right now ?
 	private Vector3 overlapSpherePosition; 
 	private Controller playerController;
 	private Health hp;
@@ -36,7 +37,6 @@ public class Behaviour_Goomba : MonoBehaviour {
 
 	void Awake() {
 		hp = gameObject.GetComponent<Health> ();
-		stompDamage = hp.maxHealth;
 	}
 
 	void Start () {;
@@ -46,13 +46,21 @@ public class Behaviour_Goomba : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+		//Look if enemy is dying
+		if(hp.curHealth <= 0) {
+			isDying = false;
+		}
+
 		if(behaviourActivated == false) {
 			rigidbody2D.isKinematic = false;
 			behaviourActivated = true;
 		}
 
 		//Move()
-		if(goingLeft == true) {
+		if(isDying == true) {
+			//Do things here that 
+		}
+		else if(goingLeft == true) {
 			rigidbody2D.velocity = new Vector2(-speed,rigidbody2D.velocity.y);
 		} else {
 			rigidbody2D.velocity = new Vector2(speed,rigidbody2D.velocity.y);
@@ -61,7 +69,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 	}
 	void  OnTriggerEnter2D(Collider2D other) { 
 		//Damage Player when touching
-		if(other.gameObject.layer == 13) { //If it hits the player
+		if(other.gameObject.layer == 13 && isDying == true) { //If it hits the player
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 

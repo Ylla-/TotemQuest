@@ -7,7 +7,9 @@ public class Lizard_Projectile : MonoBehaviour {
 	public float speed = 12f;
 	
 	public bool facingRight = true;
-	
+
+	private Controller playerController;
+
 	void Start()
 	{
 		gameObject.layer = 19; //This is the player's attack layer
@@ -33,18 +35,13 @@ public class Lizard_Projectile : MonoBehaviour {
 	
 	
 	void OnTriggerEnter2D(Collider2D other)	{
-		//TODO : Change this to hit player instead of lizard !
-		/*
-		if (other is BoxCollider2D && other.tag == "Enemy") {
-			Debug.Log ("HIT FIREBALL");
-			//Get HealthScript and remove HP
-			Health h = (Health)other.gameObject.GetComponent ("Health");
-			h.AdjustCurrentHealth (-DMG);
-			//Activate the MonoBehaviour of the enemy (if the enemy requires a specific condition to activate, getting hit by the player will fulfill it).
-			ActivateMonos(other.gameObject); //Activates the monobehaviours on target
-			
+		if(other.gameObject.layer == 13) { //If it hits the player
+			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
+			playerController.DamagePlayer(DMG);
+			Vector3 positionDiff = playerController.transform.position - transform.position; 
+			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
 			Destroy(gameObject);
-		}*/
+		}
 	}
 	
 	

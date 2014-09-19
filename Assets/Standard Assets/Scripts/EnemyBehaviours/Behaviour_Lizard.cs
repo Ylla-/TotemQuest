@@ -18,7 +18,8 @@ public class Behaviour_Lizard : MonoBehaviour {
 	/// </summary>
 
 	public float speed = 1f; //Mouvement Speed. seconds it takes to move 1 unit.
-	public int damage = 1; // Damage done to the player when hit
+	public int rangedDamage= 2; //damage done to the player when hit by projectile
+	public int meleeDamage = 1; //damage done to the player when hit by lizard's model
 	public float fadeTime = 2f; // Fade time before teleporting
 
 	public GameObject Projectile;
@@ -32,6 +33,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 	private float distanceToTeleport = 10f; //Distance between player and lizard at which he teleports instead of attacking.
 	private float safeDistanceFromPlayer = 1f; //Vertical distance to move away from player after a shot.
 	private float teleportDistance = 2.5f; // Distance to teleport to behind the player
+	private bool isDying = false;
 
 	private Health hp;
 	private LizardState _state;
@@ -54,8 +56,25 @@ public class Behaviour_Lizard : MonoBehaviour {
 			previousHp = hp.curHealth;
 			wasAttacked = true;
 		}
+		//verify if enemy is dying
+		if(hp.curHealth <= 0) {
+			isDying = true;
+		}
 		//Execute current State's update
 		_state.Update();
+	}
+
+	void  OnTriggerEnter2D(Collider2D other) { 
+		//Damage Player when touching
+		if(other.gameObject.layer == 13 && isDying == false) { //If it hits the player
+			playerController.DamagePlayer(meleeDamage);
+			Vector3 positionDiff = playerController.transform.position - transform.position; 
+			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
+		}
+	}
+
+	void ConfigureProjectile(Lizard_Projectile proj){
+		proj.DMG = rangedDamage;
 	}
 	
 
@@ -91,8 +110,8 @@ public class Behaviour_Lizard : MonoBehaviour {
 
 	public class IdleState : LizardState {
 		// Constructors
-		public IdleState(Behaviour_Lizard lizard, float time) : base(lizard) {idleTime = time; nextState = -1;_lizard.wasAttacked = false;}
-		public IdleState(Behaviour_Lizard lizard, float time, int next) : base(lizard) {idleTime = time; nextState = next;_lizard.wasAttacked = false;}
+		public IdleState(Behaviour_Lizard lizard, float time) : base(lizard) {idleTime = time; nextState = -1;}
+		public IdleState(Behaviour_Lizard lizard, float time, int next) : base(lizard) {idleTime = time; nextState = next;}
 		// Variables
 		float idleTime;
 		float currentTime = 0f;
@@ -158,7 +177,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 			if (mouvementFinished == true) { //Once mouvement is done, Lizard fires
 				mouvementFinished = false;
 				Shoot ();
-
+				_lizard._state = new IdleState(_lizard,0.5f,0);
 			}
 			
 			Debug.Log (_lizard.name + " : I AM SHOOTING");
@@ -175,12 +194,12 @@ public class Behaviour_Lizard : MonoBehaviour {
 
 		void Shoot() {
 			Lizard_Projectile projectile = ((GameObject) Instantiate (_lizard.Projectile, _lizard.transform.position, Quaternion.identity)).GetComponent<Lizard_Projectile> ();
+			projectile.DMG = _lizard.rangedDamage; // Set Correct Damage
 			if(_lizard.transform.position.x > _lizard.playerController.transform.position.x) {
 				projectile.facingRight = false;
 			} else {
 				projectile.facingRight = true;
 			}
-			_lizard._state = new IdleState(_lizard,0.5f,0);
 		}
 
 
@@ -242,7 +261,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 				FindTeleportLocation();
 				TeleportToNewLocation();
 				Shoot();
-
+				_lizard._state = new IdleState(_lizard,0.5f,0);
 			}
 			_lizard.wasAttacked = false;
 
@@ -266,12 +285,13 @@ public class Behaviour_Lizard : MonoBehaviour {
 
 		void Shoot() {
 			Lizard_Projectile projectile = ((GameObject) Instantiate (_lizard.Projectile, _lizard.transform.position, Quaternion.identity)).GetComponent<Lizard_Projectile> ();
+			projectile.DMG = _lizard.rangedDamage; // Set Correct Damage
 			if(_lizard.transform.position.x > _lizard.playerController.transform.position.x) {
 				projectile.facingRight = false;
 			} else {
 				projectile.facingRight = true;
 			}
-			_lizard._state = new IdleState(_lizard,0.5f,0);
+			;
 		}
 
 
