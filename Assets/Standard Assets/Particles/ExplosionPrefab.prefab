@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b97516d302b4e1343afac8845c4a8cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionDelay: .100000001
+  explosionDelay: .150000006
   explosionRate: 1
-  explosionMaxSize: 10
+  explosionMaxSize: 5
   explosionSpeed: 2
   currentRadius: 0
   explosionMultiplier: 400

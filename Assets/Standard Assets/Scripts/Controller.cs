@@ -57,6 +57,7 @@ public class Controller : MonoBehaviour {
 	int moleDamage;
 	float moleStrength;
 	public GameObject ExplosionPrefab;
+	Vector2 origin;
 
 	// ground check
 	public bool onGround = false;
@@ -332,7 +333,8 @@ public class Controller : MonoBehaviour {
 		AllowMovement ();
 	}
 	void MoleExplo(){
-		Instantiate(ExplosionPrefab, transform.position, transform.rotation);
+		origin = new Vector2 (transform.position.x, (transform.position.y - 0.411f));
+		Instantiate(ExplosionPrefab, origin, transform.rotation);
 	}
 
 	//TOTEM TRANSFORMATIONS
