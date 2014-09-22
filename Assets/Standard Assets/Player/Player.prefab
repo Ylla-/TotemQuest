@@ -247,7 +247,8 @@ MonoBehaviour:
   theGround:
     serializedVersion: 2
     m_Bits: 18432
-  invincibilityTime: .300000012
+  knockbackTime: .300000012
+  invincibilityTime: .400000006
   onMovingPlatform: 0
   movingRigidbody2D: {fileID: 0}
 --- !u!114 &11400002

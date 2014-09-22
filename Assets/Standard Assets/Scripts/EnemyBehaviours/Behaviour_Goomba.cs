@@ -70,6 +70,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 	void  OnTriggerEnter2D(Collider2D other) { 
 		//Damage Player when touching
 		if(other.gameObject.layer == 13 && isDying == false) { //If it hits the player
+			Debug.Log ("ENTERED");
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
@@ -78,7 +79,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 	}
 	void  OnCollisionEnter2D(Collision2D coll) { 
 		//Check if player is stomping the enemy
-		if(coll.collider.gameObject.layer == 13 && canStomp == true) { //If it hits the player
+		if((coll.collider.gameObject.tag == "Player") && canStomp == true) { //If it hits the player
 			foreach (ContactPoint2D contact in coll.contacts) {
 				if( stompCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) {
 					StartCoroutine (stompTimer()); //Start timer for next stomp

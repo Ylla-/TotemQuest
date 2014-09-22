@@ -66,8 +66,11 @@ public class Controller : MonoBehaviour {
 	public LayerMask theGround;
 
 	//for invincibility frame
+	public float knockbackTime = 0.3f; //Time where the player loses control when hit
+	private bool isKnockbacked = false; //Is the player currently being Knockbacked ?
 	public float invincibilityTime = 0.3f; //Time for invulnerability when hit.
 	private bool isInvincible = false; //Is the player currently invincible ?
+
 
 	//on moving platform
 	public bool onMovingPlatform;
@@ -91,7 +94,7 @@ public class Controller : MonoBehaviour {
 	
 	
 	void FixedUpdate () {
-		if (isInvincible == true) return; //While the knockback method is not properly implemented, this will stop the update function while the player  is hit for invincibility time
+		if (isKnockbacked == true) return; //While the knockback method is not properly implemented, this will stop the update function while the player  is hit for invincibility time
 
 		//on ground check
 		if (Physics2D.OverlapCircle (groundCheckL.position, groundRadius, theGround) == true) {
@@ -242,7 +245,9 @@ public class Controller : MonoBehaviour {
 	public void Jump(){ //Jump
 		if(jumpAllowed == true) {
 			StartCoroutine(JumpTimer ());
+			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0); //Added this to reset y velocity before jump. Fixes some issues where jump would have way too much force because of current velocity
 			rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+
 		}
 	}
 
@@ -252,9 +257,9 @@ public class Controller : MonoBehaviour {
 
 		//THis is a placeholder to a better knockback that should be implemented later :
 		if(hitDirection.x > 0) {
-			rigidbody2D.velocity = new Vector2( 4f, 6f);
+			rigidbody2D.velocity = new Vector2( 4f, 8f);
 		} else {
-			rigidbody2D.velocity = new Vector2( -4f, 6f);
+			rigidbody2D.velocity = new Vector2( -4f, 8f);
 		}
 
 
@@ -448,15 +453,31 @@ public class Controller : MonoBehaviour {
 	}
 
 	IEnumerator InvincibilityTimer() {
+		bool wasFloating = false;
+		//Player is being knockbacked
 		isInvincible = true;
-		gameObject.layer = 16;
+		isKnockbacked = true;
+		if(Floating == true) { //If float is active, remove it for the knockback (because of the drag)
+			Floating = false;
+			MaBellesFloat(Floating);
+			wasFloating = true;
+		}
+		gameObject.layer = 16; //put on layer without enemies
+		yield return new WaitForSeconds (knockbackTime);
+		//Player Get Controls back but is still invincible
+		isKnockbacked = false;
+		if(wasFloating == true) { //If float was active, set it back after knockback.
+			Floating = true;
+			MaBellesFloat(Floating);
+		}
 		yield return new WaitForSeconds (invincibilityTime);
+		//player returns to normal
 		isInvincible = false;
-		gameObject.layer = 13;
+		gameObject.layer = 13; //put back on layer with enemies
 	}
 	IEnumerator JumpTimer() { //makes sure the Jump dont get called multiple times (ex: stomping on two enemies at once would trigger jump twice).
 		jumpAllowed = false;
-		yield return new WaitForSeconds(0.1f);
+		yield return new WaitForSeconds(0.08f);
 		jumpAllowed = true;
 	}
 
