@@ -10,10 +10,12 @@ public class LevelSelect : MonoBehaviour {
 	public string Title;
 
 	public SceneTransitionGUI sceneTransition;
+	private GameManager manager;
 
 	// Use this for initialization
 	void Start () {
 		if (sceneTransition == null) sceneTransition = GameObject.Find ("SceneTransitionGUI").GetComponent<SceneTransitionGUI> ();
+		if(manager == null) manager = GameObject.Find ("GameManager").GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
@@ -34,7 +36,7 @@ public class LevelSelect : MonoBehaviour {
 			(GUI.Button(new Rect(10,230,100,100),"Caves")) StartCoroutine (LoadNextScene(CavesLevel));
 
 		//final level starts disabled
-		GUI.enabled=false;
+		if(manager.lastLevelUnlocked == false) GUI.enabled=false;
 		if 
 			(GUI.Button(new Rect(10,340,100,100),"Final")) StartCoroutine (LoadNextScene(FinalLevel));
 		GUI.enabled=true;

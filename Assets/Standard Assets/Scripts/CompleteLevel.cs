@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CompleteLevel : MonoBehaviour {
 
+	public bool isLastLevel = false;
 	public int levelToComplete = 0;
 	GameManager manager;
 	GameObject player;
@@ -16,7 +17,8 @@ public class CompleteLevel : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonDown("Vertical")||Input.GetAxis ("Vertical")>0.25) {
 			if(gameObject.renderer.bounds.Intersects(player.renderer.bounds)){
-				FinishLevel();
+				if(isLastLevel == false) FinishLevel();
+				else Application.LoadLevel (7); //GO TO CREDITS
 			} 
 		}
 	}
