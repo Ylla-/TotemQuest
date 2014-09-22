@@ -42,7 +42,7 @@ GameObject:
   - 114: {fileID: 11400010}
   m_Layer: 13
   m_Name: Player FlashSprite
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.03591967, y: 1.69440055, z: -.100000001}
+  m_LocalPosition: {x: 7.76455736, y: 1.42120838, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -185,7 +185,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a7edadae22e088d48b9c0dda1a5097b1, type: 2}
   m_IsTrigger: 0
   m_Radius: .0505000018
   m_Center: {x: -.0900000036, y: -.370000005}
@@ -240,6 +240,7 @@ MonoBehaviour:
   glideSpeed: 10
   shieldRatio: .5
   Shield: 0
+  ExplosionPrefab: {fileID: 100000, guid: dc1afa6ce7f70b04481cb01567e2aa27, type: 2}
   onGround: 0
   groundCheckL: {fileID: 400002}
   groundCheckR: {fileID: 400000}
