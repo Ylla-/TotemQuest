@@ -31,7 +31,7 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 	private bool canRotate = true; //Can the enemy rotate right now ?
 	private bool canStomp = true; //Can the enemy be stomped right now ?
 	private bool behaviourActivated = false; //Is the behaviour activated ?
-	private bool isDying = true; //can the enemy damage the player right now ?
+	private bool isDying = false; //can the enemy damage the player right now ?
 	private bool hasHitGround = false;
 	private Vector3 overlapSpherePosition; 
 	private Controller playerController;
@@ -52,7 +52,7 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 	void FixedUpdate() {
 		//Look if enemy is dying
 		if(hp.curHealth <= 0) {
-			isDying = false;
+			isDying = true;
 		}
 
 		if(behaviourActivated == false) {
@@ -74,7 +74,7 @@ public class Behaviour_FallingGoomba : MonoBehaviour {
 	void  OnTriggerEnter2D(Collider2D other) { 
 
 		//Damage Check 
-		if(other.gameObject.layer == 13 && isDying == true) { //If it hits the player
+		if(other.gameObject.layer == 13 && isDying == false) { //If it hits the player
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
