@@ -70,6 +70,7 @@ public class EnergyBar : MonoBehaviour {
 			Debug.Log ("Test Purpose : Removing an Orb (Key C)");
 			RemoveEnergyOrb();
 		}
+
 	}
 
 	void OnDestroy() {
@@ -132,6 +133,9 @@ public class EnergyBar : MonoBehaviour {
 			}
 		}
 	}
+	
+
+
 	public void RemoveEnergyOrb(){ //Remove a Complete Orb (for exemple, when using an totem ability)
 		if(currentEnergy >= 5) {
 			GameObject orbToDestroy = orbList[0].gameObject;

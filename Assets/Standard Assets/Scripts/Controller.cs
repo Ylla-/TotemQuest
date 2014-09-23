@@ -43,6 +43,7 @@ public class Controller : MonoBehaviour {
 
 	//for slo-mo
 	bool slowMo = false;
+	float orbSlowMoRatio = 0.35f;
 
 	// for floating
 	float gravityMod = 20f;
@@ -51,6 +52,7 @@ public class Controller : MonoBehaviour {
 	// for shielding
 	public float shieldRatio = 0.5f;
 	public bool Shield;
+	float orbShieldRatio = 0.30f;
 
 	//for mole melee
 	bool moleSmash;
@@ -76,19 +78,22 @@ public class Controller : MonoBehaviour {
 	public bool onMovingPlatform;
 	public Rigidbody2D movingRigidbody2D;
 
+
 	PlayerAttack att;
+	public EnergyBar orbs;
 
 	void Start () {
 		anim = GetComponent<Animator> ();
 		moveAllowed = true;
 		att = (PlayerAttack)gameObject.GetComponent ("PlayerAttack");
 		health = (Health)gameObject.GetComponent ("Health");
+		health.shieldRatio = shieldRatio;
+
 
 		//if you start as Mabellle, which I think should be default
 		TurnIntoNormal ();
 	}
 	void Awake(){
-
 				
 		}
 	
@@ -215,8 +220,7 @@ public class Controller : MonoBehaviour {
 		//shield mole
 		if (canShield) {
 			if ( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) {
-				Shield = !Shield;
-				MoleShield(Shield);
+				MoleShield();
 			}
 			}
 		//mole smash
@@ -287,15 +291,22 @@ public class Controller : MonoBehaviour {
 			}
 		}
 	void RabbitSlowMotion(){
-				if(!slowMo){
+				if(!slowMo && orbs.currentEnergy > 0){
 					Time.timeScale = 0.5f;
 					slowMo=true;
+			        StartCoroutine(SlowMoTimer());
 			        Debug.Log ("slowmo");
-				}else{
+				}else if(slowMo){
 					Time.timeScale = 1f;
 					slowMo=false;
 				}
 			}
+	IEnumerator SlowMoTimer() {
+		if (slowMo) orbs.RemoveEnergy(1);
+		yield return new WaitForSeconds(orbSlowMoRatio);
+		if (orbs.currentEnergy <= 0) RabbitSlowMotion ();
+		if (slowMo) StartCoroutine(SlowMoTimer());
+	}
 
 	void MaBellesFloat(bool Floating){
 		if (Floating) {
@@ -323,23 +334,36 @@ public class Controller : MonoBehaviour {
 		}
 	}
 
-	void MoleShield(bool shielding){
-		if (Shield) {
+	void MoleShield(){
+		if (!Shield && orbs.currentEnergy > 0) {
 			Debug.Log("shield");
-			health.shield = true;
-			health.shieldRatio = shieldRatio;
+			Shield = true;
+			health.shield = Shield;
+			StartCoroutine(MoleShieldTimer());
 				}
-		if (!Shield) {
-			health.shield = false;
+		else if (Shield) {
+			Shield = false;
+			health.shield = Shield;
+			Debug.Log("NO SHIELD");
 				}
 		}
+	IEnumerator MoleShieldTimer() {
+		if (Shield) orbs.RemoveEnergy(1);
+		yield return new WaitForSeconds(orbShieldRatio);
+		if (orbs.currentEnergy <= 0) MoleShield();
+		if (Shield) StartCoroutine(MoleShieldTimer());
+	}
+
 	void MoleMeleeDeactivate(){
 		moleSmash = false;
 		AllowMovement ();
 	}
 	void MoleExplo(){
-		origin = new Vector2 (transform.position.x, (transform.position.y - 0.411f));
-		Instantiate(ExplosionPrefab, origin, transform.rotation);
+		if (orbs.currentEnergy >= 5) {
+			origin = new Vector2 (transform.position.x, (transform.position.y - 0.411f));
+			Instantiate (ExplosionPrefab, origin, transform.rotation);
+			orbs.RemoveEnergyOrb();
+		}
 	}
 
 	//TOTEM TRANSFORMATIONS
