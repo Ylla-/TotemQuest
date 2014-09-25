@@ -157,10 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb6c283bb3cd8648a2c97a27d8f34a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.20000005
+  speed: 1.39999998
   rangedDamage: 2
   meleeDamage: 1
-  fadeTime: 2
+  fadeTime: 1.79999995
   Projectile: {fileID: 100000, guid: 9a4a1b9ae9076884aa122d3b12b69bdb, type: 2}
   ParticleSmoke: {fileID: 100000, guid: 10069fc748d6aa04e82bb084082bbbe0, type: 2}
   playerController: {fileID: 0}
