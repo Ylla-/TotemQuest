@@ -339,7 +339,7 @@ GUIText:
   m_GameObject: {fileID: 1768554409}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: Press Space To Continue
+  m_Text: Press Jump To Continue
   m_Anchor: 4
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
