@@ -59,6 +59,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 		//verify if enemy is dying
 		if(hp.curHealth <= 0) {
 			isDying = true;
+			StopAllCoroutines();
 		}
 		//Execute current State's update
 		_state.Update();
@@ -245,10 +246,15 @@ public class Behaviour_Lizard : MonoBehaviour {
 		Vector3 teleportPosition;
 		bool isFading = true;
 		bool hasTeleported = false;
+		bool hasStartedFading = false;
 		float currentTime = 0f;
 
 		// Methods
 		public override void Update() {
+			if (hasStartedFading == false) {
+				hasStartedFading = true;
+				_lizard.StartCoroutine(FadeAway ());
+			}
 
 			if(isFading == true) {
 				if(currentTime > _lizard.fadeTime) {
@@ -261,6 +267,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 				FindTeleportLocation();
 				TeleportToNewLocation();
 				Shoot();
+				MakeVisible();
 				_lizard._state = new IdleState(_lizard,0.5f,0);
 			}
 			_lizard.wasAttacked = false;
@@ -291,7 +298,24 @@ public class Behaviour_Lizard : MonoBehaviour {
 			} else {
 				projectile.facingRight = true;
 			}
-			;
+		}
+
+		void MakeVisible(){
+			_lizard.StopAllCoroutines ();
+			SpriteRenderer[] objectSprites = _lizard.gameObject.GetComponentsInChildren<SpriteRenderer> ();
+			for(int j = 0; j < objectSprites.Length; j++) {
+				objectSprites[j].color = new Color(1,1,1,1);
+			}
+		}
+
+		IEnumerator FadeAway(){
+			SpriteRenderer[] objectSprites = _lizard.gameObject.GetComponentsInChildren<SpriteRenderer> ();
+			for(float i = 0; i < 1; i += Time.deltaTime/_lizard.fadeTime) {
+				for(int j = 0; j < objectSprites.Length; j++) {
+					objectSprites[j].color = new Color(1,1,1,1-i);
+				}
+				yield return null;
+			}
 		}
 
 

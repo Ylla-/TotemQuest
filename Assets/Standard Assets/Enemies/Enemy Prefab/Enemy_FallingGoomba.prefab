@@ -50,6 +50,7 @@ GameObject:
   - 61: {fileID: 6100002}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400008}
+  - 58: {fileID: 5800002}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -177,6 +178,17 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_Radius: .100000001
   m_Center: {x: .200000003, y: 0}
+--- !u!58 &5800002
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -208,7 +220,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &11400000
 MonoBehaviour:

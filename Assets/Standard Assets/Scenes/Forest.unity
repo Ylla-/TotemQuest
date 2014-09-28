@@ -4936,6 +4936,7 @@ GameObject:
   - 61: {fileID: 111077210}
   - 61: {fileID: 111077209}
   - 114: {fileID: 111077208}
+  - 58: {fileID: 111077218}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -5034,7 +5035,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &111077214
 MonoBehaviour:
@@ -5117,6 +5118,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &111077218
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1443729222}
+  m_GameObject: {fileID: 111077206}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &111477053
 GameObject:
   m_ObjectHideFlags: 0
@@ -6304,6 +6317,7 @@ GameObject:
   - 61: {fileID: 143824181}
   - 61: {fileID: 143824180}
   - 114: {fileID: 143824179}
+  - 58: {fileID: 143824189}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -6402,7 +6416,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &143824185
 MonoBehaviour:
@@ -6485,6 +6499,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &143824189
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 786377694}
+  m_GameObject: {fileID: 143824177}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &144803059
 GameObject:
   m_ObjectHideFlags: 0
@@ -19978,6 +20004,7 @@ GameObject:
   - 58: {fileID: 408030604}
   - 61: {fileID: 408030603}
   - 114: {fileID: 408030602}
+  - 58: {fileID: 408030611}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -20064,7 +20091,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &408030607
 MonoBehaviour:
@@ -20146,6 +20173,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &408030611
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 820163386}
+  m_GameObject: {fileID: 408030600}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &408051552
 GameObject:
   m_ObjectHideFlags: 0
@@ -21820,7 +21859,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1.30999994, y: 1.21000004}
+  m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!114 &451386921
 MonoBehaviour:
@@ -24951,11 +24990,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 46.5305023
+      value: 32.610714
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 28.7615318
+      value: -13.3862886
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -35877,6 +35916,7 @@ GameObject:
   - 58: {fileID: 763007508}
   - 61: {fileID: 763007507}
   - 114: {fileID: 763007506}
+  - 58: {fileID: 763007515}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -35963,7 +36003,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &763007511
 MonoBehaviour:
@@ -36045,6 +36085,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &763007515
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 790198340}
+  m_GameObject: {fileID: 763007504}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &765191954
 Prefab:
   m_ObjectHideFlags: 0
@@ -37816,6 +37868,7 @@ GameObject:
   - 61: {fileID: 796567614}
   - 61: {fileID: 796567613}
   - 114: {fileID: 796567612}
+  - 58: {fileID: 796567622}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -37914,7 +37967,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &796567618
 MonoBehaviour:
@@ -37997,6 +38050,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &796567622
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1303798094}
+  m_GameObject: {fileID: 796567610}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &799261635
 GameObject:
   m_ObjectHideFlags: 0
@@ -45063,6 +45128,7 @@ GameObject:
   - 58: {fileID: 940089548}
   - 61: {fileID: 940089547}
   - 114: {fileID: 940089546}
+  - 58: {fileID: 940089555}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -45149,7 +45215,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &940089551
 MonoBehaviour:
@@ -45231,6 +45297,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &940089555
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 90055165}
+  m_GameObject: {fileID: 940089544}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &942594479
 Prefab:
   m_ObjectHideFlags: 0
@@ -50664,6 +50742,7 @@ GameObject:
   - 61: {fileID: 1046665605}
   - 61: {fileID: 1046665604}
   - 114: {fileID: 1046665603}
+  - 58: {fileID: 1046665613}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -50762,7 +50841,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1046665609
 MonoBehaviour:
@@ -50845,6 +50924,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1046665613
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1780155590}
+  m_GameObject: {fileID: 1046665601}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &1047358754
 Prefab:
   m_ObjectHideFlags: 0
@@ -56614,6 +56705,7 @@ GameObject:
   - 58: {fileID: 1149350300}
   - 61: {fileID: 1149350299}
   - 114: {fileID: 1149350298}
+  - 58: {fileID: 1149350307}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -56700,7 +56792,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1149350303
 MonoBehaviour:
@@ -56782,6 +56874,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1149350307
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 534153591}
+  m_GameObject: {fileID: 1149350296}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &1150977554
 GameObject:
   m_ObjectHideFlags: 0
@@ -56850,6 +56954,7 @@ GameObject:
   - 58: {fileID: 1151028676}
   - 61: {fileID: 1151028675}
   - 114: {fileID: 1151028674}
+  - 58: {fileID: 1151028683}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -56936,7 +57041,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1151028679
 MonoBehaviour:
@@ -57018,6 +57123,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1151028683
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 765191954}
+  m_GameObject: {fileID: 1151028672}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &1151173904
 Prefab:
   m_ObjectHideFlags: 0
@@ -58382,7 +58499,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1.30999994, y: 1.21000004}
+  m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!114 &1178385995
 MonoBehaviour:
@@ -62852,6 +62969,7 @@ GameObject:
   - 58: {fileID: 1264289391}
   - 61: {fileID: 1264289390}
   - 114: {fileID: 1264289389}
+  - 58: {fileID: 1264289398}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -62938,7 +63056,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1264289394
 MonoBehaviour:
@@ -63020,6 +63138,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1264289398
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1398460838}
+  m_GameObject: {fileID: 1264289387}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &1265532903
 Prefab:
   m_ObjectHideFlags: 0
@@ -69136,6 +69266,7 @@ GameObject:
   - 61: {fileID: 1381882792}
   - 61: {fileID: 1381882791}
   - 114: {fileID: 1381882790}
+  - 58: {fileID: 1381882800}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -69234,7 +69365,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1381882796
 MonoBehaviour:
@@ -69317,6 +69448,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1381882800
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 2016345016}
+  m_GameObject: {fileID: 1381882788}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &1382519940
 Prefab:
   m_ObjectHideFlags: 0
@@ -70347,6 +70490,7 @@ GameObject:
   - 58: {fileID: 1401497349}
   - 61: {fileID: 1401497348}
   - 114: {fileID: 1401497347}
+  - 58: {fileID: 1401497356}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -70433,7 +70577,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1401497352
 MonoBehaviour:
@@ -70515,6 +70659,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1401497356
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1559051964}
+  m_GameObject: {fileID: 1401497345}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &1402362486
 GameObject:
   m_ObjectHideFlags: 0
@@ -70982,6 +71138,7 @@ GameObject:
   - 58: {fileID: 1416484711}
   - 61: {fileID: 1416484710}
   - 114: {fileID: 1416484709}
+  - 58: {fileID: 1416484718}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -71068,7 +71225,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1416484714
 MonoBehaviour:
@@ -71150,6 +71307,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1416484718
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1499106911}
+  m_GameObject: {fileID: 1416484707}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &1416825396
 Prefab:
   m_ObjectHideFlags: 0
@@ -72251,7 +72420,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Size: {x: 1.30999994, y: 1.21000004}
+  m_Size: {x: 1, y: 1}
   m_Center: {x: 0, y: 0}
 --- !u!114 &1440768088
 MonoBehaviour:
@@ -73083,6 +73252,7 @@ GameObject:
   - 58: {fileID: 1464946274}
   - 61: {fileID: 1464946273}
   - 114: {fileID: 1464946272}
+  - 58: {fileID: 1464946281}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -73169,7 +73339,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1464946277
 MonoBehaviour:
@@ -73251,6 +73421,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1464946281
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1567643764}
+  m_GameObject: {fileID: 1464946270}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &1466387994
 GameObject:
   m_ObjectHideFlags: 0
@@ -74110,6 +74292,7 @@ GameObject:
   - 58: {fileID: 1480624357}
   - 61: {fileID: 1480624356}
   - 114: {fileID: 1480624355}
+  - 58: {fileID: 1480624364}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -74196,7 +74379,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1480624360
 MonoBehaviour:
@@ -74278,6 +74461,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1480624364
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1899197833}
+  m_GameObject: {fileID: 1480624353}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &1481607963
 GameObject:
   m_ObjectHideFlags: 0
@@ -75739,6 +75934,7 @@ GameObject:
   - 61: {fileID: 1508597786}
   - 61: {fileID: 1508597785}
   - 114: {fileID: 1508597784}
+  - 58: {fileID: 1508597794}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -75837,7 +76033,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1508597790
 MonoBehaviour:
@@ -75920,6 +76116,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1508597794
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 762616851}
+  m_GameObject: {fileID: 1508597782}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &1508758590
 GameObject:
   m_ObjectHideFlags: 0
@@ -75988,6 +76196,7 @@ GameObject:
   - 58: {fileID: 1508859737}
   - 61: {fileID: 1508859736}
   - 114: {fileID: 1508859735}
+  - 58: {fileID: 1508859744}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -76074,7 +76283,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1508859740
 MonoBehaviour:
@@ -76156,6 +76365,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1508859744
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1308996079}
+  m_GameObject: {fileID: 1508859733}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &1510345496
 GameObject:
   m_ObjectHideFlags: 0
@@ -77982,6 +78203,7 @@ GameObject:
   - 61: {fileID: 1542509331}
   - 61: {fileID: 1542509330}
   - 114: {fileID: 1542509329}
+  - 58: {fileID: 1542509339}
   m_Layer: 14
   m_Name: Enemy_FallingGoomba
   m_TagString: Enemy
@@ -78080,7 +78302,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1542509335
 MonoBehaviour:
@@ -78163,6 +78385,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1542509339
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: a85cd6106c92a4f42a2f10f298c4fa2a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1542326616}
+  m_GameObject: {fileID: 1542509327}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &1543100006
 Prefab:
   m_ObjectHideFlags: 0
@@ -83001,6 +83235,7 @@ GameObject:
   - 58: {fileID: 1647118356}
   - 61: {fileID: 1647118355}
   - 114: {fileID: 1647118354}
+  - 58: {fileID: 1647118363}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -83087,7 +83322,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1647118359
 MonoBehaviour:
@@ -83169,6 +83404,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1647118363
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 507420469}
+  m_GameObject: {fileID: 1647118352}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1001 &1647317982
 Prefab:
   m_ObjectHideFlags: 0
@@ -84997,6 +85244,7 @@ GameObject:
   - 58: {fileID: 1680784541}
   - 61: {fileID: 1680784540}
   - 114: {fileID: 1680784539}
+  - 58: {fileID: 1680784548}
   m_Layer: 14
   m_Name: Enemy_Goomba
   m_TagString: Enemy
@@ -85083,7 +85331,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .600000024}
+  m_Size: {x: .5, y: .5}
   m_Center: {x: 0, y: -.100000001}
 --- !u!114 &1680784544
 MonoBehaviour:
@@ -85165,6 +85413,18 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300010, guid: 67e68f02b07519d46b0ae85ea3efd1ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1680784548
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5800002, guid: b3c9006995525a7439ae1720bd5158d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 2131741908}
+  m_GameObject: {fileID: 1680784537}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Radius: .25
+  m_Center: {x: 0, y: -.150000006}
 --- !u!1 &1681578876
 GameObject:
   m_ObjectHideFlags: 0
@@ -94353,7 +94613,7 @@ Transform:
   m_PrefabInternal: {fileID: 532125556}
   m_GameObject: {fileID: 1864323935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.5305023, y: 28.7615318, z: -.100000001}
+  m_LocalPosition: {x: 32.610714, y: -13.3862886, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 729291777}
