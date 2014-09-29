@@ -49,6 +49,7 @@ public class Behaviour_Goomba : MonoBehaviour {
 		//Look if enemy is dying
 		if(hp.curHealth <= 0) {
 			isDying = true;
+			gameObject.layer = 0;
 		}
 
 		if(behaviourActivated == false) {

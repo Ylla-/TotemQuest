@@ -11,6 +11,7 @@ public class SwingingLog : MonoBehaviour {
 	public float rotationDegrees = 70;
 	public float swingTime = 3f; //time it takes to swing RotationDegrees degrees
 	public int rotateDirection = 1; //-1 for ClockWise, 1 for CounterClockwise.
+	public bool canHitPlayer = true;
 
 	[HideInInspector] public Health health;
 
@@ -40,7 +41,7 @@ public class SwingingLog : MonoBehaviour {
 	}
 
 	void  OnTriggerEnter2D(Collider2D other) {
-		if(other.gameObject.layer == 13 && isDestroyed == false && isActive == true && isDestroyed == false) { //If it hits the player
+		if(other.gameObject.layer == 13 && isDestroyed == false && isActive == true && isDestroyed == false && canHitPlayer == true) { //If it hits the player
 			Controller playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(logDamage);
 			Vector3 positionDiff = playerController.transform.position - transform.position;
