@@ -82,13 +82,20 @@ public class Controller : MonoBehaviour {
 	PlayerAttack att;
 	public EnergyBar orbs;
 
+	//declaration of audio clips
+	AudioClip playerWalk, playerStandJump, playerWalkJump, playerDamageTaken, playerTransform;
+
 	void Start () {
 		anim = GetComponent<Animator> ();
 		moveAllowed = true;
 		att = (PlayerAttack)gameObject.GetComponent ("PlayerAttack");
 		health = (Health)gameObject.GetComponent ("Health");
 		health.shieldRatio = shieldRatio;
-
+		//assign corresponding audio files to their audio variables
+		playerWalk = (AudioClip)Resources.Load ("Audio/Michelle_Walk.wav", typeof(AudioClip));
+		playerStandJump=(AudioClip)Resources.Load ("Audio/Michelle_Jump_Standing.wav",typeof(AudioClip));
+		playerWalkJump = (AudioClip)Resources.Load ("Audio/Michelle_Jump_Walking.wav", typeof(AudioClip));
+		playerTransform = (AudioClip)Resources.Load ("Audio/transformation.wav", typeof(AudioClip));
 
 		//if you start as Mabellle, which I think should be default
 		TurnIntoNormal ();

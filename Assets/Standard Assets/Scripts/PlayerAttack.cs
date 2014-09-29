@@ -8,11 +8,14 @@ public class PlayerAttack : MonoBehaviour {
 	bool canShoot, shoot;
 	public ThrowProjectile shoot1;
 	Controller controller;
+	AudioClip attackSound;
 	
 	void Start () {
 		controller = (Controller)gameObject.GetComponent ("Controller");
 		anim = GetComponentInParent<Animator> ();
 		canShoot = true;
+		attackSound = (AudioClip)Resources.Load ("Audio/Michelle_Shoot.wav", typeof(AudioClip));
+		             
 	}
 	
 	// Update is called once per frame
@@ -20,7 +23,7 @@ public class PlayerAttack : MonoBehaviour {
 		if( (Input.GetButtonDown("Fire")||Input.GetButtonDown("Fire2")) && canShoot){
 			shoot = true;
 			StartCoroutine(FiringRate ());
-
+			audio.PlayOneShot (attackSound,1);
 
 		}
 	}
