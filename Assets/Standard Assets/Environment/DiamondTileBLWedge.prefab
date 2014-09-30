@@ -9,9 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
-  m_Layer: 11
-  m_Name: DiamondTile
+  - 68: {fileID: 6800000}
+  m_Layer: 10
+  m_Name: DiamondTileBLWedge
   m_TagString: Terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6100000
-BoxCollider2D:
+--- !u!68 &6800000
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -38,8 +38,9 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 6200000, guid: a7edadae22e088d48b9c0dda1a5097b1, type: 2}
   m_IsTrigger: 0
-  m_Size: {x: .5, y: .5}
-  m_Center: {x: 0, y: 0}
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -59,8 +60,8 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300050, guid: def0fb4a29094334e937adcca6e35528, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300032, guid: def0fb4a29094334e937adcca6e35528, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
