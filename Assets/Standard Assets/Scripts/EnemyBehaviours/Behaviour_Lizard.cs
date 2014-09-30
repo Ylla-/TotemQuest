@@ -24,6 +24,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 
 	public GameObject Projectile;
 	public GameObject ParticleSmoke;
+	public GameObject ParticleDeath;
 	public Controller playerController;
 
 	public bool wasAttacked = false;
@@ -34,6 +35,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 	private float safeDistanceFromPlayer = 1f; //Vertical distance to move away from player after a shot.
 	private float teleportDistance = 2.5f; // Distance to teleport to behind the player
 	private bool isDying = false;
+	private bool hasSpawnedDeathParticles = false;
 
 	private Health hp;
 	private LizardState _state;
@@ -60,6 +62,10 @@ public class Behaviour_Lizard : MonoBehaviour {
 		if(hp.curHealth <= 0) {
 			isDying = true;
 			StopAllCoroutines();
+			if(hasSpawnedDeathParticles == false && ParticleDeath != null) {
+				Instantiate (ParticleDeath, transform.position, Quaternion.identity);
+				hasSpawnedDeathParticles = true;
+			}
 		}
 		//Execute current State's update
 		_state.Update();
@@ -178,7 +184,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 			if (mouvementFinished == true) { //Once mouvement is done, Lizard fires
 				mouvementFinished = false;
 				Shoot ();
-				_lizard._state = new IdleState(_lizard,0.5f,0);
+				_lizard._state = new IdleState(_lizard,0.4f,0);
 			}
 			
 			Debug.Log (_lizard.name + " : I AM SHOOTING");
@@ -268,7 +274,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 				TeleportToNewLocation();
 				Shoot();
 				MakeVisible();
-				_lizard._state = new IdleState(_lizard,0.5f,0);
+				_lizard._state = new IdleState(_lizard,0.4f,0);
 			}
 			_lizard.wasAttacked = false;
 
@@ -350,7 +356,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 
 			//Once the mouvement is over, transition to new State
 			if(isSafe == true) {
-				_lizard._state = new IdleState(_lizard, 0.5f, -1);
+				_lizard._state = new IdleState(_lizard, 0.4f, -1);
 			}
 
 			//This is only done once :

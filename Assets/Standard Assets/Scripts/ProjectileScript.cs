@@ -6,16 +6,14 @@ public class ProjectileScript : MonoBehaviour
 {
 	public int DMG = 20;
 	public float speed = 12f;
+	public GameObject destroyedParticlesObj;
 	
 	public bool facingRight = true;
 	
 	void Start()
 	{
 		gameObject.layer = 15; //This is the player's attack layer
-		Destroy(gameObject, 10); 
-		
-		
-		
+		Destroy(gameObject, 4); 
 	}
 	
 	
@@ -34,7 +32,9 @@ public class ProjectileScript : MonoBehaviour
 	
 	
 	void OnTriggerEnter2D(Collider2D other)	{
-		
+
+
+
 		if (other is BoxCollider2D && other.tag == "Enemy") {
 			Debug.Log ("HIT FIREBALL");
 			//Get HealthScript and remove HP
@@ -44,6 +44,10 @@ public class ProjectileScript : MonoBehaviour
 			ActivateMonos(other.gameObject); //Activates the monobehaviours on target
 
 			Destroy(gameObject);
+		} else if (other.gameObject.layer == 11) {
+			if(destroyedParticlesObj != null) Instantiate (destroyedParticlesObj,transform.position,Quaternion.identity);
+			Destroy (gameObject);
+
 		}
 	}
 	

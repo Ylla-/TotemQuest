@@ -163,6 +163,7 @@ MonoBehaviour:
   fadeTime: 1.79999995
   Projectile: {fileID: 100000, guid: 9a4a1b9ae9076884aa122d3b12b69bdb, type: 2}
   ParticleSmoke: {fileID: 100000, guid: 10069fc748d6aa04e82bb084082bbbe0, type: 2}
+  ParticleDeath: {fileID: 100000, guid: 24badef6b3ac7e248b0ba99663b2db66, type: 2}
   playerController: {fileID: 0}
   wasAttacked: 0
 --- !u!114 &11400002

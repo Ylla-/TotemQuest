@@ -106,6 +106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DMG: 5
   speed: 8
+  destroyedParticlesObj: {fileID: 100000, guid: 9ed9591b561445c4f8a7ea860da0b0c8,
+    type: 2}
   facingRight: 1
 --- !u!212 &21200000
 SpriteRenderer:

@@ -95,7 +95,7 @@ public class Controller : MonoBehaviour {
 	}
 	void Awake(){
 				
-		}
+	}
 	
 	
 	void FixedUpdate () {
