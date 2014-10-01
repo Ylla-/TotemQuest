@@ -21,7 +21,7 @@ public class AddForceZone : MonoBehaviour {
 
 	void LateUpdate () {
 		if(playerIsColliding == true) {
-			Debug.Log ("AM COLLIDIN");
+
 			playerRigidbody.AddForce(ZoneForce);
 			playerIsColliding = false;
 		}

@@ -1874,6 +1874,8 @@ MonoBehaviour:
   rotateDirection: -1
   canHitPlayer: 0
   health: {fileID: 0}
+  logDamage: 4
+  logDamageOnEnemy: 10
 --- !u!114 &43064579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28141,11 +28143,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 47.0654373
+      value: 46.9638863
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 28.1411228
+      value: 28.7277451
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
       propertyPath: m_LocalPosition.z
@@ -42871,6 +42873,8 @@ MonoBehaviour:
   rotateDirection: 1
   canHitPlayer: 1
   health: {fileID: 0}
+  logDamage: 4
+  logDamageOnEnemy: 10
 --- !u!61 &801523944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44356,6 +44360,8 @@ MonoBehaviour:
   rotateDirection: -1
   canHitPlayer: 0
   health: {fileID: 0}
+  logDamage: 4
+  logDamageOnEnemy: 10
 --- !u!114 &824359521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68528,6 +68534,8 @@ MonoBehaviour:
   rotateDirection: 1
   canHitPlayer: 0
   health: {fileID: 0}
+  logDamage: 4
+  logDamageOnEnemy: 10
 --- !u!114 &1226273897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105648,7 +105656,7 @@ Transform:
   m_PrefabInternal: {fileID: 532125556}
   m_GameObject: {fileID: 1864323935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47.0654373, y: 28.1411228, z: -.100000001}
+  m_LocalPosition: {x: 46.9638863, y: 28.7277451, z: -.100000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 729291777}

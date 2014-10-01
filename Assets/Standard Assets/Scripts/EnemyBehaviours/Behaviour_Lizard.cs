@@ -259,6 +259,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 		public override void Update() {
 			if (hasStartedFading == false) {
 				hasStartedFading = true;
+				_lizard.gameObject.layer = 0; //Change layer to default to make it invulnerable during teleport
 				_lizard.StartCoroutine(FadeAway ());
 			}
 
@@ -269,6 +270,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 					currentTime += Time.deltaTime;
 				}
 			} else if(hasTeleported == false){
+				_lizard.gameObject.layer = 14; //Change back layer to enemies
 				hasTeleported = true;
 				FindTeleportLocation();
 				TeleportToNewLocation();
@@ -283,12 +285,38 @@ public class Behaviour_Lizard : MonoBehaviour {
 		}
 
 		void FindTeleportLocation(){
+			Vector3 OppositePosition;
 			if(_lizard.playerController.facingRight == true) {
 				teleportPosition = _lizard.playerController.transform.position + new Vector3(-_lizard.teleportDistance,0,0);
+				OppositePosition = _lizard.playerController.transform.position + new Vector3(_lizard.teleportDistance,0,0);
 			} else {
 				teleportPosition = _lizard.playerController.transform.position + new Vector3(_lizard.teleportDistance,0,0);
+				OppositePosition = _lizard.playerController.transform.position + new Vector3(-_lizard.teleportDistance,0,0);
+			}
+			if(VerifyTeleportCollision(teleportPosition) == true){
+				if(VerifyTeleportCollision(OppositePosition) == false) {
+					teleportPosition = OppositePosition;
+				}
 			}
 
+
+
+		}
+
+		bool VerifyTeleportCollision(Vector3 testPosition) {
+			//Test sphere collider on spot
+			if (Physics2D.OverlapCircle (testPosition, 0.5f, _lizard.CollisionLayerMask) == null) {  //Overlapshere returns what it collides with
+				Debug.DrawLine(testPosition,_lizard.playerController.transform.position,Color.yellow,3f);
+				Debug.Log("Teleport Collision Point!");
+				return true;
+			} 
+			//Test if ray can be made between player and lizard
+			else if(Physics2D.Linecast(testPosition,_lizard.playerController.transform.position, _lizard.CollisionLayerMask)){ 
+				Debug.DrawLine(testPosition,_lizard.playerController.transform.position,Color.yellow,3f);
+				Debug.Log("Teleport Collision Line!");
+				return true;
+			}
+			return false;
 		}
 
 		void TeleportToNewLocation() {

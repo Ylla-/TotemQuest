@@ -18,7 +18,9 @@ public class SwingingLog : MonoBehaviour {
 	private bool isActive = false;
 	private bool triggerStayActive = false; //are we using TriggerStay function ?
 	private bool isDestroyed = false;
-	private int logDamage = 4;
+	public int logDamage = 4;
+	public int logDamageOnEnemy = 10;
+
 
 
 	void Awake() {
@@ -47,9 +49,10 @@ public class SwingingLog : MonoBehaviour {
 			Vector3 positionDiff = playerController.transform.position - transform.position;
 			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized));
 			DestroyLog();
-		} else if(other.gameObject.layer == 14 && isActive == true && isDestroyed == false) { //If it another enemy and it is moving
+		} 
+		else if(other.gameObject.layer == 14 && isActive == true && isDestroyed == false) { //If it another enemy and it is moving
 			Health enemyHp = other.gameObject.GetComponent<Health>();
-			enemyHp.AdjustCurrentHealth(-10);
+			enemyHp.AdjustCurrentHealth(-logDamageOnEnemy);
 			health.AdjustCurrentHealth(-5);
 		}
 	}
@@ -58,7 +61,7 @@ public class SwingingLog : MonoBehaviour {
 		//We're doing this so the object that are already colliding with the log when it is released are Damaged as well. 
 		if(triggerStayActive == true && other.gameObject.layer == 14 && isActive == true && isDestroyed == false) { //If it another enemy
 			Health enemyHp = other.gameObject.GetComponent<Health>();
-			enemyHp.AdjustCurrentHealth(-10);
+			enemyHp.AdjustCurrentHealth(-logDamageOnEnemy);
 			health.AdjustCurrentHealth(-5);
 			triggerStayActive = false;
 		}

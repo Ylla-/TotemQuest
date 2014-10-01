@@ -45,8 +45,11 @@ public class Health : MonoBehaviour {
 		if(value < 0 && flashSprite != null) { //If damage taken is >1. Flash Sprite.
 			flashSprite.Flash(Color.white);
 		}
-		if (shield)	curHealth = curHealth + (int)(value * shieldRatio); //for mole shielding
-		else        curHealth += value;
+		if (shield)	{
+			curHealth = curHealth + (int)(value * shieldRatio); //for mole shielding
+		} else  {  
+			curHealth += value;
+		}
 
 		if (curHealth < 1) {
 			curHealth = 0;
@@ -71,6 +74,7 @@ public class Health : MonoBehaviour {
 	}
 
 	IEnumerator DestroyAnimation(){
+		gameObject.layer = 0; //Change layer to default so it doesnt trigger/collides with other object when dead
 		SpriteRenderer[] objectSprites = gameObject.GetComponentsInChildren<SpriteRenderer> ();
 		for(float i = 0; i < 1; i += Time.deltaTime/0.5f) {
 			for(int j = 0; j < objectSprites.Length; j++) {

@@ -35,7 +35,7 @@ public class ProjectileScript : MonoBehaviour
 
 
 
-		if (other is BoxCollider2D && other.tag == "Enemy") {
+		if (other is BoxCollider2D && other.gameObject.layer == 14) { //Changed the collision requirements from being a tag to a layer. It will now hit everything in enemy layer.
 			Debug.Log ("HIT FIREBALL");
 			//Get HealthScript and remove HP
 			Health h = (Health)other.gameObject.GetComponent ("Health");

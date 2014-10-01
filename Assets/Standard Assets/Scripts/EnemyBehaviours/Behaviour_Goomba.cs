@@ -71,7 +71,6 @@ public class Behaviour_Goomba : MonoBehaviour {
 	void  OnTriggerEnter2D(Collider2D other) { 
 		//Damage Player when touching
 		if(other.gameObject.layer == 13 && isDying == false) { //If it hits the player
-			Debug.Log ("ENTERED");
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
@@ -94,7 +93,6 @@ public class Behaviour_Goomba : MonoBehaviour {
 
 		//Direction Change check
 		if(canRotate == true && coll.collider.gameObject.layer == 11  || coll.collider.gameObject.layer == 13 || coll.collider.gameObject.layer == 14) { //If it hits wall/player/enemy
-			Debug.Log ("Collider hit !");
 			foreach (ContactPoint2D contact in coll.contacts) {
 				if( frontCollider.GetInstanceID() == contact.otherCollider.GetInstanceID()) { //If it collided with the front
 					StartCoroutine (Flip ());
