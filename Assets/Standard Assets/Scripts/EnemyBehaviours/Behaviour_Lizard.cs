@@ -305,7 +305,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 
 		bool VerifyTeleportCollision(Vector3 testPosition) {
 			//Test sphere collider on spot
-			if (Physics2D.OverlapCircle (testPosition, 0.5f, _lizard.CollisionLayerMask) == null) {  //Overlapshere returns what it collides with
+			if (Physics2D.OverlapCircle (testPosition, 0.5f, _lizard.CollisionLayerMask) == null) {  //Overlapshere returns what it collides withg
 				Debug.DrawLine(testPosition,_lizard.playerController.transform.position,Color.yellow,3f);
 				Debug.Log("Teleport Collision Point!");
 				return true;

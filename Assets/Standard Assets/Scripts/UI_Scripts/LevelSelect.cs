@@ -22,7 +22,7 @@ public class LevelSelect : MonoBehaviour {
 	void Update () {
 	
 	}
-	/*
+
 	// 2014-08AUG-28 ACP Buttons properties are hardcoded should be re-written to be easier to edit
 	void OnGUI () {
 		//plains
@@ -45,7 +45,7 @@ public class LevelSelect : MonoBehaviour {
 		if
 			(GUI.Button(new Rect(Screen.width-100-10,10,100,100),"Back To Title")) StartCoroutine (LoadNextScene(Title));
 	}
-*/
+
 	IEnumerator LoadNextScene(string nextScene) {
 		if(sceneTransition != null) {  //Fade UI , Then load next level
 			sceneTransition.FadeUI ();
