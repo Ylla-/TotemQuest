@@ -77,7 +77,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Vine
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -364,7 +364,10 @@ MonoBehaviour:
   rotationDegrees: 70
   swingTime: 2
   rotateDirection: 1
+  canHitPlayer: 1
   health: {fileID: 0}
+  logDamage: 4
+  logDamageOnEnemy: 10
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
