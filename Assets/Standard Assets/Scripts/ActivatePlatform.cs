@@ -28,6 +28,9 @@ public class ActivatePlatform : MonoBehaviour {
 		if(isActivated == false && activationCollider.activated == true) {
 			Activate ();
 		}
+		if (isActivated == true && activationCollider.activated == false) {
+			Deactivate ();
+				}
 	}
 	
 	void Activate() {
@@ -40,9 +43,8 @@ public class ActivatePlatform : MonoBehaviour {
 	
 	void Deactivate() {
 		for(int i = 0; i < monosToActivate.Length; i++) { //Deactivate each MonoBehaviour except this one and Health Script.
-			if(this.GetInstanceID() != monosToActivate[i].GetInstanceID()
-			   && health.GetInstanceID() != monosToActivate[i].GetInstanceID()
-			   && giveEnergyOnDeath.GetInstanceID() != monosToActivate[i].GetInstanceID()) monosToActivate[i].enabled = false;
+			if(this.GetInstanceID() != monosToActivate[i].GetInstanceID())
+			monosToActivate[i].enabled = false;
 		}
 		rigidBody.isKinematic = true;
 		isActivated = false;

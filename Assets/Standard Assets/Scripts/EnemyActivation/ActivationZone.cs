@@ -13,9 +13,16 @@ public class ActivationZone : MonoBehaviour {
 	void Update () {
 	
 	}
+
 	void  OnTriggerEnter2D(Collider2D other) {
 		if(other.gameObject.layer == 13) { //If it hits the player
 			activated = true;
+		} 
+	}
+
+	void  OnTriggerExit2D(Collider2D other) {
+		if(other.gameObject.layer == 13) { //If it hits the player
+			activated = false;
 		} 
 	}
 
