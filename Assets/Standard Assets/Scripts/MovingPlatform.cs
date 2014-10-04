@@ -18,9 +18,9 @@ public class MovingPlatform : MonoBehaviour {
 		thisRigidbody2D = GetComponent<Rigidbody2D> ();
 
 
-		distanceX = Mathf.Abs (limitX2 - limitX1);
+		distanceX = Mathf.Abs(limitX2 - limitX1);
 		speedX = distanceX / interval;
-		distanceY = Mathf.Abs (limitY2 - limitY1);
+		distanceY = Mathf.Abs(limitY2 - limitY1);
 		speedY = distanceY / interval;
 
 		StartCoroutine (StartMoving()); // New Coroutine Added To simulate what the previous code was doing.

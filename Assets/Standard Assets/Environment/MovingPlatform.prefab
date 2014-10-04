@@ -31,7 +31,7 @@ GameObject:
   - 212: {fileID: 21200004}
   - 114: {fileID: 11400004}
   - 61: {fileID: 6100002}
-  m_Layer: 11
+  m_Layer: 20
   m_Name: RightEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}

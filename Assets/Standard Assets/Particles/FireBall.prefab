@@ -13,7 +13,7 @@ GameObject:
   - 58: {fileID: 5800000}
   - 108: {fileID: 10800000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
