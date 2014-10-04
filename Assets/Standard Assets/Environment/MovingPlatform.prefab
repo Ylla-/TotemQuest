@@ -29,6 +29,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   - 212: {fileID: 21200004}
+  - 114: {fileID: 11400004}
+  - 61: {fileID: 6100002}
   m_Layer: 11
   m_Name: RightEnd
   m_TagString: Untagged
@@ -137,6 +139,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: 1, y: .5}
   m_Center: {x: .25, y: 0}
+--- !u!61 &6100002
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 13.0892715, y: 25.8323288}
+  m_Center: {x: 0, y: 0}
 --- !u!102 &10200000
 TextMesh:
   serializedVersion: 3
@@ -170,12 +183,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisTransform: {fileID: 0}
-  interval: 6
+  interval: 7
   delay: 0
-  limitX1: 2.5
-  limitX2: 2.5
-  limitY1: -4.25
-  limitY2: 5.25
+  limitX1: -1.75
+  limitX2: -1.75
+  limitY1: 7.5
+  limitY2: 9
   moving: 0
   left: 0
 --- !u!114 &11400002
@@ -189,9 +202,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aea81ea9ad7f7d8499ee0fc37bac20f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationCollider: {fileID: 0}
+  activationCollider: {fileID: 11400004}
   isActivated: 0
   monosToActivate: []
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6128eda931f09c146bd373446992b0d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activated: 0
 --- !u!212 &21200002
 SpriteRenderer:
   m_ObjectHideFlags: 1

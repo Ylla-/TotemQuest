@@ -248,6 +248,8 @@ public class Controller : MonoBehaviour {
 		anim.SetBool ("Dash", dash);
 		anim.SetBool ("Glide", glide);
 		anim.SetBool ("Smash", moleSmash);
+		anim.SetBool ("Floating", Floating);
+
 
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 		anim.SetInteger ("Totem", totem);

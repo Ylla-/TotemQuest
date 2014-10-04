@@ -2892,7 +2892,7 @@ MonoBehaviour:
   groundCheckR: {fileID: 126676265}
   theGround:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 18432
   knockbackTime: .300000012
   invincibilityTime: .400000006
   onMovingPlatform: 0
