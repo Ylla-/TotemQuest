@@ -24,9 +24,11 @@ public class Behaviour_Guardian : MonoBehaviour {
 	public GameObject lightningPrediction;
 
 	private int previousHp; //Previous hp of ennemy
+	private float heightTest = 7; //Height to test lightning ray
 	private bool wasAttacked = false; //Becomes true when the enemy has been damaged
 	private bool isDying = false; //Is currently dying
 	private bool behaviourActivated = false; //Has behaviour been activated
+	private int collisionLayermask = 1 << 11; //Collision layermask
 
 	private Health hp;
 	private GuardianState _state;
@@ -170,6 +172,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 			Debug.Log (_guardian.name + " : I AM READYING AN ATTACK");
 			_guardian.guardianShield.SetActive (false);
 		}
+
 		public override void Update() {
 
 			//If Guardian is attacked, throw attack now instead of waiting.
@@ -182,7 +185,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 			if(currentTime > idleTime) {
 				if(PlayerIsBehind() == true){
 					_guardian.guardianShield.SetActive (true);
-					_guardian._state = new TurnAroundState(_guardian);
+					_guardian._state = new TurnAroundState(_guardian,true);
 					
 				} else {
 					ChooseAttack();
@@ -198,14 +201,15 @@ public class Behaviour_Guardian : MonoBehaviour {
 		void ChooseAttack(){
 			//If player is too far, idle :
 			Vector3 playerDistance = _guardian.playerController.transform.position - _guardian.transform.position;
-			if (playerDistance.x > _guardian.engageDistance || playerDistance.x < -_guardian.engageDistance) {
+			if (playerDistance.magnitude > _guardian.engageDistance) {
 				_guardian._state = new IdleState(_guardian,1.5f);
-			}
-			//Choose an attack depending on player position
-			if(playerDistance.magnitude <= _guardian.meleeDistance){
-				_guardian._state = new MeleeState(_guardian);
 			} else {
-				_guardian._state = new RangeState(_guardian);
+				//Choose an attack depending on player position
+				if(playerDistance.magnitude <= _guardian.meleeDistance){
+					_guardian._state = new MeleeState(_guardian);
+				} else {
+					_guardian._state = new RangeState(_guardian);
+				}
 			}
 		}
 
@@ -283,14 +287,12 @@ public class Behaviour_Guardian : MonoBehaviour {
 			} 
 			if(currentTime > idleTime) {
 				Attack ();
-				//Stop particle of prediction effect 
-				predictionEffect.GetComponentInChildren<ParticleSystem>().emissionRate = 0;
 			} else if(lightningPositionChosen == false && currentTime > lightningPositionTime){
 				//Choose ligthning position on start, so player has a delay to dodge it
-				lightningPosition = new Vector3 (_guardian.playerController.transform.position.x, _guardian.transform.position.y-0.6f, 0);
-				lightningPositionChosen = true;
+				lightningPosition = ChooseAttackPosition();
 				//Spawn a marker on the ground to show the player lightning is gonna strike there.
 				predictionEffect = (GameObject) Instantiate(_guardian.lightningPrediction, lightningPosition, Quaternion.identity); 
+				predictionEffect.GetComponentInChildren<StopParticlesOnDelay>().delay = idleTime - currentTime;
 			} else {
 				currentTime += Time.deltaTime;
 			}
@@ -300,6 +302,22 @@ public class Behaviour_Guardian : MonoBehaviour {
 			Instantiate (_guardian.lightningProjectile,lightningPosition , Quaternion.identity); //Create Lightning
 			_guardian._state = new IdleState(_guardian,1.5f);
 		}
+
+		Vector3 ChooseAttackPosition(){
+			Vector3 newPosition = new Vector3 (_guardian.playerController.transform.position.x, _guardian.playerController.transform.position.y-0.6f, 0);
+			Vector3 RayPosition = new Vector3 (newPosition.x, newPosition.y + _guardian.heightTest, newPosition.z);
+		
+			RaycastHit2D hit = Physics2D.Linecast (RayPosition, RayPosition - new Vector3(0,20,0), _guardian.collisionLayermask);
+			Debug.DrawLine (RayPosition, hit.point, Color.yellow, 4f);
+
+			if (hit.point != null) {
+				newPosition = new Vector3 (newPosition.x, hit.point.y, newPosition.z);
+			}
+
+			lightningPositionChosen = true;
+			return newPosition;
+		}
+
 		
 	}
 
