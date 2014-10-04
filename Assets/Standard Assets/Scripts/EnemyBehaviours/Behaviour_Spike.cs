@@ -13,7 +13,7 @@ public class Behaviour_Spike : MonoBehaviour {
 	void Start () {
 		if(damage <= 0) canHitPlayer = false;
 		if(enemyDamage <= 0) canHitEnemy = false;
-		gameObject.layer = 17;
+		gameObject.layer = 19;
 	}
 	
 	// Update is called once per frame

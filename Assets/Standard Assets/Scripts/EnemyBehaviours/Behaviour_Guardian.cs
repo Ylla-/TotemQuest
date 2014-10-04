@@ -18,9 +18,10 @@ public class Behaviour_Guardian : MonoBehaviour {
 
 	public bool facingRight = true;
 	public float engageDistance = 15f;
-	public float meleeDistance = 2f;
+	public float meleeDistance = 1.5f;
 	public GameObject guardianShield;
 	public GameObject lightningProjectile;
+	public GameObject lightningPrediction;
 
 	private int previousHp; //Previous hp of ennemy
 	private bool wasAttacked = false; //Becomes true when the enemy has been damaged
@@ -262,24 +263,40 @@ public class Behaviour_Guardian : MonoBehaviour {
 		public RangeState(Behaviour_Guardian guardian) : base(guardian) {}
 		// Variables
 		float idleTime = 1f;
+		float lightningPositionTime; //Time at which lightning position is chosen
 		float currentTime = 0f;
+
+		bool lightningPositionChosen = false; // Has attack position been chosen yet ?
+
+		GameObject predictionEffect;
+		Vector3 lightningPosition;
 		// Methods
-		public override void Start (){Debug.Log (_guardian.name + " : I AM RANGE ATTACKING");}
+		public override void Start (){
+			Debug.Log (_guardian.name + " : I AM RANGE ATTACKING");
+			lightningPositionTime = (idleTime - 0.8f);
+		}
 		public override void Update() {
 			//If Guardian is attacked, throw attack now instead of waiting.
 			if(_guardian.wasAttacked == true) {
 				_guardian.wasAttacked = false;
 				//Do something on attack :
-			}
+			} 
 			if(currentTime > idleTime) {
 				Attack ();
+				//Stop particle of prediction effect 
+				predictionEffect.GetComponentInChildren<ParticleSystem>().emissionRate = 0;
+			} else if(lightningPositionChosen == false && currentTime > lightningPositionTime){
+				//Choose ligthning position on start, so player has a delay to dodge it
+				lightningPosition = new Vector3 (_guardian.playerController.transform.position.x, _guardian.transform.position.y-0.6f, 0);
+				lightningPositionChosen = true;
+				//Spawn a marker on the ground to show the player lightning is gonna strike there.
+				predictionEffect = (GameObject) Instantiate(_guardian.lightningPrediction, lightningPosition, Quaternion.identity); 
 			} else {
 				currentTime += Time.deltaTime;
 			}
 		}
 
 		void Attack(){
-			Vector3 lightningPosition = new Vector3 (_guardian.playerController.transform.position.x, _guardian.transform.position.y-0.6f, 0);
 			Instantiate (_guardian.lightningProjectile,lightningPosition , Quaternion.identity); //Create Lightning
 			_guardian._state = new IdleState(_guardian,1.5f);
 		}
