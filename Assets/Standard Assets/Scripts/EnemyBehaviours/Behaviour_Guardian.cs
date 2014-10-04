@@ -17,10 +17,15 @@ public class Behaviour_Guardian : MonoBehaviour {
 	/// </summary>
 
 	public bool facingRight = true;
+	public float engageDistance = 15f;
+	public float meleeDistance = 2f;
+	public GameObject guardianShield;
+	public GameObject lightningProjectile;
 
 	private int previousHp; //Previous hp of ennemy
 	private bool wasAttacked = false; //Becomes true when the enemy has been damaged
 	private bool isDying = false; //Is currently dying
+	private bool behaviourActivated = false; //Has behaviour been activated
 
 	private Health hp;
 	private GuardianState _state;
@@ -39,6 +44,13 @@ public class Behaviour_Guardian : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//Run this once when activated 
+		if(behaviourActivated == false) {
+			rigidbody2D.isKinematic = false;
+			behaviourActivated = true;
+		}
+
+
 		// Verify if health has changed to verify is lizard was attacked.
 		if(previousHp != hp.curHealth) {
 			previousHp = hp.curHealth;
@@ -75,10 +87,12 @@ public class Behaviour_Guardian : MonoBehaviour {
 		private GuardianState() {}
 		public GuardianState(Behaviour_Guardian guardian) {
 			_guardian = guardian;
+			Start(); //Calls the Start method of the state on entering
 		}
 		
 		// Methods
 		public abstract void Update();
+		public abstract void Start();
 	}
 
 
@@ -105,8 +119,12 @@ public class Behaviour_Guardian : MonoBehaviour {
 		float currentTime = 0f;
 		int nextState;
 		
-		
+
 		// Methods
+		public override void Start (){
+			Debug.Log (_guardian.name + " : I AM IDLE");
+			_guardian.guardianShield.SetActive (true);
+		}
 		public override void Update() {
 			//If Lizard was attacked, transition into Teleport
 			if(_guardian.wasAttacked == true) {
@@ -119,9 +137,9 @@ public class Behaviour_Guardian : MonoBehaviour {
 			} else {
 				currentTime += Time.deltaTime;
 			}
-			Debug.Log (_guardian.name + " : I AM IDLE");
+
 		}
-		
+
 		private void GoToNextState(){
 			if(nextState == 0) { //GO to  Hide State
 				_guardian._state = new MeleeState(_guardian);
@@ -147,7 +165,12 @@ public class Behaviour_Guardian : MonoBehaviour {
 		float currentTime = 0f;
 		float idleTime = 0.7f; //Time before attack
 		// Methods
+		public override void Start (){
+			Debug.Log (_guardian.name + " : I AM READYING AN ATTACK");
+			_guardian.guardianShield.SetActive (false);
+		}
 		public override void Update() {
+
 			//If Guardian is attacked, throw attack now instead of waiting.
 			if(_guardian.wasAttacked == true) {
 				_guardian.wasAttacked = false;
@@ -156,7 +179,8 @@ public class Behaviour_Guardian : MonoBehaviour {
 			
 			//Look if idle time has elapsed :
 			if(currentTime > idleTime) {
-				if(PlayerIsBehind()){
+				if(PlayerIsBehind() == true){
+					_guardian.guardianShield.SetActive (true);
 					_guardian._state = new TurnAroundState(_guardian);
 					
 				} else {
@@ -168,13 +192,16 @@ public class Behaviour_Guardian : MonoBehaviour {
 				currentTime += Time.deltaTime;
 			}
 
-			Debug.Log (_guardian.name + " : I AM READYING AN ATTACK");
 		}
 
 		void ChooseAttack(){
-			//TODO :Choose an attack depending on player position
-			//TODO :Go to that state's attack
-			if (true) {
+			//If player is too far, idle :
+			Vector3 playerDistance = _guardian.playerController.transform.position - _guardian.transform.position;
+			if (playerDistance.x > _guardian.engageDistance || playerDistance.x < -_guardian.engageDistance) {
+				_guardian._state = new IdleState(_guardian,1.5f);
+			}
+			//Choose an attack depending on player position
+			if(playerDistance.magnitude <= _guardian.meleeDistance){
 				_guardian._state = new MeleeState(_guardian);
 			} else {
 				_guardian._state = new RangeState(_guardian);
@@ -182,7 +209,16 @@ public class Behaviour_Guardian : MonoBehaviour {
 		}
 
 		bool PlayerIsBehind(){
-			//TODO : IF player is behind, return TRUE
+			//IF player is behind, return TRUE
+			if(_guardian.facingRight == true) {
+				if(_guardian.playerController.transform.position.x < _guardian.transform.position.x){
+					return true;
+				}
+			} else {
+				if(_guardian.playerController.transform.position.x > _guardian.transform.position.x){
+					return true;
+				}
+			}
 			return false;
 		}
 	}
@@ -199,6 +235,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 		// Variables
 
 		// Methods
+		public override void Start (){Debug.Log (_guardian.name + " : I AM MELEE ATTACKING");}
 		public override void Update() {
 			//If Guardian is attacked, throw attack now instead of waiting.
 			if(_guardian.wasAttacked == true) {
@@ -207,8 +244,6 @@ public class Behaviour_Guardian : MonoBehaviour {
 			}
 
 			Attack ();
-
-			Debug.Log (_guardian.name + " : I AM MELEE ATTACKING");
 		}
 
 		void Attack(){
@@ -226,21 +261,26 @@ public class Behaviour_Guardian : MonoBehaviour {
 		// Constructors
 		public RangeState(Behaviour_Guardian guardian) : base(guardian) {}
 		// Variables
-		
+		float idleTime = 1f;
+		float currentTime = 0f;
 		// Methods
+		public override void Start (){Debug.Log (_guardian.name + " : I AM RANGE ATTACKING");}
 		public override void Update() {
 			//If Guardian is attacked, throw attack now instead of waiting.
 			if(_guardian.wasAttacked == true) {
 				_guardian.wasAttacked = false;
 				//Do something on attack :
 			}
-
-			Attack ();
-			
-			Debug.Log (_guardian.name + " : I AM RANGE ATTACKING");
+			if(currentTime > idleTime) {
+				Attack ();
+			} else {
+				currentTime += Time.deltaTime;
+			}
 		}
 
 		void Attack(){
+			Vector3 lightningPosition = new Vector3 (_guardian.playerController.transform.position.x, _guardian.transform.position.y-0.6f, 0);
+			Instantiate (_guardian.lightningProjectile,lightningPosition , Quaternion.identity); //Create Lightning
 			_guardian._state = new IdleState(_guardian,1.5f);
 		}
 		
@@ -261,6 +301,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 		float currentTime = 0f;
 		bool wasReadyToAttack;
 		// Methods
+		public override void Start (){Debug.Log (_guardian.name + " : I AM Turning Around");}
 		public override void Update() {
 			//If Guardian is attacked, throw attack now instead of waiting.
 			if(_guardian.wasAttacked == true) {
@@ -279,7 +320,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 			} else {
 				currentTime += Time.deltaTime;
 			}
-			Debug.Log (_guardian.name + " : I AM Turning Around");
+
 		}
 
 		void Turn(){
@@ -290,10 +331,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 				_guardian.facingRight = true;
 				_guardian.transform.localScale = new Vector3(1,1,1);
 			}
-
-
-		}
-		
+		}	
 	}
 
 

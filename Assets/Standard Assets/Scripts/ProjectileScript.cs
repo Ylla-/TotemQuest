@@ -35,11 +35,11 @@ public class ProjectileScript : MonoBehaviour
 
 
 
-		if (other is BoxCollider2D && other.gameObject.layer == 14) { //Changed the collision requirements from being a tag to a layer. It will now hit everything in enemy layer.
+		if (other is BoxCollider2D && (other.gameObject.layer == 14 || other.gameObject.layer == 17)) { //Changed the collision requirements from being a tag to a layer. It will now hit everything in enemy layer.
 			Debug.Log ("HIT FIREBALL");
 			//Get HealthScript and remove HP
 			Health h = (Health)other.gameObject.GetComponent ("Health");
-			h.AdjustCurrentHealth (-DMG);
+			if(h != null) h.AdjustCurrentHealth (-DMG);
 			//Activate the MonoBehaviour of the enemy (if the enemy requires a specific condition to activate, getting hit by the player will fulfill it).
 			ActivateMonos(other.gameObject); //Activates the monobehaviours on target
 

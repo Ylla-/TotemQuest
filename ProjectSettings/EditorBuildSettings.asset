@@ -12,9 +12,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Standard Assets/Scenes/Level Select.unity
   - enabled: 1
-    path: Assets/Standard Assets/Scenes/Plains.unity
-  - enabled: 1
     path: Assets/Standard Assets/Scenes/Forest.unity
+  - enabled: 1
+    path: Assets/Standard Assets/Scenes/Plains.unity
   - enabled: 1
     path: Assets/Standard Assets/Scenes/Caves.unity
   - enabled: 1
