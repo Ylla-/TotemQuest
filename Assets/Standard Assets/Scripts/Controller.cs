@@ -226,13 +226,13 @@ public class Controller : MonoBehaviour {
 
 		//shield mole
 		if (canShield) {
-			if ( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) {
+			if ( (Input.GetButtonDown ("Ability1"))) {
 				MoleShield();
 			}
 			}
 		//mole smash
 		if (canSmash) {
-						if ((Input.GetButtonDown ("Ability2") || Input.GetButtonDown ("Fire2"))) {
+						if ((Input.GetButtonDown ("Ability2"))) {
 				moleSmash = true;
 				moveAllowed = false;
 				MoleExplo();
