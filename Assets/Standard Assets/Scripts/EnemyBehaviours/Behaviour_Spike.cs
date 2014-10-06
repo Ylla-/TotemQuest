@@ -21,9 +21,10 @@ public class Behaviour_Spike : MonoBehaviour {
 	
 	}
 
-	void  OnTriggerEnter2D(Collider2D other) { 
+	void  OnTriggerStay2D(Collider2D other) { 
 		//Damages Player when touching
 		if(canHitPlayer == true && other.gameObject.layer == 13) { //If it hits the player
+			Debug.Log("pHit");
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 

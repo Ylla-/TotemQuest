@@ -269,12 +269,13 @@ public class Controller : MonoBehaviour {
 		// The vector2 hitDirection is the normalized vector of the direction from the ennemy to the player. (direction player should be knocked in, Or not if hit from top !)  
 
 		//THis is a placeholder to a better knockback that should be implemented later :
+		/* //Removed for testing purposes. Trying a knockback with just immunity instead
 		if(hitDirection.x > 0) {
 			rigidbody2D.velocity = new Vector2( 4f, 8f);
 		} else {
 			rigidbody2D.velocity = new Vector2( -4f, 8f);
 		}
-
+		*/
 
 	}
 	
@@ -489,13 +490,15 @@ public class Controller : MonoBehaviour {
 		bool wasFloating = false;
 		//Player is being knockbacked
 		isInvincible = true;
-		isKnockbacked = true;
+		//isKnockbacked = true; //hanged to false to remove knockback
+		isKnockbacked = false;
 		if(Floating == true) { //If float is active, remove it for the knockback (because of the drag)
 			Floating = false;
 			MaBellesFloat(Floating);
 			wasFloating = true;
 		}
 		gameObject.layer = 16; //put on layer without enemies
+
 		yield return new WaitForSeconds (knockbackTime);
 		//Player Get Controls back but is still invincible
 		isKnockbacked = false;
@@ -503,6 +506,7 @@ public class Controller : MonoBehaviour {
 			Floating = true;
 			MaBellesFloat(Floating);
 		}
+
 		yield return new WaitForSeconds (invincibilityTime);
 		//player returns to normal
 		isInvincible = false;
