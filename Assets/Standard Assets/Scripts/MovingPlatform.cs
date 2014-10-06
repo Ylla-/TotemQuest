@@ -67,7 +67,7 @@ public class MovingPlatform : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.collider is CircleCollider2D) {
-			Debug.Log ("on platform");
+			//Debug.Log ("on platform");
 			Controller c = (Controller)coll.gameObject.GetComponent ("Controller");	
 			c.movingRigidbody2D = thisRigidbody2D;
 			c.onMovingPlatform = true;
@@ -75,7 +75,7 @@ public class MovingPlatform : MonoBehaviour {
 	}
 	void OnCollisionExit2D(Collision2D coll){
 		if (coll.collider is CircleCollider2D) {
-		Debug.Log ("off platform");
+		//Debug.Log ("off platform");
 		Controller c = (Controller)coll.gameObject.GetComponent ("Controller");	
 		c.onMovingPlatform = false;
 		}
