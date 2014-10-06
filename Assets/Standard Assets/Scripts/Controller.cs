@@ -73,11 +73,13 @@ public class Controller : MonoBehaviour {
 	public float invincibilityTime = 0.3f; //Time for invulnerability when hit.
 	private bool isInvincible = false; //Is the player currently invincible ?
 
-
 	//on moving platform
 	public bool onMovingPlatform;
 	public Rigidbody2D movingRigidbody2D;
 
+	//GameManager and Camera
+	private GameManager gameManager;
+	private CameraScript cameraScript;
 
 	PlayerAttack att;
 	public EnergyBar orbs;
@@ -86,10 +88,7 @@ public class Controller : MonoBehaviour {
 	AudioClip playerWalk, playerStandJump, playerWalkJump, playerDamageTaken, playerTransform;
 
 	void Start () {
-		anim = GetComponent<Animator> ();
 		moveAllowed = true;
-		att = (PlayerAttack)gameObject.GetComponent ("PlayerAttack");
-		health = (Health)gameObject.GetComponent ("Health");
 		health.shieldRatio = shieldRatio;
 		//assign corresponding audio files to their audio variables
 		playerWalk = (AudioClip)Resources.Load ("Audio/Michelle_Walk.wav", typeof(AudioClip));
@@ -101,7 +100,16 @@ public class Controller : MonoBehaviour {
 		TurnIntoNormal ();
 	}
 	void Awake(){
-				
+		//Get the different components. Try and do this in Awake in case some other scripts require those components in their start()	
+		att = gameObject.GetComponent<PlayerAttack>();
+		health = gameObject.GetComponent <Health>();
+		anim = GetComponent<Animator> ();
+		GameObject manager_Obj = GameObject.FindGameObjectWithTag ("GameManager");
+		if (manager_Obj != null) gameManager = (GameManager)manager_Obj.GetComponent<GameManager> ();
+		else Debug.Log ("MANAGER OBJECT NOT FOUND !");
+		GameObject camera_Obj = GameObject.FindGameObjectWithTag ("MainCamera");
+		if (camera_Obj != null) cameraScript = (CameraScript)camera_Obj.GetComponentInParent<CameraScript> ();
+		else Debug.Log ("CAMERA OBJECT NOT FOUND !");
 	}
 	
 	
@@ -481,8 +489,10 @@ public class Controller : MonoBehaviour {
 	//Function Used when taking Damage. When hit, Call THIS function instead of changing the player's health through Health Script.
 	public void DamagePlayer(int damage) {
 		if(isInvincible == false) {
-			health.AdjustCurrentHealth(-damage);
-			StartCoroutine(InvincibilityTimer());
+			health.AdjustCurrentHealth(-damage); //deal dmg
+			StartCoroutine(InvincibilityTimer()); //Start Invincibility
+			gameManager.FreezeGame(0.075f); //Freeze the game for a small moment
+			if(cameraScript != null) cameraScript.ScreenShake(); //Shake Screen
 		}
 	}
 

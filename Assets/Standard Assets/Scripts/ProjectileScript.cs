@@ -9,9 +9,20 @@ public class ProjectileScript : MonoBehaviour
 	public GameObject destroyedParticlesObj;
 	
 	public bool facingRight = true;
-	
-	void Start()
-	{
+
+	//For Screen shake
+	private CameraScript cameraScript;
+	private GameManager gameManager;
+
+	void Awake() {
+		GameObject camera_Obj = GameObject.FindGameObjectWithTag ("MainCamera");
+		if (camera_Obj != null) cameraScript = (CameraScript)camera_Obj.GetComponentInParent<CameraScript> ();
+		else Debug.Log ("CAMERA OBJECT NOT FOUND !");
+		GameObject manager_Obj = GameObject.FindGameObjectWithTag ("GameManager");
+		if (manager_Obj != null) gameManager = (GameManager)manager_Obj.GetComponent<GameManager> ();
+		else Debug.Log ("MANAGER OBJECT NOT FOUND !");
+	}
+	void Start() {
 		gameObject.layer = 15; //This is the player's attack layer
 		Destroy(gameObject, 4); 
 	}
@@ -43,14 +54,18 @@ public class ProjectileScript : MonoBehaviour
 			//Activate the MonoBehaviour of the enemy (if the enemy requires a specific condition to activate, getting hit by the player will fulfill it).
 			ActivateMonos(other.gameObject); //Activates the monobehaviours on target
 
-			Destroy(gameObject);
+			DestroyProjectile();
 		} else if (other.gameObject.layer == 11) {
 			if(destroyedParticlesObj != null) Instantiate (destroyedParticlesObj,transform.position,Quaternion.identity);
 			Destroy (gameObject);
-
 		}
 	}
-	
+
+	void DestroyProjectile() { //Destroy Projectile and add freeze and shake effect
+		gameManager.FreezeGame(0.02f);
+		if(cameraScript != null) cameraScript.ScreenShake(0.08f,0.02f); //Shake Screen
+		Destroy (gameObject);
+	}
 	
 	void Flip(){
 		Vector3 theScale = transform.localScale;

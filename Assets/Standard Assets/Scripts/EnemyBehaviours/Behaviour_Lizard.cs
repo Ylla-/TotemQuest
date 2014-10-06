@@ -139,7 +139,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 			} else {
 				currentTime += Time.deltaTime;
 			}
-			Debug.Log (_lizard.name + " : I AM IDLE");
+			//Debug.Log (_lizard.name + " : I AM IDLE");
 		}
 
 		private void GoToNextState(){
@@ -187,7 +187,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 				_lizard._state = new IdleState(_lizard,0.4f,0);
 			}
 			
-			Debug.Log (_lizard.name + " : I AM SHOOTING");
+			//Debug.Log (_lizard.name + " : I AM SHOOTING");
 		}
 
 		//Determine if the player is in range and returns the result
@@ -281,7 +281,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 			_lizard.wasAttacked = false;
 
 
-			Debug.Log (_lizard.name + " : I AM TELEPORTING");
+			//Debug.Log (_lizard.name + " : I AM TELEPORTING");
 		}
 
 		void FindTeleportLocation(){
@@ -307,13 +307,13 @@ public class Behaviour_Lizard : MonoBehaviour {
 			//Test sphere collider on spot
 			if (Physics2D.OverlapCircle (testPosition, 0.5f, _lizard.CollisionLayerMask) == null) {  //Overlapshere returns what it collides withg
 				Debug.DrawLine(testPosition,_lizard.playerController.transform.position,Color.yellow,3f);
-				Debug.Log("Teleport Collision Point!");
+				//Debug.Log("Teleport Collision Point!");
 				return true;
 			} 
 			//Test if ray can be made between player and lizard
 			else if(Physics2D.Linecast(testPosition,_lizard.playerController.transform.position, _lizard.CollisionLayerMask)){ 
 				Debug.DrawLine(testPosition,_lizard.playerController.transform.position,Color.yellow,3f);
-				Debug.Log("Teleport Collision Line!");
+				//Debug.Log("Teleport Collision Line!");
 				return true;
 			}
 			return false;
@@ -395,7 +395,7 @@ public class Behaviour_Lizard : MonoBehaviour {
 				}
 			}
 	
-			Debug.Log (_lizard.name + " : I AM HIDING");
+			//Debug.Log (_lizard.name + " : I AM HIDING");
 		}
 
 		private bool FindSafePosition() { //find the position the lizard must be in to hit the player
