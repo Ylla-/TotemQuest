@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour {
 			if (shoot){
 			shoot = false;
 			shoot1.ThrowFireball(DMG);
-			           }
+			}
 		}
 	
 	void Attack(){

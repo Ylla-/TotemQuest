@@ -36,16 +36,11 @@ public class ProjectileScript : MonoBehaviour
 			facingRight = true;
 		}
 		rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
-		
-		
 	}
 	
 	
 	
 	void OnTriggerEnter2D(Collider2D other)	{
-
-
-
 		if (other is BoxCollider2D && (other.gameObject.layer == 14 || other.gameObject.layer == 17)) { //Changed the collision requirements from being a tag to a layer. It will now hit everything in enemy layer.
 			Debug.Log ("HIT FIREBALL");
 			//Get HealthScript and remove HP
