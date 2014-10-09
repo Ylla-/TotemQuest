@@ -8,13 +8,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 212: {fileID: 21200000}
   - 50: {fileID: 5000000}
   - 58: {fileID: 5800000}
   - 108: {fileID: 10800000}
   - 114: {fileID: 11400000}
-  m_Layer: 15
-  m_Name: Rabbit_Fireball
+  - 212: {fileID: 21200000}
+  m_Layer: 0
+  m_Name: TurretProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: -.861185968, w: .508290112}
-  m_LocalPosition: {x: 2.84144044, y: .149549514, z: -.200000003}
-  m_LocalScale: {x: .13000001, y: .129999995, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.5, y: 2.70000005, z: -.200000003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,8 +56,8 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.07000005
-  m_Center: {x: -.100000001, y: 0}
+  m_Radius: .230000004
+  m_Center: {x: 0, y: 0}
 --- !u!108 &10800000
 Light:
   m_ObjectHideFlags: 1
@@ -67,9 +67,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: .903448105, g: 1, b: 0, a: 1}
-  m_Intensity: 3
-  m_Range: 5
+  m_Color: {r: 1, g: .886206925, b: .514705896, a: 1}
+  m_Intensity: 8
+  m_Range: 3.53999996
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -104,14 +104,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5193a6f85d5a0814abea528ca75de2a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DMG: 4
-  speed: 10
+  DMG: 6
+  speed: 0
   speedY: 0
   destroyedParticlesObj: {fileID: 100000, guid: 9ed9591b561445c4f8a7ea860da0b0c8,
     type: 2}
   interactsWith:
     serializedVersion: 2
-    m_Bits: 147456
+    m_Bits: 8192
   facingRight: 1
 --- !u!212 &21200000
 SpriteRenderer:
@@ -133,8 +133,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: c6428fa0f637bcf458ae5a7c671cae56, type: 3}
-  m_Color: {r: 1, g: .765517294, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 663c4c1f68c11de4e8f07531d1d7a376, type: 3}
+  m_Color: {r: .98093307, g: 1, b: .654411793, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

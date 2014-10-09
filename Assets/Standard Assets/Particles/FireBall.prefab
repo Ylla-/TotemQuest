@@ -106,8 +106,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DMG: 5
   speed: 8
+  speedY: 0
   destroyedParticlesObj: {fileID: 100000, guid: 9ed9591b561445c4f8a7ea860da0b0c8,
     type: 2}
+  interactsWith:
+    serializedVersion: 2
+    m_Bits: 147456
   facingRight: 1
 --- !u!212 &21200000
 SpriteRenderer:
@@ -130,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: c6428fa0f637bcf458ae5a7c671cae56, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: .068965517, g: 0, b: .588235259, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

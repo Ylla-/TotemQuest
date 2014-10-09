@@ -6,7 +6,9 @@ public class ProjectileScript : MonoBehaviour
 {
 	public int DMG = 20;
 	public float speed = 12f;
+	public float speedY = 0f;
 	public GameObject destroyedParticlesObj;
+	public LayerMask interactsWith;
 	
 	public bool facingRight = true;
 
@@ -33,15 +35,16 @@ public class ProjectileScript : MonoBehaviour
 		if (facingRight == false) {
 			Flip ();
 			speed = -speed;
+			speedY = -speedY;
 			facingRight = true;
 		}
-		rigidbody2D.velocity = new Vector2 (speed, rigidbody2D.velocity.y);
+		rigidbody2D.velocity = new Vector2 (speed, speedY);
 	}
 	
 	
-	
+	//14-17
 	void OnTriggerEnter2D(Collider2D other)	{
-		if (other is BoxCollider2D && (other.gameObject.layer == 14 || other.gameObject.layer == 17)) { //Changed the collision requirements from being a tag to a layer. It will now hit everything in enemy layer.
+		if (other is BoxCollider2D && (((1<<other.gameObject.layer) & interactsWith) != 0)) { //Changed the collision requirements from being a tag to a layer. It will now hit everything in enemy layer.
 			Debug.Log ("HIT FIREBALL");
 			//Get HealthScript and remove HP
 			Health h = (Health)other.gameObject.GetComponent ("Health");

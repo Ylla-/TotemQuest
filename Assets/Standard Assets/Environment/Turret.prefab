@@ -9,12 +9,12 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 50: {fileID: 5000000}
-  - 58: {fileID: 5800000}
-  - 108: {fileID: 10800000}
+  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  m_Layer: 15
-  m_Name: Rabbit_Fireball
+  - 60: {fileID: 6000000}
+  - 50: {fileID: 5000000}
+  m_Layer: 0
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: -.861185968, w: .508290112}
-  m_LocalPosition: {x: 2.84144044, y: .149549514, z: -.200000003}
-  m_LocalScale: {x: .13000001, y: .129999995, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.5, y: 12.625, z: 0}
+  m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,58 +41,42 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
+  m_GravityScale: 1
+  m_FixedAngle: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!58 &5800000
-CircleCollider2D:
+--- !u!60 &6000000
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Radius: 1.07000005
-  m_Center: {x: -.100000001, y: 0}
---- !u!108 &10800000
-Light:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Type: 2
-  m_Color: {r: .903448105, g: 1, b: 0, a: 1}
-  m_Intensity: 3
-  m_Range: 5
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_ActuallyLightmapped: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_ShadowSamples: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_IndirectIntensity: 1
-  m_AreaSize: {x: 1, y: 1}
+  m_IsTrigger: 0
+  m_Poly:
+    m_Paths:
+    - - {x: .270000011, y: -.5}
+      - {x: .270000011, y: .109999999}
+      - {x: .25, y: .219999999}
+      - {x: .200000003, y: .340000004}
+      - {x: .119999997, y: .479999989}
+      - {x: -.0900000036, y: .699999988}
+      - {x: -.200000003, y: .730000019}
+      - {x: -.270000011, y: .730000019}
+      - {x: -.270000011, y: .670000017}
+      - {x: -.209999993, y: .569999993}
+      - {x: -.109999999, y: .159999996}
+      - {x: -.150000006, y: -.200000003}
+      - {x: -.239999995, y: -.460000008}
+      - {x: -.25999999, y: -.529999971}
+      - {x: -.230000004, y: -.629999995}
+      - {x: -.170000002, y: -.730000019}
+      - {x: .159999996, y: -.730000019}
+      - {x: .200000003, y: -.670000017}
+      - {x: .25999999, y: -.560000002}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,18 +85,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5193a6f85d5a0814abea528ca75de2a0, type: 3}
+  m_Script: {fileID: 11500000, guid: aea81ea9ad7f7d8499ee0fc37bac20f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DMG: 4
-  speed: 10
-  speedY: 0
-  destroyedParticlesObj: {fileID: 100000, guid: 9ed9591b561445c4f8a7ea860da0b0c8,
-    type: 2}
-  interactsWith:
-    serializedVersion: 2
-    m_Bits: 147456
-  facingRight: 1
+  activationCollider: {fileID: 0}
+  isActivated: 0
+  monosToActivate: []
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16baac3992cff0b469576274177d54ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurretProjectile: {fileID: 100000, guid: b8d5129a22e723b46a039f03cbb573ad, type: 2}
+  fireRate: 1
+  projSpeedX: 0
+  projSpeedY: 10
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -133,8 +126,8 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: c6428fa0f637bcf458ae5a7c671cae56, type: 3}
-  m_Color: {r: 1, g: .765517294, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8f59395222ebdfc4b8e1a64c29ee17f2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
