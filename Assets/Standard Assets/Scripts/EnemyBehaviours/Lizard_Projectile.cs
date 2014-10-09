@@ -39,7 +39,6 @@ public class Lizard_Projectile : MonoBehaviour {
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(DMG);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
-			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
 			Destroy(gameObject);
 		}
 	}

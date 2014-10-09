@@ -76,7 +76,6 @@ public class Behaviour_Lizard : MonoBehaviour {
 		if(other.gameObject.layer == 13 && isDying == false) { //If it hits the player
 			playerController.DamagePlayer(meleeDamage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
-			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
 		}
 	}
 

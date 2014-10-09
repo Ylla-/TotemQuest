@@ -74,7 +74,6 @@ public class Behaviour_Goomba : MonoBehaviour {
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
-			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
 		}
 	}
 	void  OnCollisionEnter2D(Collision2D coll) { 

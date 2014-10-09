@@ -5,6 +5,7 @@ public class Behaviour_Spike : MonoBehaviour {
 
 	public int damage = 2; //damage dealt to player
 	public int enemyDamage = 10; //damage dealt to enemy
+	public bool KnockBackPlayer = false;
 
 	private Controller playerController;
 	private bool canHitPlayer = true;
@@ -28,7 +29,7 @@ public class Behaviour_Spike : MonoBehaviour {
 			if(playerController == null) playerController = other.gameObject.GetComponent<Controller>();
 			playerController.DamagePlayer(damage);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
-			playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
+			if(KnockBackPlayer == true) playerController.Knockback((new Vector2(positionDiff.x,positionDiff.y).normalized)); //Not implemented yet.
 		}
 		if(canHitEnemy == true && other.gameObject.layer == 14) { //If it hits the player
 			Health hp = other.GetComponent<Health>();

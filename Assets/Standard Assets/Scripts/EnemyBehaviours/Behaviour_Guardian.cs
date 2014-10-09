@@ -17,11 +17,14 @@ public class Behaviour_Guardian : MonoBehaviour {
 	/// </summary>
 
 	public bool facingRight = true;
+	public int meleeDamage = 2;
 	public float engageDistance = 15f;
 	public float meleeDistance = 1.5f;
 	public GameObject guardianShield;
 	public GameObject lightningProjectile;
 	public GameObject lightningPrediction;
+	public GameObject meleeAttackPrefab;
+
 
 	private int previousHp; //Previous hp of ennemy
 	private float heightTest = 7; //Height to test lightning ray
@@ -132,6 +135,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 			//If Lizard was attacked, transition into Teleport
 			if(_guardian.wasAttacked == true) {
 				_guardian.wasAttacked = false;
+				currentTime = idleTime; //interrupt wait on hit
 			}
 			
 			//Look if idle time has elapsed :
@@ -238,7 +242,8 @@ public class Behaviour_Guardian : MonoBehaviour {
 		// Constructors
 		public MeleeState(Behaviour_Guardian guardian) : base(guardian) {}
 		// Variables
-
+		float idleTime = 0.3f; //Time before attack launches nd leave state
+		float currentTime = 0f;
 		// Methods
 		public override void Start (){Debug.Log (_guardian.name + " : I AM MELEE ATTACKING");}
 		public override void Update() {
@@ -247,12 +252,32 @@ public class Behaviour_Guardian : MonoBehaviour {
 				_guardian.wasAttacked = false;
 				//Do something on attack :
 			}
-
-			Attack ();
+			if(currentTime > idleTime) {
+				Attack ();
+			} else {
+				currentTime += Time.deltaTime;
+			}
 		}
 
 		void Attack(){
+
+			CreateProjectile ();
 			_guardian._state = new IdleState(_guardian,1.5f);
+		}
+
+		void CreateProjectile(){
+			Vector3 newPosition;
+			if(_guardian.facingRight == true) {
+				newPosition = _guardian.transform.position + new Vector3 (1f,0,0);
+				_guardian.rigidbody2D.AddForce (new Vector2 (25000f, 0f));
+			} else {
+				newPosition = _guardian.transform.position - new Vector3 (1f,0,0);
+				_guardian.rigidbody2D.AddForce (new Vector2 (-25000f, 0f));
+			}
+			GameObject proj = (GameObject)Instantiate (_guardian.meleeAttackPrefab, newPosition, Quaternion.identity);
+			Enemy_Projectile projScript = proj.GetComponent<Enemy_Projectile> ();
+			projScript.DMG = _guardian.meleeDamage;
+			projScript.facingRight = _guardian.facingRight;
 		}
 	}
 
@@ -266,7 +291,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 		// Constructors
 		public RangeState(Behaviour_Guardian guardian) : base(guardian) {}
 		// Variables
-		float idleTime = 1f;
+		float idleTime = 1f; //Time before attack launches nd leave state
 		float lightningPositionTime; //Time at which lightning position is chosen
 		float currentTime = 0f;
 

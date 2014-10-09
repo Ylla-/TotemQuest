@@ -68,9 +68,9 @@ public class Controller : MonoBehaviour {
 	public LayerMask theGround;
 
 	//for invincibility frame
-	public float knockbackTime = 0.3f; //Time where the player loses control when hit
+	public float knockbackTime = 0.5f; //Time where the player loses control when hit
 	private bool isKnockbacked = false; //Is the player currently being Knockbacked ?
-	public float invincibilityTime = 0.3f; //Time for invulnerability when hit.
+	public float invincibilityTime = 0f; //Time for invulnerability when hit.
 	private bool isInvincible = false; //Is the player currently invincible ?
 
 	//on moving platform
@@ -273,18 +273,22 @@ public class Controller : MonoBehaviour {
 	}
 
 	public void Knockback(Vector2 hitDirection) {
-		//TODO : This function is called when the player is hit to give a knockback to the player.
 		// The vector2 hitDirection is the normalized vector of the direction from the ennemy to the player. (direction player should be knocked in, Or not if hit from top !)  
-
 		//THis is a placeholder to a better knockback that should be implemented later :
-		/* //Removed for testing purposes. Trying a knockback with just immunity instead
+		isKnockbacked = true;
 		if(hitDirection.x > 0) {
 			rigidbody2D.velocity = new Vector2( 4f, 8f);
 		} else {
 			rigidbody2D.velocity = new Vector2( -4f, 8f);
 		}
-		*/
-
+	}
+	public void Knockback(Vector2 hitDirection, float xAmplification, float yAmplification) { //can add X and Y values that multiply the force of the push
+		isKnockbacked = true;
+		if(hitDirection.x > 0) {
+			rigidbody2D.velocity = new Vector2( 4f*xAmplification, 8f*yAmplification);
+		} else {
+			rigidbody2D.velocity = new Vector2( -4f*xAmplification, 8f*yAmplification);
+		}
 	}
 	
 	void Flip(){
@@ -500,7 +504,6 @@ public class Controller : MonoBehaviour {
 		bool wasFloating = false;
 		//Player is being knockbacked
 		isInvincible = true;
-		//isKnockbacked = true; //hanged to false to remove knockback
 		isKnockbacked = false;
 		if(Floating == true) { //If float is active, remove it for the knockback (because of the drag)
 			Floating = false;
