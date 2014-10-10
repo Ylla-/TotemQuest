@@ -17,16 +17,16 @@ public class ProjectileScript : MonoBehaviour
 	private GameManager gameManager;
 
 	void Awake() {
+		gameObject.layer = 15; //This is the player's attack layer
+		Destroy(gameObject, 4); 
+	}
+	void Start() {
 		GameObject camera_Obj = GameObject.FindGameObjectWithTag ("MainCamera");
 		if (camera_Obj != null) cameraScript = (CameraScript)camera_Obj.GetComponentInParent<CameraScript> ();
 		else Debug.Log ("CAMERA OBJECT NOT FOUND !");
 		GameObject manager_Obj = GameObject.FindGameObjectWithTag ("GameManager");
 		if (manager_Obj != null) gameManager = (GameManager)manager_Obj.GetComponent<GameManager> ();
 		else Debug.Log ("MANAGER OBJECT NOT FOUND !");
-	}
-	void Start() {
-		gameObject.layer = 15; //This is the player's attack layer
-		Destroy(gameObject, 4); 
 	}
 	
 	
