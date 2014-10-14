@@ -13,7 +13,7 @@ public class Health : MonoBehaviour {
 	public float shieldRatio;
 
 	private float healthBarMaxLength;
-	private GUIStyle centeredText;
+	public GUISkin skin;
 	private FlashSprite flashSprite;
 
 	void Awake () {
@@ -23,10 +23,6 @@ public class Health : MonoBehaviour {
 	void Start () {
 		healthBarLength = (Screen.width / 3) * (curHealth / (float)(maxHealth)); //current health Lenght
 		healthBarMaxLength = (Screen.width / 3); //Health Bar Background Lenght
-		//Creating a new GUISTYLE
-		centeredText = new GUIStyle ();
-		centeredText.alignment = TextAnchor.MiddleCenter;
-
 	}
 	
 	// Update is called once per frame
@@ -37,7 +33,8 @@ public class Health : MonoBehaviour {
 		if(ShowHealthOnScreen == true) {
 			GUI.Box (new Rect (10, pos, healthBarMaxLength, 20),"");
 			GUI.Box (new Rect (10, pos, healthBarLength, 20),"");
-			GUI.Label (new Rect(10, pos, healthBarMaxLength, 20),curHealth + "/" + maxHealth,centeredText);
+			GUI.skin = skin;
+			GUI.Label (new Rect(10, pos, healthBarMaxLength, 20),curHealth + "/" + maxHealth);
 		}
 	}
 	
