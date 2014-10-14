@@ -83,7 +83,7 @@ Light:
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -134,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: c6428fa0f637bcf458ae5a7c671cae56, type: 3}
-  m_Color: {r: .816176474, g: 0, b: 0, a: 1}
+  m_Color: {r: .985294104, g: .22458908, b: .22458908, a: 1}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

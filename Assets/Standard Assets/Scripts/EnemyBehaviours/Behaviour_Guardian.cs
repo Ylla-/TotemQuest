@@ -44,8 +44,9 @@ public class Behaviour_Guardian : MonoBehaviour {
 	void Start () {
 		previousHp = hp.curHealth;
 		if(playerController == null) playerController = (Controller) GameObject.FindGameObjectWithTag ("Player").GetComponent<Controller> ();
-		
+		UpdateFacing ();
 		_state = new IdleState(this,2f,-1);
+
 	}
 	
 	// Update is called once per frame
@@ -370,7 +371,7 @@ public class Behaviour_Guardian : MonoBehaviour {
 			}
 			//timer
 			if(currentTime > idleTime) {
-				Turn();
+				_guardian.Turn();
 				if(wasReadyToAttack){ //If was attacking,attack now.
 					_guardian._state = new ReadyState(_guardian);
 				} else { //Else go idle and ready attack
@@ -383,18 +384,26 @@ public class Behaviour_Guardian : MonoBehaviour {
 
 		}
 
-		void Turn(){
-			if(_guardian.facingRight == true){
-				_guardian.facingRight = false;
-				_guardian.transform.localScale = new Vector3(-1,1,1);
-			} else {
-				_guardian.facingRight = true;
-				_guardian.transform.localScale = new Vector3(1,1,1);
-			}
-		}	
+
 	}
 
+	void Turn(){
+		if(facingRight == true){
+			facingRight = false;
+			transform.localScale = new Vector3(-1,1,1);
+		} else {
+			facingRight = true;
+			transform.localScale = new Vector3(1,1,1);
+		}
+	}	
 
+	void UpdateFacing(){
+		if(facingRight == true){
+			transform.localScale = new Vector3(1,1,1);
+		} else {
+			transform.localScale = new Vector3(-1,1,1);
+		}
+	}
 
 
 

@@ -22,8 +22,9 @@ public class Door : MonoBehaviour {
 	
 
 	void Update () {
-		if(Input.GetButtonDown("Vertical")||Input.GetAxis ("Vertical")>0.25) {
+		if(Input.GetAxis ("Vertical")>0.25) {
 			if(gameObject.renderer.bounds.Intersects(player.renderer.bounds)){
+				Debug.Log ("yes");
 				UseDoor ();
 			} 
 		}

@@ -120,7 +120,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300034, guid: 5ee226e749fd210409e7b8a3e0db5867, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 520b6c855cdc54947b3a75caaef75369, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &21200002
 SpriteRenderer:

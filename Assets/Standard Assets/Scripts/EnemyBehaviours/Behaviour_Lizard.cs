@@ -122,10 +122,15 @@ public class Behaviour_Lizard : MonoBehaviour {
 		float idleTime;
 		float currentTime = 0f;
 		int nextState;
+		bool hasStarted = false;
 
 
 		// Methods
 		public override void Update() {
+			if (hasStarted == false) {
+				hasStarted = true;
+				idleTime += Random.Range (-(1f/10f)*idleTime,(1f/10f)*idleTime);
+			}
 			//If Lizard was attacked, transition into Teleport
 			if(_lizard.wasAttacked == true) {
 				_lizard.wasAttacked = false;
