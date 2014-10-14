@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 
@@ -18,7 +18,7 @@ public class ProjectileScript : MonoBehaviour
 
 	void Awake() {
 		gameObject.layer = 15; //This is the player's attack layer
-		Destroy(gameObject, 4); 
+		Destroy(gameObject, 6); 
 	}
 	void Start() {
 		GameObject camera_Obj = GameObject.FindGameObjectWithTag ("MainCamera");

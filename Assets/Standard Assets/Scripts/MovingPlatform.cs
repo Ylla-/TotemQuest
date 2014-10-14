@@ -18,9 +18,9 @@ public class MovingPlatform : MonoBehaviour {
 		thisRigidbody2D = GetComponent<Rigidbody2D> ();
 
 
-		distanceX = Mathf.Abs(limitX2 - limitX1);
+		distanceX = limitX2 - limitX1;
 		speedX = distanceX / interval;
-		distanceY = Mathf.Abs(limitY2 - limitY1);
+		distanceY = limitY2 - limitY1;
 		speedY = distanceY / interval;
 
 		StartCoroutine (StartMoving()); // New Coroutine Added To simulate what the previous code was doing.
@@ -40,7 +40,7 @@ public class MovingPlatform : MonoBehaviour {
 		}
 		*/
 		
-		if (moving) { 
+		if (moving && speedY >= 0) { 
 			if (!left) {
 				if (limitX2 >= rigidbody2D.position.x && limitY2 >= rigidbody2D.position.y) {
 					rigidbody2D.velocity = new Vector2 (speedX, rigidbody2D.velocity.y);
@@ -61,6 +61,26 @@ public class MovingPlatform : MonoBehaviour {
 			}
 		}
 
+		if (moving && speedY < 0) { 
+			if (!left) {
+				if (limitX2 >= rigidbody2D.position.x && limitY2 <= rigidbody2D.position.y) {
+					rigidbody2D.velocity = new Vector2 (speedX, rigidbody2D.velocity.y);
+					rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, +speedY);
+				} else if (!left) {
+					rigidbody2D.velocity = new Vector2 (0, 0);
+					left = true;
+				}
+			}				
+			if (left) {
+				if (limitX1 <= rigidbody2D.position.x && limitY1 >= rigidbody2D.position.y) { 
+					rigidbody2D.velocity = new Vector2 (-speedX, rigidbody2D.velocity.y);
+					rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, -speedY);
+				} else if (left) {
+					rigidbody2D.velocity = new Vector2 (0, 0);
+					left = false;
+				}
+			}
+		}
 	}
 
 

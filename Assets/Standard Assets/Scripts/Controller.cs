@@ -138,7 +138,7 @@ public class Controller : MonoBehaviour {
 				rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
 			}
 			else if (onMovingPlatform && onGround) {
-				rigidbody2D.velocity = new Vector2 ((move * maxSpeed) + movingRigidbody2D.velocity.x, rigidbody2D.velocity.y);
+				rigidbody2D.velocity = new Vector2 ((move * maxSpeed) + movingRigidbody2D.velocity.x, movingRigidbody2D.velocity.y);
 			}
 			else if(onMovingPlatform){
 				rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
