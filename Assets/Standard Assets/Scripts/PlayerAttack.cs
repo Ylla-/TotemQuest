@@ -21,9 +21,14 @@ public class PlayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if( (Input.GetButtonDown("Fire")||Input.GetButtonDown("Fire2")) && canShoot){
-			shoot = true;
-			StartCoroutine(FiringRate ());
-			audio.PlayOneShot (attackSound,1);
+			if(controller.totem != 0) {
+				if(controller.orbs.currentEnergy > 0) {
+					controller.orbs.RemoveEnergy(1);
+					Shoot ();
+				}
+			} else {
+				Shoot();
+			}
 
 		}
 	}
@@ -38,6 +43,13 @@ public class PlayerAttack : MonoBehaviour {
 	void Attack(){
 		
 	}
+
+	void Shoot() {
+		shoot = true;
+		StartCoroutine(FiringRate ());
+		audio.PlayOneShot (attackSound,1);
+	}
+
 	void OnTriggerEnter2D(Collider2D other){
 		if (other is BoxCollider2D) {
 			//Debug.Log ("HIT - PLAYER ATTACK");
