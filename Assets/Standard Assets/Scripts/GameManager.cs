@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 
 	static bool isLoaded = false;
 	public bool[] levelFinished;
+	public bool[] totemUnlocks;//0 = normal, 1 = rabbit, 2 = mole, 3 = mantis
 	public bool lastLevelUnlocked = false;
 
 	void Awake(){
@@ -19,10 +20,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Start () {
-		levelFinished = new bool[3];
-		levelFinished [0] = false;
-		levelFinished [1] = false;
-		levelFinished [2] = false;
+		InitializeTables ();
+		//DEBUG_UNLOCKTOTEMS (); //TODO :Remove this for release !
 	}
 	
 	// Update is called once per frame
@@ -30,6 +29,17 @@ public class GameManager : MonoBehaviour {
 		if(levelFinished[0] == true && levelFinished[1] == true && levelFinished[2] == true){
 			lastLevelUnlocked = true;
 		}
+	}
+
+	void InitializeTables(){
+		levelFinished = new bool[3];
+		for(int i=0; i<levelFinished.Length; i++) 	levelFinished [i] = false;
+		totemUnlocks = new bool[4];
+		for(int i=0; i<totemUnlocks.Length; i++) 	totemUnlocks [i] = false;
+		totemUnlocks [0] = true; //Can transform into basic form
+	}
+	void DEBUG_UNLOCKTOTEMS(){
+		for(int i=0; i<totemUnlocks.Length; i++) 	totemUnlocks [i] = true;
 	}
 
 	//Freezes the game for an amount of time. This is used to freeze the game for really small intervals when certains events happens

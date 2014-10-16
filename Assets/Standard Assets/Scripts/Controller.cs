@@ -183,10 +183,10 @@ public class Controller : MonoBehaviour {
 	
 	
 
-	if (Input.GetButtonDown ("Normal")||Input.GetAxis("DPadYAxis")>0) totem = 0;
-		if (Input.GetButtonDown ("Bunny")||Input.GetAxis("DPadXAxis")>0) totem = 1;
-		if (Input.GetButtonDown ("Mole")||Input.GetAxis("DPadXAxis")<0) totem = 2;
-		if (Input.GetButtonDown ("Mantis")||Input.GetAxis("DPadYAxis")<0) totem = 3;
+	if (Input.GetButtonDown ("Normal")||Input.GetAxis("DPadYAxis")>0) if(gameManager.totemUnlocks[0] == true) totem = 0;
+	if (Input.GetButtonDown ("Bunny")||Input.GetAxis("DPadXAxis")>0) if(gameManager.totemUnlocks[1] == true)totem = 1;
+	if (Input.GetButtonDown ("Mole")||Input.GetAxis("DPadXAxis")<0) if(gameManager.totemUnlocks[2] == true)totem = 2;
+	if (Input.GetButtonDown ("Mantis")||Input.GetAxis("DPadYAxis")<0) if(gameManager.totemUnlocks[3] == true)totem = 3;
 	if (Input.GetButtonDown ("TransformForward")) totem=(totem+1)%4;
 	if (Input.GetButtonDown ("TransformBackward")) totem=(totem+3)%4;
 		//"DPadXAxis">0
