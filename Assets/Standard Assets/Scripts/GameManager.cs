@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour {
 		if(levelFinished[0] == true && levelFinished[1] == true && levelFinished[2] == true){
 			lastLevelUnlocked = true;
 		}
+		if (Input.GetKeyDown (KeyCode.U)) {
+			DEBUG_UNLOCKTOTEMS ();
+		}
 	}
 
 	void InitializeTables(){
