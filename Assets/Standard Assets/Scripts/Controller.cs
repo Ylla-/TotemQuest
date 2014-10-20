@@ -6,8 +6,8 @@ public class Controller : MonoBehaviour {
 
 	// in order: maxSpeed, soloJumpForce, maxHealth, fireRate, shotDMG
 	float[] rabbitStats = {6.5f,460f,8f, 0.75f, 10f};
-	float[] moleStats   = {3f,  440f,15f,1.5f,  12f};
-	float[] mantisStats = {5f,  445f,8f, 0.50f, 8f};
+	float[] moleStats   = {3f,  440f,15f,1.5f,  14f};
+	float[] mantisStats = {5f,  445f,8f, 0.20f, 6f};
 	float[] normalStats = {5f,  445f,10f,0.75f, 5f};
 	bool canDash, canGlide, canShield, canSlowTime, canFloat, canSmash;
 
