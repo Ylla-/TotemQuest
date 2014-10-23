@@ -85,16 +85,20 @@ public class Controller : MonoBehaviour {
 	public EnergyBar orbs;
 
 	//declaration of audio clips
-	AudioClip playerWalk, playerStandJump, playerWalkJump, playerDamageTaken, playerTransform;
+	public AudioClip playerWalk;
+	public AudioClip playerStandJump;
+	public AudioClip playerWalkJump;
+	public AudioClip playerDamageTaken;
+	public AudioClip playerTransform;
 
 	void Start () {
 		moveAllowed = true;
 		health.shieldRatio = shieldRatio;
 		//assign corresponding audio files to their audio variables
-		playerWalk = (AudioClip)Resources.Load ("Audio/Michelle_Walk.wav", typeof(AudioClip));
-		playerStandJump=(AudioClip)Resources.Load ("Audio/Michelle_Jump_Standing.wav",typeof(AudioClip));
-		playerWalkJump = (AudioClip)Resources.Load ("Audio/Michelle_Jump_Walking.wav", typeof(AudioClip));
-		playerTransform = (AudioClip)Resources.Load ("Audio/transformation.wav", typeof(AudioClip));
+		//playerWalk = (AudioClip)Resources.Load ("Audio/Michelle_Walk.wav", typeof(AudioClip));
+		//playerStandJump=(AudioClip)Resources.Load ("Audio/Michelle_Jump_Standing.wav",typeof(AudioClip));
+		//playerWalkJump = (AudioClip)Resources.Load ("Audio/Michelle_Jump_Walking.wav", typeof(AudioClip));
+		//playerTransform = (AudioClip)Resources.Load ("Audio/transformation.wav", typeof(AudioClip));
 
 		//if you start as Mabellle, which I think should be default
 		TurnIntoNormal ();
@@ -268,6 +272,7 @@ public class Controller : MonoBehaviour {
 			StartCoroutine(JumpTimer ());
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x,0); //Added this to reset y velocity before jump. Fixes some issues where jump would have way too much force because of current velocity
 			rigidbody2D.AddForce (new Vector2 (0, soloJumpForce));
+			audio.PlayOneShot (playerWalkJump);
 
 		}
 	}
@@ -392,6 +397,7 @@ public class Controller : MonoBehaviour {
 
 	public void TurnIntoRabbit(){
 		Debug.Log ("rabbit");
+		audio.PlayOneShot (playerTransform,1);
 		maxSpeed = rabbitStats [0];
 		soloJumpForce = rabbitStats [1];
 		health.maxHealth = (int)rabbitStats [2];
@@ -414,6 +420,7 @@ public class Controller : MonoBehaviour {
 	}
 	public void TurnIntoMole(){
 		Debug.Log ("mole");
+		audio.PlayOneShot (playerTransform,1);
 		maxSpeed = moleStats [0];
 		soloJumpForce = moleStats [1];
 		health.maxHealth = (int)moleStats [2];
@@ -436,6 +443,7 @@ public class Controller : MonoBehaviour {
 	}
 	public void TurnIntoMantis(){
 		Debug.Log ("mantis");
+		audio.PlayOneShot (playerTransform,1);
 		maxSpeed = mantisStats [0];
 		soloJumpForce = mantisStats [1];
 		health.maxHealth = (int)mantisStats [2];
@@ -458,6 +466,7 @@ public class Controller : MonoBehaviour {
 	}
 	public void TurnIntoNormal(){
 		Debug.Log ("normal");
+		audio.PlayOneShot (playerTransform,1);
 		maxSpeed = normalStats [0];
 		soloJumpForce = normalStats [1];
 		health.maxHealth = (int)normalStats [2];
@@ -497,6 +506,7 @@ public class Controller : MonoBehaviour {
 			StartCoroutine(InvincibilityTimer()); //Start Invincibility
 			gameManager.FreezeGame(0.075f); //Freeze the game for a small moment
 			if(cameraScript != null) cameraScript.ScreenShake(); //Shake Screen
+			audio.PlayOneShot (playerDamageTaken,1);
 		}
 	}
 
