@@ -8,7 +8,7 @@ public class Door : MonoBehaviour {
 	public float fadeTime = 1f;
 
 	private SceneTransitionGUI transitionGUI;
-
+	
 
 	void Start () { 
 		//If for some reasons public link to GameObject are misssing :
@@ -16,8 +16,6 @@ public class Door : MonoBehaviour {
 		if (targetAnchor == null) targetAnchor = (gameObject.GetComponentsInChildren<Transform> ()) [1].gameObject; 
 
 		transitionGUI = (SceneTransitionGUI) GameObject.FindGameObjectWithTag ("TransitionGUI").GetComponent<SceneTransitionGUI> ();
-
-
 	}
 	
 
