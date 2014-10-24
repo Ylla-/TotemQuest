@@ -10339,6 +10339,7 @@ MonoBehaviour:
   DMG: 20
   shootDelay: 1
   shoot1: {fileID: 138035750}
+  attackSound: {fileID: 8300000, guid: 65ddd3f7a621f4041adfabc664598295, type: 3}
 --- !u!114 &842796308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10449,6 +10450,11 @@ MonoBehaviour:
   onMovingPlatform: 0
   movingRigidbody2D: {fileID: 0}
   orbs: {fileID: 0}
+  playerWalk: {fileID: 8300000, guid: 47688f4934bcff14784b1b3acfa33000, type: 3}
+  playerStandJump: {fileID: 8300000, guid: 6e7da450c399cf441827d58f791a9ccf, type: 3}
+  playerWalkJump: {fileID: 8300000, guid: 35fbcd8187689e347bbea8a3bb205086, type: 3}
+  playerDamageTaken: {fileID: 8300000, guid: 5153461b622cc30479d85a3e3b91bbd8, type: 3}
+  playerTransform: {fileID: 8300000, guid: 2b39bcdf7fa564c40b00fd2fdeda3af1, type: 3}
 --- !u!50 &842796314
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -21468,6 +21474,30 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: playerDamageTaken
+      value: 
+      objectReference: {fileID: 8300000, guid: 5153461b622cc30479d85a3e3b91bbd8, type: 3}
+    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: playerWalkJump
+      value: 
+      objectReference: {fileID: 8300000, guid: 35fbcd8187689e347bbea8a3bb205086, type: 3}
+    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: playerStandJump
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e7da450c399cf441827d58f791a9ccf, type: 3}
+    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: playerWalk
+      value: 
+      objectReference: {fileID: 8300000, guid: 47688f4934bcff14784b1b3acfa33000, type: 3}
+    - target: {fileID: 11400000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b39bcdf7fa564c40b00fd2fdeda3af1, type: 3}
+    - target: {fileID: 11400002, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
+      propertyPath: attackSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 65ddd3f7a621f4041adfabc664598295, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 748be64ffe1d0e94999d1c9ccf3281dc, type: 2}
   m_RootGameObject: {fileID: 842796304}

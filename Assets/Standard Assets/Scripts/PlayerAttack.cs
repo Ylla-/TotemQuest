@@ -8,14 +8,16 @@ public class PlayerAttack : MonoBehaviour {
 	bool canShoot, shoot;
 	public ThrowProjectile shoot1;
 	Controller controller;
-	AudioClip attackSound;
+	public AudioClip attackSound;
 	
 	void Start () {
 		controller = (Controller)gameObject.GetComponent ("Controller");
 		anim = GetComponentInParent<Animator> ();
 		canShoot = true;
-		attackSound = (AudioClip)Resources.Load ("Audio/Michelle_Shoot.wav", typeof(AudioClip));
-		             
+		//Assigned .wav file to public AudioClip attackSound in properties instead of resources.load
+		//if you can get resources.load method working feel free to change!
+		//attackSound = (AudioClip)Resources.Load ("Resources/Audio/Michelle_Shoot.wav", typeof (AudioClip));
+
 	}
 	
 	// Update is called once per frame
