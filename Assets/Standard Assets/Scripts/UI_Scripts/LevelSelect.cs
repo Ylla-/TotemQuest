@@ -26,7 +26,7 @@ public class LevelSelect : MonoBehaviour {
 	// 2014-08AUG-28 ACP Buttons properties are hardcoded should be re-written to be easier to edit
 	void OnGUI () {
 		//plains
-		if 
+		/*if 
 			(GUI.Button(new Rect(10,10,100,100),"Plains")) StartCoroutine (LoadNextScene(PlainsLevel));
 		//forest
 		if 
@@ -39,7 +39,7 @@ public class LevelSelect : MonoBehaviour {
 		if(manager.lastLevelUnlocked == false) GUI.enabled=false;
 		if 
 			(GUI.Button(new Rect(10,340,100,100),"Final")) StartCoroutine (LoadNextScene(FinalLevel));
-		GUI.enabled=true;
+		GUI.enabled=true;*/
 
 		//back to title
 		if
