@@ -91,6 +91,9 @@ public class Controller : MonoBehaviour {
 	public AudioClip playerDamageTaken;
 	public AudioClip playerTransform;
 
+	//DEBUG : INVINCIBILITY MODE
+	bool DEBUG_INVINCIBLE = false;
+
 	void Start () {
 		moveAllowed = true;
 		health.shieldRatio = shieldRatio;
@@ -118,6 +121,12 @@ public class Controller : MonoBehaviour {
 	
 	
 	void FixedUpdate () {
+		//DEBUG INVINCIBLE 
+		if(Input.GetKey(KeyCode.Alpha0)) DEBUG_INVINCIBLE = !DEBUG_INVINCIBLE;
+		if(DEBUG_INVINCIBLE == true) health.curHealth = health.maxHealth;
+						
+
+
 		if (isKnockbacked == true) return; //While the knockback method is not properly implemented, this will stop the update function while the player  is hit for invincibility time
 
 		//on ground check

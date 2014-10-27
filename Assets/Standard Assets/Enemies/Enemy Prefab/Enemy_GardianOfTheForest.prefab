@@ -31,6 +31,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 61: {fileID: 6100000}
   - 114: {fileID: 11400000}
+  - 61: {fileID: 6100004}
   m_Layer: 14
   m_Name: Enemy_GardianOfTheForest
   m_TagString: Enemy
@@ -174,7 +175,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: .699999988, y: 1.5}
   m_Center: {x: 0, y: .25}
 --- !u!61 &6100002
@@ -188,6 +189,17 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_Size: {x: .200000003, y: 1}
   m_Center: {x: .5, y: 0}
+--- !u!61 &6100004
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: .699999988, y: .5}
+  m_Center: {x: 0, y: -.25}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -251,6 +263,7 @@ MonoBehaviour:
   ShowHealthOnScreen: 0
   shield: 0
   shieldRatio: 0
+  skin: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,6 +294,7 @@ MonoBehaviour:
   ShowHealthOnScreen: 0
   shield: 0
   shieldRatio: 0
+  skin: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

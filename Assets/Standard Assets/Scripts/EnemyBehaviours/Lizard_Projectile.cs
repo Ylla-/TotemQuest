@@ -40,6 +40,8 @@ public class Lizard_Projectile : MonoBehaviour {
 			playerController.DamagePlayer(DMG);
 			Vector3 positionDiff = playerController.transform.position - transform.position; 
 			Destroy(gameObject);
+		} else if (other.gameObject.layer == 11) {
+			Destroy (gameObject);
 		}
 	}
 	

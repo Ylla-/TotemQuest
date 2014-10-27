@@ -72,6 +72,14 @@ public class Behaviour_Guardian : MonoBehaviour {
 		_state.Update();
 	}
 
+	void  OnTriggerEnter2D(Collider2D other) { 
+		//Damage Player when touching
+		if(other.gameObject.layer == 13 && isDying == false) { //If it hits the player
+			playerController.DamagePlayer(meleeDamage);
+			Vector3 positionDiff = playerController.transform.position - transform.position; 
+		}
+	}
+
 
 	
 	/*********************************************
