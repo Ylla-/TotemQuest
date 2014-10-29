@@ -39,11 +39,11 @@ public class LevelSelect : MonoBehaviour {
 		if(manager.lastLevelUnlocked == false) GUI.enabled=false;
 		if 
 			(GUI.Button(new Rect(10,340,100,100),"Final")) StartCoroutine (LoadNextScene(FinalLevel));
-		GUI.enabled=true;*/
+		GUI.enabled=true;
 
 		//back to title
 		if
-			(GUI.Button(new Rect(Screen.width-100-10,10,100,100),"Back To Title")) StartCoroutine (LoadNextScene(Title));
+			(GUI.Button(new Rect(Screen.width-100-10,10,100,100),"Back To Title")) StartCoroutine (LoadNextScene(Title));*/
 	}
 
 	IEnumerator LoadNextScene(string nextScene) {
