@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: 60b69c12b09ec1c4399712b0fc5dd48c
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: michelle_death_sheet
+    21300002: Death
+    21300004: Death_0
+    21300006: Death_1
+    21300008: Death_2
+    21300010: Death_3
+    21300012: Death_4
+    21300014: Death_5
+    21300016: Death_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Death_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1
+        width: 42
+        height: 91
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Death_1
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 39
+        height: 94
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Death_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 37
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Death_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 2
+        width: 44
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Death_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2
+        width: 47
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Death_5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 41
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Death_6
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 2
+        width: 41
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
