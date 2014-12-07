@@ -68,6 +68,7 @@ public class Health : MonoBehaviour {
 
 	void Die(){
 		if (gameObject.tag == "Player") {
+			Debug.Log("Player Death");
 			StartCoroutine (DeathAnimation)();
 			Application.LoadLevel (Application.loadedLevel);
 		} else {
