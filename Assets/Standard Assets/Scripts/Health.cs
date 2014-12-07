@@ -7,7 +7,7 @@ public class Health : MonoBehaviour {
 	public float healthBarLength = 200;
 	public int pos = 40;
 	public bool ShowHealthOnScreen = false;
-
+	public Animator anim;
 
 
 	//mole shield
@@ -21,6 +21,8 @@ public class Health : MonoBehaviour {
 	void Awake () {
 		flashSprite = gameObject.GetComponentInChildren<FlashSprite> ();
 		curHealth = maxHealth;
+		if (gameObject.tag == "Player")
+			anim = GetComponent<Animator> ();
 	}
 	void Start () {
 		healthBarLength = (Screen.width / 3) * (curHealth / (float)(maxHealth)); //current health Lenght
@@ -29,7 +31,8 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (gameObject.tag == "Player")
+			anim.SetBool("isDead", false);
 	}
 	
 	void OnGUI(){
@@ -65,7 +68,7 @@ public class Health : MonoBehaviour {
 
 	void Die(){
 		if (gameObject.tag == "Player") {
-
+			StartCoroutine (DeathAnimation)();
 			Application.LoadLevel (Application.loadedLevel);
 		} else {
 			GiveEnergyOnDeath giveEnergy = gameObject.GetComponent<GiveEnergyOnDeath>();
@@ -85,5 +88,15 @@ public class Health : MonoBehaviour {
 		}
 		Destroy (gameObject);
 	}
+
+	Coroutine DeathAnimation(){
+		anim.SetBool ("isDead", true);
+		while (AnimationState.time >= AnimationState.length)
+		{
+			yield return null;
+		}
+		return null;
+	}
+
 
 }
