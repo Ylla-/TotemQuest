@@ -56,6 +56,8 @@ public class Health : MonoBehaviour {
 
 		if (curHealth < 1) {
 			curHealth = 0;
+			CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
+			cc.enabled = false; // Turn off the component
 			Die();
 		}
 		if (curHealth > maxHealth) {
@@ -69,7 +71,7 @@ public class Health : MonoBehaviour {
 	void Die(){
 		if (gameObject.tag == "Player") {
 			Debug.Log("Player Death");
-			StartCoroutine (DeathAnimation)();
+			StartCoroutine (DeathAnimation());
 			Application.LoadLevel (Application.loadedLevel);
 		} else {
 			GiveEnergyOnDeath giveEnergy = gameObject.GetComponent<GiveEnergyOnDeath>();
@@ -90,12 +92,9 @@ public class Health : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-	Coroutine DeathAnimation(){
+	IEnumerator DeathAnimation(){
 		anim.SetBool ("isDead", true);
-		while (AnimationState.time >= AnimationState.length)
-		{
-			yield return null;
-		}
+		anim.Play ("Death");
 		return null;
 	}
 

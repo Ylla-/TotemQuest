@@ -105,6 +105,8 @@ public class Controller : MonoBehaviour {
 
 		//if you start as Mabellle, which I think should be default
 		TurnIntoNormal ();
+		CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
+		cc.enabled = true; // Turn on the component
 	}
 	void Awake(){
 		//Get the different components. Try and do this in Awake in case some other scripts require those components in their start()	
