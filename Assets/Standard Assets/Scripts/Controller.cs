@@ -192,19 +192,32 @@ public class Controller : MonoBehaviour {
 
 	}
 	// it seems you cant use GetButtonDown in the FixedUpdate() 
-	
+	int nextTotem(){
+		int x=totem;
+		while(true){
+			x=(x+1)%4;
+			if(gameManager.totemUnlocks[x] == true) return x;
+		}
+	}
+	int previousTotem(){
+		int x=totem;
+		while(true){
+			x=(x+3)%4;
+			if(gameManager.totemUnlocks[x] == true) return x;
+		}
+	}
 	//For totem transformations
 	void Update(){
 	
 	
 
-	if (Input.GetButtonDown ("Normal")||Input.GetAxis("DPadYAxis")>0) if(gameManager.totemUnlocks[0] == true) totem = 0;
-	if (Input.GetButtonDown ("Bunny")||Input.GetAxis("DPadXAxis")>0) if(gameManager.totemUnlocks[1] == true)totem = 1;
-	if (Input.GetButtonDown ("Mole")||Input.GetAxis("DPadXAxis")<0) if(gameManager.totemUnlocks[2] == true)totem = 2;
-	if (Input.GetButtonDown ("Mantis")||Input.GetAxis("DPadYAxis")<0) if(gameManager.totemUnlocks[3] == true)totem = 3;
-	if (Input.GetButtonDown ("TransformForward")) totem=(totem+1)%4;
-	if (Input.GetButtonDown ("TransformBackward")) totem=(totem+3)%4;
-		//"DPadXAxis">0
+	if (Input.GetButtonDown ("Normal")) if(gameManager.totemUnlocks[0] == true) totem = 0;
+	if (Input.GetButtonDown ("Bunny")) if(gameManager.totemUnlocks[1] == true)totem = 1;
+	if (Input.GetButtonDown ("Mole")) if(gameManager.totemUnlocks[2] == true)totem = 2;
+	if (Input.GetButtonDown ("Mantis")) if(gameManager.totemUnlocks[3] == true)totem = 3;
+	if (Input.GetButtonDown ("TransformForward")) totem=nextTotem();
+	if (Input.GetButtonDown ("TransformBackward")) totem=previousTotem();
+
 	//Fixed jump
 	if (Input.GetButtonDown("Jump") && onGround){
 			Jump ();
@@ -212,13 +225,13 @@ public class Controller : MonoBehaviour {
 
 		//DASH
 		if (canDash) {
-			if (( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) && onGround) {
+			if (( (Input.GetButtonDown ("Ability1")) ) && onGround) {
 				dash = true;
 				}
 		}
 		// GLIDE
 		if (canGlide) {
-			if (( (Input.GetButtonDown ("Ability1") || Input.GetButtonDown ("Fire1")) ) && (!onGround)) {
+			if (( (Input.GetButtonDown ("Ability1")) ) && (!onGround)) {
 				if(airCounter){
 				glide = true;
 				airCounter = false;
@@ -237,7 +250,7 @@ public class Controller : MonoBehaviour {
 				}
 		// float mabelle
 		if (canFloat) {
-			if (Input.GetButtonDown ("Ability1") && onGround == false) {
+			if ((Input.GetButtonDown ("Ability1")) && onGround == false) {
 				Floating = !Floating;
 				MaBellesFloat (Floating);  
 				}
@@ -249,13 +262,13 @@ public class Controller : MonoBehaviour {
 
 		//shield mole
 		if (canShield) {
-			if ( (Input.GetButtonDown ("Ability1"))) {
+			if ( Input.GetButtonDown ("Ability1")) {
 				MoleShield();
 			}
 			}
 		//mole smash
 		if (canSmash) {
-						if ((Input.GetButtonDown ("Ability2"))) {
+			if (Input.GetButtonDown ("Ability2") || Input.GetButtonDown ("Fire2")) {
 				moleSmash = true;
 				moveAllowed = false;
 				MoleExplo();

@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if( (Input.GetButtonDown("Fire")||Input.GetButtonDown("Fire2")) && canShoot){
+		if( (Input.GetButtonDown("Fire")) && canShoot){
 			if(controller.totem != 0) {
 				if(controller.orbs.currentEnergy > 0) {
 					controller.orbs.RemoveEnergy(1);
