@@ -57,7 +57,7 @@ public class Health : MonoBehaviour {
 		if (curHealth < 1) {
 			curHealth = 0;
 			CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
-			cc.enabled = false; // Turn off the component
+			//cc.enabled = false; // Turn off the component
 			Die();
 		}
 		if (curHealth > maxHealth) {

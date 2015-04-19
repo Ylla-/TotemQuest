@@ -20,6 +20,10 @@ public class Controller : MonoBehaviour {
 	public bool moveAllowed;
 	//public float HorizontalForceonAir = 8f;
 
+
+	//CharacterController myCC;
+
+
 	//for non fixed jump UNUSUED
 	//float JumpDuration = 0.150f;
 	float JumpPressedTime, JumpingPressed;
@@ -103,10 +107,15 @@ public class Controller : MonoBehaviour {
 		//playerWalkJump = (AudioClip)Resources.Load ("Audio/Michelle_Jump_Walking.wav", typeof(AudioClip));
 		//playerTransform = (AudioClip)Resources.Load ("Audio/transformation.wav", typeof(AudioClip));
 
-		//if you start as Mabellle, which I think should be default
+		//if you start as Mabellle, which I think should be default'
+
 		TurnIntoNormal ();
-		CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
-		cc.enabled = true; // Turn on the component
+		//CharacterController cc = GetComponent(typeof(CharacterController)) as CharacterController;
+		CharacterController myCC = GetComponent<CharacterController>();
+		if (myCC != null) {
+						myCC.enabled = true; // Turn on the component
+				} else
+						Debug.Log ("Broken controller");
 	}
 	void Awake(){
 		//Get the different components. Try and do this in Awake in case some other scripts require those components in their start()	
@@ -208,11 +217,10 @@ public class Controller : MonoBehaviour {
 	}
 	//For totem transformations
 	void Update(){
-	
-	
+
 
 	if (Input.GetButtonDown ("Normal")) if(gameManager.totemUnlocks[0] == true) totem = 0;
-	if (Input.GetButtonDown ("Bunny")) if(gameManager.totemUnlocks[1] == true)totem = 1;
+		if (Input.GetButtonDown ("Bunny"))if(gameManager.totemUnlocks[1] == true)totem = 1;
 	if (Input.GetButtonDown ("Mole")) if(gameManager.totemUnlocks[2] == true)totem = 2;
 	if (Input.GetButtonDown ("Mantis")) if(gameManager.totemUnlocks[3] == true)totem = 3;
 	if (Input.GetButtonDown ("TransformForward")) totem=nextTotem();
@@ -268,7 +276,7 @@ public class Controller : MonoBehaviour {
 			}
 		//mole smash
 		if (canSmash) {
-			if (Input.GetButtonDown ("Ability2") || Input.GetButtonDown ("Fire2")) {
+			if (Input.GetButtonDown ("Ability2")){// || Input.GetButtonDown ("Fire2")) {
 				moleSmash = true;
 				moveAllowed = false;
 				MoleExplo();

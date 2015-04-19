@@ -38,8 +38,9 @@ public class GameManager : MonoBehaviour {
 		levelFinished = new bool[3];
 		for(int i=0; i<levelFinished.Length; i++) 	levelFinished [i] = false;
 		totemUnlocks = new bool[4];
-		for(int i=0; i<totemUnlocks.Length; i++) 	totemUnlocks [i] = false;
-		totemUnlocks [0] = true; //Can transform into basic form
+		//for(int i=0; i<totemUnlocks.Length; i++) 	totemUnlocks [i] = false;
+		//totemUnlocks [0] = true; //Can transform into basic form
+		DEBUG_UNLOCKTOTEMS ();
 	}
 	void DEBUG_UNLOCKTOTEMS(){
 		for(int i=0; i<totemUnlocks.Length; i++) 	totemUnlocks [i] = true;
